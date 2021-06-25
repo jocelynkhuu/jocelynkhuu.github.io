@@ -1,0 +1,332 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Jocelyn Khuu</title>
+        <link>https://jocelynkhuu.github.io/posts/</link>
+        <description>Recent content in Posts on Jocelyn Khuu</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Thu, 20 May 2021 22:12:27 -0700</lastBuildDate>
+        <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Panic Buying Gas?</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</link>
+            <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</guid>
+            <description>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;
+What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</description>
+            <content type="html"><![CDATA[<p>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that <a href="https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/">they only target companies that can pay the specified ransom as they do not &ldquo;want to kill your business&rdquo;</a></p>
+<p>What&rsquo;s also nice of them is that they have a list of &ldquo;principles&rdquo; where they won&rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</p>
+<p>Colonial pipeline however, provides approximately 45% of the fuel for the east coast. On May 19th, Joseph Blount (CEO of Colonial Pipeline) announced that he had made the decision to pay a $4.4 million in bitcoin to try to get their systems back online.</p>
+<p>According to President Biden, there is evidence that the ransomware operation is in Russia as there haven&rsquo;t been attacks surfaced on Russian, Kazakh, and Ukrainian-speaking companies as reported by <a href="https://www.reuters.com/business/energy/ransom-group-linked-colonial-pipeline-hack-is-new-experienced-2021-05-09/">Reuters</a>.</p>
+<h3 id="is-panic-buying-gas-a-good-idea">Is panic buying gas a good idea?</h3>
+<p>There have been images circulating of people buying gas and putting them in plastic bags in the back of their car (not sure how true this is but nonetheless scary images)&hellip; please don&rsquo;t do this as it isn&rsquo;t safe, it causes more shortages, and is a huge fire risk. Reminds me of the panic buying for toilet paper when COVID first hit.</p>
+<blockquote>
+<p>sources: <a href="https://www.npr.org/2021/05/10/995405459/what-we-know-about-the-ransomware-attack-on-a-critical-u-s-pipeline">npr</a>, <a href="https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/">bleepingcomputer</a>, <a href="https://www.wsj.com/amp/articles/colonial-pipeline-ceo-tells-why-he-paid-hackers-a-4-4-million-ransom-11621435636">WSJ</a>, <a href="https://www.reuters.com/business/energy/ransom-group-linked-colonial-pipeline-hack-is-new-experienced-2021-05-09/">Reuters</a></p>
+</blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Linux Tip of the Day - ps</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
+            <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
+            <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
+This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-ps">What is ps?</h2>
+<p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
+<p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
+<p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
+<pre><code>$ ps
+    PID TTY          TIME CMD
+  43682 pts/1    00:00:00 bash
+  43706 pts/1    00:00:00 ps
+</code></pre><ul>
+<li><code>PID</code> = Process ID</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-e, select all processes</code></strong></p>
+<p><code>ps -e</code> lists all processes that have been started by all users.</p>
+<pre><code>$ ps -e | head -3
+    PID TTY          TIME CMD
+      1 ?        00:00:03 systemd
+      2 ?        00:00:00 kthreadd
+</code></pre><p><strong><code>-f, full format listing</code></strong></p>
+<p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
+<pre><code>$ ps -ef | head -3
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 Mar06 ?        00:00:03 /sbin/init
+root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
+</code></pre><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-F, Extra full format</code></strong></p>
+<pre><code>$ ps -eF | head -3
+UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
+root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
+</code></pre><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>SZ</code> = Size in RAM page of the process image</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>PSR</code> = processor that the process is assigned to</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>ps aux</code></strong></p>
+<p><code>ps aux</code> is another way to list all processes (not the same as <code>ps -aux</code>, which displays all processes owned by user named &ldquo;x&rdquo;). This is the legacy way of seeing all processes running using BSD syntax.</p>
+<ul>
+<li><code>a</code> = all users</li>
+<li><code>u</code> = shows the user</li>
+<li><code>x</code> = displays the processes not executed in the terminal</li>
+</ul>
+<pre><code>$ ps aux | head -3
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
+</code></pre><ul>
+<li><code>USER</code> = User account running process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>%CPU</code> = CPU time used by the process (in %)</li>
+<li><code>%MEM</code> = Physical Memory used by the process (in %)</li>
+<li><code>VSZ</code> = Virtual memory used (in bytes)</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>STAT</code> = Process state</li>
+<li><code>START</code> = Starting time/date of the process</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>COMMAND</code> = Command which started the process</li>
+</ul>
+<p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
+<p><strong><code>-C, cmdlet</code></strong></p>
+<p><code>-C</code> can be used to search in ps with a command name.</p>
+<pre><code>$ ps -C chrome
+    PID TTY          TIME CMD
+  23128 ?        00:01:49 chrome
+</code></pre><p><strong><code>-p, process id</code></strong></p>
+<p><code>-p</code> can be used to search for process id</p>
+<pre><code>$ ps -p 23128
+    PID TTY          TIME CMD
+  23128 ?        00:01:51 chrome
+</code></pre><p><strong><code>-u, userlist</code></strong></p>
+<p><code>-u</code> can be used to search by user</p>
+<pre><code>$ ps -u bob
+    PID TTY          TIME CMD
+  17827 ?        00:00:00 systemd
+  17828 ?        00:00:00 (sd-pam)
+  17854 ?        00:00:00 dbus-daemon 
+</code></pre><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>What is a CVE?</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</link>
+            <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</guid>
+            <description>CVE is short for &amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;.
+CVE is managed by the MITRE corporation and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</description>
+            <content type="html"><![CDATA[<p>CVE is short for <strong>&ldquo;Common Vulnerabilities and Exposures&rdquo;</strong>.</p>
+<p>CVE is managed by the <a href="https://cve.mitre.org/">MITRE corporation</a> and is funded by the DHS CISA. According to the Mitre site, &ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</p>
+<p>CVE provides an identifier assigned by a CVE Numbering Authority (CNA). Once an issue is brought up to a CNA, they can assign the issue/information a CVE ID and provide a brief description to post on the CVE website.</p>
+<p>According to RedHad, &ldquo;Often, a CVE ID is assigned before a security advisory is made public. It’s common for vendors to keep security flaws secret until a fix has been developed and tested. That reduces opportunities for attackers to exploit unpatched flaws.&rdquo;</p>
+<p>CVE IDs are in the format of <code>CVE-2021-1234567</code> and an entry includes the CVE ID, a brief description, a product and version, and links to the reports.</p>
+<h2 id="what-are-the-requirements-for-a-cve">What are the requirements for a CVE?</h2>
+<p>Not all vulnerabilities will receive a CVE ID.</p>
+<p>RedHat provides a list of criteria.</p>
+<p><img src="/static/cvecriteria.png" alt="CVE Criteria"></p>
+<blockquote>
+<p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p>
+</blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Linux Tip of the Day - du</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</link>
+            <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</guid>
+            <description>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.
+What is du? According to the du man page, du is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking.</description>
+            <content type="html"><![CDATA[<p><em>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.</em></p>
+<h2 id="what-is-du">What is du?</h2>
+<p>According to the <code>du</code> man page, <code>du</code> is used to estimate file space usage. It&rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the <code>du</code> cmd has helped to figure out which files/folders are the culprits.</p>
+<p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
+<p><strong><code>-s, --summarize</code></strong></p>
+<p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
+<pre><code>~ $ du -s
+12669812	.
+ ~ $ du -s *
+16	Desktop
+429860	Documents
+</code></pre><p><strong><code>-h, --human-readable</code></strong></p>
+<p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
+<pre><code> ~ $ du -sh *
+16K	Desktop
+420M	Documents
+</code></pre><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
+<p><strong><code>-a, --all</code></strong></p>
+<p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
+<pre><code>test $  du -ha
+0	./test/test/test.txt
+4.0K	./test/test
+8.0K	./test
+12K	.
+</code></pre><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
+<pre><code>~ $  du -sh * | sort -hr | head -5
+4.6G	Downloads
+655M	games
+420M	Documents
+33M	github
+14M	Pictures
+</code></pre>]]></content>
+        </item>
+        
+        <item>
+            <title>Microsoft Exchange Server explots compromises over 30,000 orgs&#39; Emails</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</link>
+            <pubDate>Sun, 07 Mar 2021 13:34:26 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</guid>
+            <description>On 3/5/21, KrebsOnSecurity published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.
+When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</description>
+            <content type="html"><![CDATA[<p>On 3/5/21, <a href="https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/">KrebsOnSecurity</a> published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.</p>
+<p>When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</p>
+<p>According to Chris Krebs, orgs that run OWA servers exposed to the internet should assume compromise between 02/26-03/03 and should check for 8 character aspx files in <code>C:\\inetpub\wwwroot\aspnet\_client\system\_web\</code>.</p>
+<p>Now that the hackers are in, it&rsquo;s time to clean house as patching these servers isn&rsquo;t enough. Orgs impacted should really be looking for any signs of malware or other backdoors left that might allow the attackers to come back. The best course of action would be to rebuild these servers completely to ensure no malicious software is installed.</p>
+<p>Microsoft has posted IOCs <a href="https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/">here</a>, the mitigation guide <a href="https://msrc-blog.microsoft.com/2021/03/05/microsoft-exchange-server-vulnerabilities-mitigations-march-2021/">here</a>, and information about the updates <a href="https://msrc-blog.microsoft.com/2021/03/02/multiple-security-updates-released-for-exchange-server/">here</a>.</p>
+<p>Microsoft has stated that this isn&rsquo;t connected to the SolarWinds attacks that happened earlier last year.</p>
+<blockquote>
+<p>Sources: <a href="https://arstechnica.com/gadgets/2021/03/tens-of-thousands-of-us-organizations-hit-in-ongoing-microsoft-exchange-hack/">arstechnica</a>, <a href="https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/">KrebsOnSecurity</a></p>
+</blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Security Researcher Hacks over 35 Companies</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</link>
+            <pubDate>Mon, 15 Feb 2021 04:33:31 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</guid>
+            <description>Another Simple Supply Chain Attack Article on BleepingComputer and TechXplore
+A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.
+Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</description>
+            <content type="html"><![CDATA[<h2 id="another-simple-supply-chain-attack">Another Simple Supply Chain Attack</h2>
+<p><em>Article on <a href="https://www.bleepingcomputer.com/news/security/researcher-hacks-over-35-tech-firms-in-novel-supply-chain-attack/">BleepingComputer</a> and <a href="https://techxplore.com/news/2021-02-hacks-major-technology-firms.html">TechXplore</a></em></p>
+<p>A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.</p>
+<p>Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</p>
+<p>According to Birsan: &ldquo;vulnerabilities or design flaws in automated build or installation tools may cause public dependencies to be mistaken for internal dependencies with the exact same name&rdquo; resulting in a supply chain attack taking advantage of dependency confusion.</p>
+<p>Microsoft published a <a href="https://azure.microsoft.com/mediahandler/files/resourcefiles/3-ways-to-mitigate-risk-using-private-package-feeds/3%20Ways%20to%20Mitigate%20Risk%20When%20Using%20Private%20Package%20Feeds%20-%20v1.0.pdf">whitepaper</a> on this and some mitigation strategies such as referencing one private feed and not multiple, protecting packages using controlled scopes, and using client-side verification features such as specific version numbers for packages and dependencies.</p>
+<p>Overall, it seemed like a pretty simple supply chain attack and it highlighted the dangers of utilizing open-source libraries and certain dependency managers.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Hack on Oldsmar, Fl. Water Treatment Facility</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</link>
+            <pubDate>Sat, 13 Feb 2021 03:29:31 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</guid>
+            <description>Poisoning Water? Earlier this week, Reuters reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.
+We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by Engadget that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been updated or supported by Microsoft in over a year.</description>
+            <content type="html"><![CDATA[<h2 id="poisoning-water">Poisoning Water?</h2>
+<p>Earlier this week, <a href="https://www.reuters.com/article/us-usa-cyber-florida-idUSKBN2A82FV">Reuters</a> reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.</p>
+<p>We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by <a href="https://www.engadget.com/hacked-water-plant-computer-had-shared-passwords-andofdate-windows-os-082552973.html">Engadget</a> that the facility&rsquo;s systems were running Windows 7, which hasn&rsquo;t been <a href="https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962#:~:text=The%20specific%20end%20of%20support,longer%20available%20for%20the%20product.">updated or supported by Microsoft</a> in over a year. TeamViewer, a remote desktop software, was not secured by a strong password and was brute-forced to allow unauthorized access. The systems were also connected directly to the internet without any firewalls, essentially leaving them exposed to the rest of the world. SCADA systems are typically on isolated networks but it didn&rsquo;t seem like this was the case here.</p>
+<p>The bad actor was able to remote in through TeamViewer and tried to increase the levels of sodium hydroxide, or lye, from 100 parts per million to 11,000 parts per million, essentially <a href="https://www.nytimes.com/2021/02/08/us/oldsmar-florida-water-supply-hack.html">poisoning the water supply</a>. Luckily, an employee was monitoring the system and was able to see the hack live, revert the changes made, and report to the authorities.</p>
+<p>The scariest part of all of this is how easily a bad actor was able to exploit the system to commit a dangerous crime. A water treatment facility should have better security posture to implement defense in depth to avoid situations like these. I am fortunate enough to live in an area where I can drink tap water pretty safely, but events like these make me question the trust that I have.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Sudo Vulnerability</title>
+            <link>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</link>
+            <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</guid>
+            <description>A Sudo Vulnerability CVE-2021-3156
+On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.
+With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
+            <content type="html"><![CDATA[<h2 id="a-sudo-vulnerability">A Sudo Vulnerability</h2>
+<p><img src="/static/sudo.jpg" alt="Sudo"></p>
+<p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156">CVE-2021-3156</a></p>
+<p>On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &lsquo;sudo&rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &lsquo;', however, a bug has made it possible to run &lsquo;sudoedit&rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.</p>
+<p>With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</p>
+<p>To <a href="https://www.sudo.ws/alerts/unescape_overflow.html">check</a> if your version of sudo is affected try running:
+<code>sudoedit -s /</code></p>
+<p>A vulnerable version will either prompt for a password or display an error similar to: <code>sudoedit: /: not a regular file</code></p>
+<p>According to Mitre, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-315I6">CVE-2021-3156</a>, sudo versions before 1.9.5p2 are vulnerable.</p>
+<p>Apple has <a href="https://support.apple.com/en-us/HT212177">released an update</a> today for Big Sur, Catalina, and Mojave.</p>
+<p>This particular vulnerability, while dangerous, still does require an attacker to have access to the machine already to trigger this.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>SolarWinds Supply Chain Attack</title>
+            <link>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</link>
+            <pubDate>Thu, 17 Dec 2020 05:17:52 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</guid>
+            <description>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised. What exactly is SolarWinds and what happened? SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform.</description>
+            <content type="html"><![CDATA[<p>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
+<img src="/static/solarwinds.png" alt="SolarWinds"></p>
+<h2 id="what-exactly-is-solarwinds-and-what-happened">What exactly is SolarWinds and what happened?</h2>
+<p>SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">called SUNBURST by FireEye</a>, as part of a legitimate update from SolarWinds' servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed <a href="https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/">(sans.org)</a>. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.</p>
+<p>What was very interesting about this malware but that it did not do anything for up to 2 weeks and used &ldquo;obfuscated blocklists to identify forensic and anti-virus tools running as processes, services, and drivers&rdquo; according to <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">FireEye</a>. They were able to copy existing SolarWinds protocols to hide their traffic and appear as legit SolarWinds activity.</p>
+<p>This was a highly sophisticated attack that took a lot of planning, skill, and confidence.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Look! A Puppy!</title>
+            <link>https://jocelynkhuu.github.io/posts/2020/121420_puppy/</link>
+            <pubDate>Mon, 14 Dec 2020 20:00:05 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2020/121420_puppy/</guid>
+            <description>Literally just a picture of a puppy </description>
+            <content type="html"><![CDATA[<h2 id="literally-just-a-picture-of-a-puppy">Literally just a picture of a puppy</h2>
+<p><img src="/static/puppy.png" alt="Puppy"></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>FireEye Hack</title>
+            <link>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</link>
+            <pubDate>Sat, 12 Dec 2020 12:32:22 -0800</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</guid>
+            <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.
+This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.
+FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
+            <content type="html"><![CDATA[<p><img src="/static/fireeye.png" alt="FireEye"></p>
+<h2 id="fireeye-attack-a-reminder-that-no-one-is-safe">FireEye Attack, a reminder that no one is safe</h2>
+<p>On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.</p>
+<p>This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.</p>
+<p>FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack. Kevin Mandia stated that the attackers were &ldquo;highly trained in operational security and executed with discipline and focus. They operated clandestinly, using methods that counter security tools and forensic examination.&rdquo; The attackers got their hands on a number of FireEye Red Team tools, which FireEye posted a list of countermeasures for <a href="https://github.com/fireeye/red_team_tool_countermeasures">here</a>.</p>
+<p>Are the attackers going to release these tools to the public like the Shadow Brokers did?</p>
+<p>FireEye has reassured us that no zero-day exploits were stolen and that only well-known methods used by red teams around the world were stolen.</p>
+<p>It&rsquo;s an interesting thought that in this digital world, no one is really safe from cyber attacks. It isn&rsquo;t enough to lock the door to our home anymore when people can just hack their way in.</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

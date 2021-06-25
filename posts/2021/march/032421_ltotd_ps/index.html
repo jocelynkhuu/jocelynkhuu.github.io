@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="ps - process status" />
+<meta name="keywords" content=", security, thoughts, post, blog" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/" />
+
+
+    <title>
+        
+            Linux Tip of the Day - ps :: Jocelyn Khuu  — Welcome to my page!
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://jocelynkhuu.github.io/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Linux Tip of the Day - ps">
+<meta itemprop="description" content="ps - process status"><meta itemprop="datePublished" content="2021-03-24T21:30:06-07:00" />
+<meta itemprop="dateModified" content="2021-03-24T21:30:06-07:00" />
+<meta itemprop="wordCount" content="749"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="keywords" content="security,thoughts,post,blog," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
+
+<meta name="twitter:title" content="Linux Tip of the Day - ps"/>
+<meta name="twitter:description" content="ps - process status"/>
+
+
+
+
+    <meta property="og:title" content="Linux Tip of the Day - ps" />
+<meta property="og:description" content="ps - process status" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-24T21:30:06-07:00" />
+<meta property="article:modified_time" content="2021-03-24T21:30:06-07:00" /><meta property="og:site_name" content="Jocelyn Khuu" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-03-24 21:30:06 -0700 PDT" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://jocelynkhuu.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">/home</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://jocelynkhuu.github.io/posts">posts</a></li><li><a href="https://jocelynkhuu.github.io/resume">resume</a></li><li><a href="https://jocelynkhuu.github.io/about">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        4 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/">Linux Tip of the Day - ps</a>
+      </h1>
+
+      
+        <div class="post-excerpt">ps - process status</div>
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="what-is-ps">What is ps?</h2>
+<p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
+<p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
+<p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
+<pre><code>$ ps
+    PID TTY          TIME CMD
+  43682 pts/1    00:00:00 bash
+  43706 pts/1    00:00:00 ps
+</code></pre><ul>
+<li><code>PID</code> = Process ID</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-e, select all processes</code></strong></p>
+<p><code>ps -e</code> lists all processes that have been started by all users.</p>
+<pre><code>$ ps -e | head -3
+    PID TTY          TIME CMD
+      1 ?        00:00:03 systemd
+      2 ?        00:00:00 kthreadd
+</code></pre><p><strong><code>-f, full format listing</code></strong></p>
+<p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
+<pre><code>$ ps -ef | head -3
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 Mar06 ?        00:00:03 /sbin/init
+root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
+</code></pre><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-F, Extra full format</code></strong></p>
+<pre><code>$ ps -eF | head -3
+UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
+root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
+</code></pre><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>SZ</code> = Size in RAM page of the process image</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>PSR</code> = processor that the process is assigned to</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>ps aux</code></strong></p>
+<p><code>ps aux</code> is another way to list all processes (not the same as <code>ps -aux</code>, which displays all processes owned by user named &ldquo;x&rdquo;). This is the legacy way of seeing all processes running using BSD syntax.</p>
+<ul>
+<li><code>a</code> = all users</li>
+<li><code>u</code> = shows the user</li>
+<li><code>x</code> = displays the processes not executed in the terminal</li>
+</ul>
+<pre><code>$ ps aux | head -3
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
+</code></pre><ul>
+<li><code>USER</code> = User account running process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>%CPU</code> = CPU time used by the process (in %)</li>
+<li><code>%MEM</code> = Physical Memory used by the process (in %)</li>
+<li><code>VSZ</code> = Virtual memory used (in bytes)</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>STAT</code> = Process state</li>
+<li><code>START</code> = Starting time/date of the process</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>COMMAND</code> = Command which started the process</li>
+</ul>
+<p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
+<p><strong><code>-C, cmdlet</code></strong></p>
+<p><code>-C</code> can be used to search in ps with a command name.</p>
+<pre><code>$ ps -C chrome
+    PID TTY          TIME CMD
+  23128 ?        00:01:49 chrome
+</code></pre><p><strong><code>-p, process id</code></strong></p>
+<p><code>-p</code> can be used to search for process id</p>
+<pre><code>$ ps -p 23128
+    PID TTY          TIME CMD
+  23128 ?        00:01:51 chrome
+</code></pre><p><strong><code>-u, userlist</code></strong></p>
+<p><code>-u</code> can be used to search by user</p>
+<pre><code>$ ps -u bob
+    PID TTY          TIME CMD
+  17827 ?        00:00:00 systemd
+  17828 ?        00:00:00 (sd-pam)
+  17854 ?        00:00:00 dbus-daemon 
+</code></pre><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/security/">security</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/thoughts/">thoughts</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/post/">post</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/blog/">blog</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        749 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-03-24 21:30
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Panic Buying Gas?</span>
+              </a>
+            </span>
+          
+
+          
+            <span class="button next">
+              <a href="https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/">
+                <span class="button__text">What is a CVE?</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://jocelynkhuu.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://jocelynkhuu.github.io/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
+
+
+
+    </body>
+</html>

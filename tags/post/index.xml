@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>post on Jocelyn Khuu</title>
+    <link>https://jocelynkhuu.github.io/tags/post/</link>
+    <description>Recent content in post on Jocelyn Khuu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 20 May 2021 22:12:27 -0700</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Panic Buying Gas?</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</link>
+      <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</guid>
+      <description>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;
+What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</description>
+    </item>
+    
+    <item>
+      <title>Linux Tip of the Day - ps</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
+      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
+      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
+This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+    </item>
+    
+    <item>
+      <title>What is a CVE?</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</link>
+      <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</guid>
+      <description>CVE is short for &amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;.
+CVE is managed by the MITRE corporation and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Exchange Server explots compromises over 30,000 orgs&#39; Emails</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</link>
+      <pubDate>Sun, 07 Mar 2021 13:34:26 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</guid>
+      <description>On 3/5/21, KrebsOnSecurity published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.
+When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</description>
+    </item>
+    
+    <item>
+      <title>Security Researcher Hacks over 35 Companies</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</link>
+      <pubDate>Mon, 15 Feb 2021 04:33:31 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</guid>
+      <description>Another Simple Supply Chain Attack Article on BleepingComputer and TechXplore
+A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.
+Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</description>
+    </item>
+    
+    <item>
+      <title>Hack on Oldsmar, Fl. Water Treatment Facility</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</link>
+      <pubDate>Sat, 13 Feb 2021 03:29:31 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</guid>
+      <description>Poisoning Water? Earlier this week, Reuters reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.
+We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by Engadget that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been updated or supported by Microsoft in over a year.</description>
+    </item>
+    
+    <item>
+      <title>Sudo Vulnerability</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</link>
+      <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</guid>
+      <description>A Sudo Vulnerability CVE-2021-3156
+On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.
+With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
+    </item>
+    
+    <item>
+      <title>SolarWinds Supply Chain Attack</title>
+      <link>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</link>
+      <pubDate>Thu, 17 Dec 2020 05:17:52 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</guid>
+      <description>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised. What exactly is SolarWinds and what happened? SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform.</description>
+    </item>
+    
+    <item>
+      <title>FireEye Hack</title>
+      <link>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</link>
+      <pubDate>Sat, 12 Dec 2020 12:32:22 -0800</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</guid>
+      <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.
+This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.
+FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
+    </item>
+    
+  </channel>
+</rss>
