@@ -145,26 +145,26 @@
 <p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
 <p><strong><code>-s, --summarize</code></strong></p>
 <p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
-<pre><code>~ $ du -s
+<pre tabindex="0"><code>~ $ du -s
 12669812	.
  ~ $ du -s *
 16	Desktop
 429860	Documents
 </code></pre><p><strong><code>-h, --human-readable</code></strong></p>
 <p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
-<pre><code> ~ $ du -sh *
+<pre tabindex="0"><code> ~ $ du -sh *
 16K	Desktop
 420M	Documents
 </code></pre><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
 <p><strong><code>-a, --all</code></strong></p>
 <p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
-<pre><code>test $  du -ha
+<pre tabindex="0"><code>test $  du -ha
 0	./test/test/test.txt
 4.0K	./test/test
 8.0K	./test
 12K	.
 </code></pre><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
-<pre><code>~ $  du -sh * | sort -hr | head -5
+<pre tabindex="0"><code>~ $  du -sh * | sort -hr | head -5
 4.6G	Downloads
 655M	games
 420M	Documents
@@ -261,7 +261,7 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://jocelynkhuu.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
