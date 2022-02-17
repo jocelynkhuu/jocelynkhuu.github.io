@@ -6,8 +6,35 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 02 Feb 2022 00:19:34 -0500</lastBuildDate>
+        <lastBuildDate>Thu, 17 Feb 2022 03:24:13 -0500</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Passing Security&#43;</title>
+            <link>https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/</link>
+            <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/</guid>
+            <description>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
+The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</description>
+            <content type="html"><![CDATA[<p>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.</p>
+<h3 id="the-testing-experience">The Testing Experience</h3>
+<p>I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</p>
+<p>Like lots of others I thought I had failed for sure during the test. I flagged all PBQs and dedicated about 30 minutes after finishing the multiple choice to go over them. I ran out of time in the end to double-check all of my answers but made sure to submit something on all of the questions regardless of whether I was sure or not.</p>
+<h3 id="resources">Resources</h3>
+<ul>
+<li>Darril Gibson&rsquo;s GCGA</li>
+<li>Professor Messer&rsquo;s Practice Exams and Videos</li>
+<li>Jason Dion&rsquo;s Udemy Practice Exams</li>
+<li>Mike Chapple&rsquo;s Cert Prep (Linkedin Learning)</li>
+</ul>
+<p>I mainly watched Prof. Messer&rsquo;s and Mike Chapple&rsquo;s videos at 1.75x speed to help clarify things I didn&rsquo;t understand.</p>
+<p>I spent about a month of serious studying and dedicated about 4-5 hours of study after work. I ended up passing with an 825.</p>
+<h3 id="what-was-helpful-for-me">What was helpful for me</h3>
+<p>Practice Exams! The practice exams really gave me an idea of what I needed to focus on. I wasn&rsquo;t scoring very high on Dion&rsquo;s practice exams (low to mid 70s) but on Prof. Messer&rsquo;s exams I was getting mid to high 80s. I would definitely recommend purchasing Prof. Messer&rsquo;s exams as they were super helpful.</p>
+<p>A year and half later, I have found that while the cert did help me with gaining basic security knowledge, it wasn&rsquo;t very helpful for helping me land a job. I don&rsquo;t think that companies value the cert as much as people say they do. I would still recommed getting the cert as it definitely teaches good foundations that are important during interviews.</p>
+]]></content>
+        </item>
         
         <item>
             <title>How I Got My First Security Job</title>
