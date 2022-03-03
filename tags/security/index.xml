@@ -40,16 +40,6 @@ What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;princi
     </item>
     
     <item>
-      <title>Linux Tip of the Day - ps</title>
-      <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
-      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
-      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
-This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
-    </item>
-    
-    <item>
       <title>What is a CVE?</title>
       <link>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</link>
       <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>

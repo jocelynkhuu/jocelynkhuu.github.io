@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 07 Mar 2021 13:49:29 -0800</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/ltotd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 21:30:06 -0700</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/ltotd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tip of the Day - ps</title>
+      <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
+      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
+      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
+This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+    </item>
+    
     <item>
       <title>Linux Tip of the Day - du</title>
       <link>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</link>
