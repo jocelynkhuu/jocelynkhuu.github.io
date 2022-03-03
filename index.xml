@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 17 Feb 2022 03:24:13 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 02:47:19 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up Python Virtual Environment</title>
+      <link>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</link>
+      <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</guid>
+      <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.
+Dependencies:
+ Miniconda  Steps  Install Miniconda Verify conda is installed running conda -V   Conda cheatsheet  Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Start ipython: ipython  </description>
+    </item>
+    
     <item>
       <title>Passing Security&#43;</title>
       <link>https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/</link>
