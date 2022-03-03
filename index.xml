@@ -17,7 +17,7 @@
       <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.
 Dependencies:
  Miniconda  Steps:
- Install Miniconda Verify conda is installed running conda -V   Conda cheatsheet  Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Start ipython: ipython  </description>
+ Install Miniconda Verify conda is installed running conda -V   Conda cheatsheet  Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Install any other libraries needed: ex.</description>
     </item>
     
     <item>
