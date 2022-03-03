@@ -31,6 +31,7 @@ Steps:
 <li>Install any other libraries needed: ex. <code>pip install requests</code>, <code>pip install python-ldap</code></li>
 <li>Start ipython: <code>ipython</code></li>
 <li>To exit ipython: <code>exit</code></li>
+<li>To leave virtual env: <code>conda deactivate</code></li>
 </ol>
 ]]></content>
         </item>
