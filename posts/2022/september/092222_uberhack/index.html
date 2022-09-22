@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc." />
+<meta name="description" content="Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems" />
 <meta name="keywords" content=", security, thoughts, post, blog" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,21 +33,21 @@
 
 
 <meta itemprop="name" content="Uber Hack - Another Social Engineering Attack">
-<meta itemprop="description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc."><meta itemprop="datePublished" content="2022-09-22T00:54:03-04:00" />
+<meta itemprop="description" content="Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems"><meta itemprop="datePublished" content="2022-09-22T00:54:03-04:00" />
 <meta itemprop="dateModified" content="2022-09-22T00:54:03-04:00" />
-<meta itemprop="wordCount" content="116"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="wordCount" content="412"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
 <meta itemprop="keywords" content="security,thoughts,post,blog," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
 
 <meta name="twitter:title" content="Uber Hack - Another Social Engineering Attack"/>
-<meta name="twitter:description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc."/>
+<meta name="twitter:description" content="Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems"/>
 
 
 
 
     <meta property="og:title" content="Uber Hack - Another Social Engineering Attack" />
-<meta property="og:description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc." />
+<meta property="og:description" content="Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-22T00:54:03-04:00" />
@@ -121,7 +121,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        One minute
+        2 minutes
 
         
       </p>
@@ -133,18 +133,30 @@
       </h1>
 
       
+        <div class="post-excerpt">Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems</div>
+      
 
       
 
       <div class="post-content">
         <p>On September 15, <a href="https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html">reports came in</a> that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</p>
+<p>The alleged timeline that took place according to hacker from multiple reports is that they were able to social engineer an employee, spam the employee with MFA notifications until they accepted, connect to vpn, profit.</p>
 <p>Screenshot of telegram exchange <a href="https://twitter.com/malwaretechblog/status/1570600059909345280?s=21">here</a>
 <img src="https://jocelynkhuu.github.io/static/uber.jpeg" alt="ubertelegram"></p>
-<p>There are multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
+<p>In my opinion, there were multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
 <ol>
 <li>FIDO Authentication so that MFA wouldn&rsquo;t have been so easily bypassed</li>
-<li></li>
+<li>Certificate based authentication for VPN (802.1X) so that the hacker couldn&rsquo;t connect to VPN</li>
+<li>No hardcoded admin credentials in scripts - This one was probably the biggest issue that someone hardcoded their admin credentials and they seemd to have admin access to everything.</li>
+<li>Least privilege/auditing - Why was there an account that allowed the hacker to get admin access to everything?</li>
 </ol>
+<p>These were just some of my personal initial thoughts on the hack. I find it impressive how the hacker was able to pivot through and get admin access to everything even though it didn&rsquo;t seem that sophisticated of an attack. It sounded like it was just a teenager who did it because they could. The hacker even created a slack account and posted in Uber&rsquo;s slack channel stating that they hacked Uber and many folks thought it was just a joke. They were even able to get access to Uber&rsquo;s hackerone vulnerability reports which means that they can easily exploit more vulnerabilities in uber&rsquo;s infrastructure of those are still valid.</p>
+<p>We talk about APTs all the time but sometimes even folks&rsquo; with less resources than APTs can still cause damage and hit high profile targets.</p>
+<p>Best of luck to Uber&rsquo;s blue team as they assess the damage. Uber has stated that they don&rsquo;t see &ldquo;any evidence&rdquo; of the hacker accessing customers&rsquo; personal data. No evidence isn&rsquo;t very reassuring though becuase that could mean they just haven&rsquo;t located it yet.</p>
+<p>Today, Uber has released a statement that they think that Lapsus$ was behind the hack.</p>
+<p>sources:
+<a href="https://www.bleepingcomputer.com/news/security/uber-links-breach-to-lapsus-group-blames-contractor-for-hack/">bleepingcomputer</a>
+<a href="https://twitter.com/hacker_/status/1570582202697809920">twitter</a></p>
 
       </div>
     </article>
@@ -173,7 +185,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        116 Words
+        412 Words
       </p>
 
       <p>
