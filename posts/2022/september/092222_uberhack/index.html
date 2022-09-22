@@ -5,16 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="CVE-2021-3156 - A sudo buffer overflow vulnerability" />
+<meta name="description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc." />
 <meta name="keywords" content=", security, thoughts, post, blog" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/" />
+<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/" />
 
 
     <title>
         
-            Sudo Vulnerability :: Jocelyn Khuu  — Welcome to my page!
+            Uber Hack - Another Social Engineering Attack :: Jocelyn Khuu  — Welcome to my page!
         
     </title>
 
@@ -32,26 +32,26 @@
 
 
 
-<meta itemprop="name" content="Sudo Vulnerability">
-<meta itemprop="description" content="CVE-2021-3156 - A sudo buffer overflow vulnerability"><meta itemprop="datePublished" content="2021-02-09T22:43:05-08:00" />
-<meta itemprop="dateModified" content="2021-02-09T22:43:05-08:00" />
-<meta itemprop="wordCount" content="157"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="name" content="Uber Hack - Another Social Engineering Attack">
+<meta itemprop="description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc."><meta itemprop="datePublished" content="2022-09-22T00:54:03-04:00" />
+<meta itemprop="dateModified" content="2022-09-22T00:54:03-04:00" />
+<meta itemprop="wordCount" content="116"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
 <meta itemprop="keywords" content="security,thoughts,post,blog," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
 
-<meta name="twitter:title" content="Sudo Vulnerability"/>
-<meta name="twitter:description" content="CVE-2021-3156 - A sudo buffer overflow vulnerability"/>
+<meta name="twitter:title" content="Uber Hack - Another Social Engineering Attack"/>
+<meta name="twitter:description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc."/>
 
 
 
 
-    <meta property="og:title" content="Sudo Vulnerability" />
-<meta property="og:description" content="CVE-2021-3156 - A sudo buffer overflow vulnerability" />
+    <meta property="og:title" content="Uber Hack - Another Social Engineering Attack" />
+<meta property="og:description" content="On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-02-09T22:43:05-08:00" />
-<meta property="article:modified_time" content="2021-02-09T22:43:05-08:00" /><meta property="og:site_name" content="Jocelyn Khuu" />
+<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-22T00:54:03-04:00" />
+<meta property="article:modified_time" content="2022-09-22T00:54:03-04:00" /><meta property="og:site_name" content="Jocelyn Khuu" />
 
 
 
@@ -59,7 +59,7 @@
 
 
 
-    <meta property="article:published_time" content="2021-02-09 22:43:05 -0800 -0800" />
+    <meta property="article:published_time" content="2022-09-22 00:54:03 -0400 EDT" />
 
 
 
@@ -129,27 +129,22 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/">Sudo Vulnerability</a>
+        <a href="https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/">Uber Hack - Another Social Engineering Attack</a>
       </h1>
 
-      
-        <div class="post-excerpt">CVE-2021-3156 - A sudo buffer overflow vulnerability</div>
       
 
       
 
       <div class="post-content">
-        <h2 id="a-sudo-vulnerability">A Sudo Vulnerability</h2>
-<p><img src="https://jocelynkhuu.github.io/static/sudo.jpg" alt="Sudo"></p>
-<p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156">CVE-2021-3156</a></p>
-<p>On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &lsquo;sudo&rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &lsquo;', however, a bug has made it possible to run &lsquo;sudoedit&rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.</p>
-<p>With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</p>
-<p>To <a href="https://www.sudo.ws/alerts/unescape_overflow.html">check</a> if your version of sudo is affected try running:
-<code>sudoedit -s /</code></p>
-<p>A vulnerable version will either prompt for a password or display an error similar to: <code>sudoedit: /: not a regular file</code></p>
-<p>According to Mitre, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-315I6">CVE-2021-3156</a>, sudo versions before 1.9.5p2 are vulnerable.</p>
-<p>Apple has <a href="https://support.apple.com/en-us/HT212177">released an update</a> today for Big Sur, Catalina, and Mojave.</p>
-<p>This particular vulnerability, while dangerous, still does require an attacker to have access to the machine already to trigger this.</p>
+        <p>On September 15, <a href="https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html">reports came in</a> that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</p>
+<p>Screenshot of telegram exchange <a href="https://twitter.com/malwaretechblog/status/1570600059909345280?s=21">here</a>
+<img src="https://jocelynkhuu.github.io/static/uber.jpeg" alt="ubertelegram"></p>
+<p>There are multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
+<ol>
+<li>FIDO Authentication so that MFA wouldn&rsquo;t have been so easily bypassed</li>
+<li></li>
+</ol>
 
       </div>
     </article>
@@ -178,7 +173,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        157 Words
+        116 Words
       </p>
 
       <p>
@@ -189,7 +184,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-02-10 01:43
+          2022-09-22 00:54
         
 
          
@@ -207,18 +202,11 @@
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Hack on Oldsmar, Fl. Water Treatment Facility</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/">
-                <span class="button__text">SolarWinds Supply Chain Attack</span>
+              <a href="https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/">
+                <span class="button__text">Setting up Python Virtual Environment</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

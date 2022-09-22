@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 17 Feb 2022 03:24:13 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 00:54:03 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uber Hack - Another Social Engineering Attack</title>
+      <link>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</link>
+      <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</guid>
+      <description>On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</description>
+    </item>
+    
     <item>
       <title>Passing Security&#43;</title>
       <link>https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/</link>
@@ -26,7 +35,7 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
       <guid>https://jocelynkhuu.github.io/posts/2022/february/020122_1stsecurityjob/</guid>
       <description>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.
 For some context, here is my work experience:
- 5 years of IT support experience overall 2 years at a FAANG doing internal IT support 6 months running IT at a startup as the sole IT person  I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.</description>
+5 years of IT support experience overall 2 years at a FAANG doing internal IT support 6 months running IT at a startup as the sole IT person I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.</description>
     </item>
     
     <item>
