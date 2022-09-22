@@ -35,7 +35,7 @@
 <meta itemprop="name" content="Uber Hack - Another Social Engineering Attack">
 <meta itemprop="description" content="Hacker was able to get into Uber&#39;s intranet and have admin access to multiple internal systems"><meta itemprop="datePublished" content="2022-09-22T00:54:03-04:00" />
 <meta itemprop="dateModified" content="2022-09-22T00:54:03-04:00" />
-<meta itemprop="wordCount" content="413"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="wordCount" content="428"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
 <meta itemprop="keywords" content="security,thoughts,post,blog," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
@@ -121,7 +121,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -145,12 +145,13 @@
 <img src="https://jocelynkhuu.github.io/static/uber.jpeg" alt="ubertelegram"></p>
 <p>In my opinion, there were multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
 <ol>
+<li>Account lock for exessive MFA attempts - so that MFA wouldn&rsquo;t have been spammed</li>
 <li>FIDO Authentication so that MFA wouldn&rsquo;t have been so easily bypassed</li>
 <li>Certificate based authentication for VPN (802.1X) so that the hacker couldn&rsquo;t connect to VPN</li>
 <li>No hardcoded admin credentials in scripts - This one was probably the biggest issue that someone hardcoded their admin credentials and they seemd to have admin access to everything.</li>
 <li>Least privilege/auditing - Why was there an account that allowed the hacker to get admin access to everything?</li>
 </ol>
-<p>These were just some of my personal initial thoughts on the hack. I find it impressive how the hacker was able to pivot through and get admin access to everything even though it didn&rsquo;t seem that sophisticated of an attack. It sounded like it was just a teenager who did it because they could. The hacker even created a slack account and posted in Uber&rsquo;s slack channel stating that they hacked Uber and many folks thought it was just a joke. They were even able to get access to Uber&rsquo;s hackerone vulnerability reports which means that they can easily exploit more vulnerabilities in uber&rsquo;s infrastructure of those are still valid.</p>
+<p>These were just some of my personal initial thoughts on the hack. I find it impressive how the hacker was able to pivot through and get admin access to eprivileged accounts even though it didn&rsquo;t seem that sophisticated of an attack. It sounded like it was just a teenager who did it because they could. The hacker even created a slack account and posted in Uber&rsquo;s slack channel stating that they hacked Uber and many folks thought it was just a joke. They were even able to get access to Uber&rsquo;s hackerone vulnerability reports which means that they can easily exploit more vulnerabilities in uber&rsquo;s infrastructure if those are still valid.</p>
 <p>We talk about APTs all the time but sometimes even folks&rsquo; with less resources than APTs can still cause damage and hit high profile targets.</p>
 <p>Best of luck to Uber&rsquo;s blue team as they assess the damage. Uber has stated that they don&rsquo;t see &ldquo;any evidence&rdquo; of the hacker accessing customers&rsquo; personal data. No evidence isn&rsquo;t very reassuring though becuase that could mean they just haven&rsquo;t located it yet.</p>
 <p>Today, Uber has released a statement that they think that Lapsus$ was behind the hack.</p>
@@ -186,7 +187,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        413 Words
+        428 Words
       </p>
 
       <p>
