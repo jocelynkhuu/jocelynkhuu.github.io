@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>https on Jocelyn Khuu</title>
+    <link>https://jocelynkhuu.github.io/tags/https/</link>
+    <description>Recent content in https on Jocelyn Khuu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring https for a webserver</title>
+      <link>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</link>
+      <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</guid>
+      <description>I tried to configure https for a webserver recently and wanted to document what worked for me.
+This worked on CentOS 7 running Apache version 2.4.6.
+Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost configuration: &amp;lt;VirtualHost *:443&amp;gt; &amp;lt;Directory /var/www/html/website/public&amp;gt; Require all granted AllowOverride All &amp;lt;/Directory&amp;gt; ServerName website.com DocumentRoot /var/www/html/website/public ErrorLog /var/log/httpd/website.error.log CustomLog /var/log/httpd/access.log combined SSLEngine on SSLCertificateFile /etc/ssl/certs/public.crt SSLCertificateKeyFile /etc/ssl/private/private.key SSLCertificateChainFile /etc/ssl/certs/chain.crt &amp;lt;/VirtualHost&amp;gt; SSLCertificateChainFile might not be necessary in newer versions of Apache.</description>
+    </item>
+    
+  </channel>
+</rss>
