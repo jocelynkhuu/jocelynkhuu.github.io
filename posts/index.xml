@@ -10,7 +10,7 @@
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Configuring https for a webserver</title>
+            <title>Configuring https on a CentOS webserver</title>
             <link>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</link>
             <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
             
