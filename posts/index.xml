@@ -25,10 +25,10 @@ grep can be used by running grep [OPTION...] PATTERNS [FILE...]
 <pre tabindex="0"><code>❯ grep export ~/.zshrc
 export PATH=&#34;$HOME/.local/bin:$PATH&#34;
 </code></pre><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
-<pre tabindex="0"><code>❯ grep GNOME /var/log/boot.log 
-[  OK  ] Started GNOME Display Manager.
-         Starting GNOME Display Manager...
-</code></pre><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
+</span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
+</span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
+</span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
 <p><code>-i, --ignore-case</code></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
 <pre tabindex="0"><code>❯ grep -i gnome /var/log/boot.log
