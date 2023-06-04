@@ -5,7 +5,7 @@
     <link>https://jocelynkhuu.github.io/</link>
     <description>Recent content on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -180,8 +180,9 @@ FireEye disclosed that the attackers were likely an APT due to the high level of
       <description>Hello! I&amp;rsquo;m Jocelyn! (Pronouns: She/Her)
 Welcome to my page! It&amp;rsquo;s still a work in progress but here&amp;rsquo;s a bit about me.
 Hobbies: Learning 日本語 | Petting dogs | Traveling | Eating new foods
-A Cybersecurity and Linux enthusiast from a non-traditional background. Currently an Endpoint Security Engineer for a fintech company.
-All thoughts are my own.</description>
+A Cybersecurity and Linux enthusiast from a non-traditional background, learning how to code. Currently an Endpoint Security Engineer for a fintech company.
+All thoughts are my own.
+subject = &amp;#34;Python&amp;#34; print(f&amp;#34;Currently learning {subject}&amp;#34;) Check out my TryHackMe badge:</description>
     </item>
     
   </channel>
