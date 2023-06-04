@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="Short post on how to configure https on a CentOS webserver" />
-<meta name="keywords" content=", security, website, https" />
+<meta name="keywords" content="homepage, blog, security, website, https" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/" />
@@ -152,21 +152,21 @@
 <li>Create an <code>ssl.conf</code> file in <code>/etc/httpd/conf.d/</code>.</li>
 <li>Create the following VirtualHost configuration:</li>
 </ol>
-<pre tabindex="0"><code>&lt;VirtualHost *:443&gt;
-&lt;Directory /var/www/html/website/public&gt;
-  Require all granted
-  AllowOverride All
-&lt;/Directory&gt;
-  ServerName website.com
-  DocumentRoot /var/www/html/website/public
-  ErrorLog /var/log/httpd/website.error.log
-  CustomLog /var/log/httpd/access.log combined
-  SSLEngine on
-  SSLCertificateFile /etc/ssl/certs/public.crt
-  SSLCertificateKeyFile /etc/ssl/private/private.key
-  SSLCertificateChainFile /etc/ssl/certs/chain.crt
-&lt;/VirtualHost&gt;
-</code></pre><p><code>SSLCertificateChainFile</code> might not be necessary in newer versions of Apache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">VirtualHost</span> <span style="color:#960050;background-color:#1e0010">*</span><span style="color:#a6e22e">:443</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">Directory</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">var</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">website</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">public</span>&gt;
+</span></span><span style="display:flex;"><span>  Require all granted
+</span></span><span style="display:flex;"><span>  AllowOverride All
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">Directory</span>&gt;
+</span></span><span style="display:flex;"><span>  ServerName website.com
+</span></span><span style="display:flex;"><span>  DocumentRoot /var/www/html/website/public
+</span></span><span style="display:flex;"><span>  ErrorLog /var/log/httpd/website.error.log
+</span></span><span style="display:flex;"><span>  CustomLog /var/log/httpd/access.log combined
+</span></span><span style="display:flex;"><span>  SSLEngine on
+</span></span><span style="display:flex;"><span>  SSLCertificateFile /etc/ssl/certs/public.crt
+</span></span><span style="display:flex;"><span>  SSLCertificateKeyFile /etc/ssl/private/private.key
+</span></span><span style="display:flex;"><span>  SSLCertificateChainFile /etc/ssl/certs/chain.crt
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">VirtualHost</span>&gt;
+</span></span></code></pre></div><p><code>SSLCertificateChainFile</code> might not be necessary in newer versions of Apache.</p>
 <ol start="3">
 <li>Restart <code>httpd</code>: <code>sudo systemctl restart httpd</code></li>
 </ol>

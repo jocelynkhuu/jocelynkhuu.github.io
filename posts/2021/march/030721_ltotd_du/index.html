@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="du - estimate file space usage" />
-<meta name="keywords" content=", linux, LTOTD, tip of the day, du, blog" />
+<meta name="keywords" content="homepage, blog, linux, LTOTD, tip of the day, du, blog" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/" />
@@ -152,32 +152,32 @@
 <p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
 <p><strong><code>-s, --summarize</code></strong></p>
 <p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
-<pre tabindex="0"><code>~ $ du -s
-12669812	.
- ~ $ du -s *
-16	Desktop
-429860	Documents
-</code></pre><p><strong><code>-h, --human-readable</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>~ $ du -s
+</span></span><span style="display:flex;"><span>12669812	.
+</span></span><span style="display:flex;"><span> ~ $ du -s *
+</span></span><span style="display:flex;"><span>16	Desktop
+</span></span><span style="display:flex;"><span>429860	Documents
+</span></span></code></pre></div><p><strong><code>-h, --human-readable</code></strong></p>
 <p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
-<pre tabindex="0"><code> ~ $ du -sh *
-16K	Desktop
-420M	Documents
-</code></pre><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> ~ $ du -sh *
+</span></span><span style="display:flex;"><span>16K	Desktop
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span></code></pre></div><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
 <p><strong><code>-a, --all</code></strong></p>
 <p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
-<pre tabindex="0"><code>test $  du -ha
-0	./test/test/test.txt
-4.0K	./test/test
-8.0K	./test
-12K	.
-</code></pre><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
-<pre tabindex="0"><code>~ $  du -sh * | sort -hr | head -5
-4.6G	Downloads
-655M	games
-420M	Documents
-33M	github
-14M	Pictures
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>test $  du -ha
+</span></span><span style="display:flex;"><span>0	./test/test/test.txt
+</span></span><span style="display:flex;"><span>4.0K	./test/test
+</span></span><span style="display:flex;"><span>8.0K	./test
+</span></span><span style="display:flex;"><span>12K	.
+</span></span></code></pre></div><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>~ $  du -sh * | sort -hr | head -5
+</span></span><span style="display:flex;"><span>4.6G	Downloads
+</span></span><span style="display:flex;"><span>655M	games
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span><span style="display:flex;"><span>33M	github
+</span></span><span style="display:flex;"><span>14M	Pictures
+</span></span></code></pre></div>
       </div>
     </article>
 

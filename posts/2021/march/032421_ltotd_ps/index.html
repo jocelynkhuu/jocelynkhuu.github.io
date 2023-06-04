@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="ps - process status" />
-<meta name="keywords" content=", linux, LTOTD, tip of the day, blog, ps" />
+<meta name="keywords" content="homepage, blog, linux, LTOTD, tip of the day, blog, ps" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/" />
@@ -150,11 +150,11 @@
 <p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
 <p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
 <p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
-<pre tabindex="0"><code>$ ps
-    PID TTY          TIME CMD
-  43682 pts/1    00:00:00 bash
-  43706 pts/1    00:00:00 ps
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  43682 pts/1    00:00:00 bash
+</span></span><span style="display:flex;"><span>  43706 pts/1    00:00:00 ps
+</span></span></code></pre></div><ul>
 <li><code>PID</code> = Process ID</li>
 <li><code>TTY</code> = Name of console that the user is logged in at</li>
 <li><code>TIME</code> = Time that the process has been running</li>
@@ -162,17 +162,17 @@
 </ul>
 <p><strong><code>-e, select all processes</code></strong></p>
 <p><code>ps -e</code> lists all processes that have been started by all users.</p>
-<pre tabindex="0"><code>$ ps -e | head -3
-    PID TTY          TIME CMD
-      1 ?        00:00:03 systemd
-      2 ?        00:00:00 kthreadd
-</code></pre><p><strong><code>-f, full format listing</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -e | head -3
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>      1 ?        00:00:03 systemd
+</span></span><span style="display:flex;"><span>      2 ?        00:00:00 kthreadd
+</span></span></code></pre></div><p><strong><code>-f, full format listing</code></strong></p>
 <p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
-<pre tabindex="0"><code>$ ps -ef | head -3
-UID          PID    PPID  C STIME TTY          TIME CMD
-root           1       0  0 Mar06 ?        00:00:03 /sbin/init
-root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -ef | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           1       0  0 Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>UID</code> = User ID of the owner of the process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>PPID</code> = Parent process ID of the process</li>
@@ -183,11 +183,11 @@ root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
 <li><code>CMD</code> = Command executed that launched the process</li>
 </ul>
 <p><strong><code>-F, Extra full format</code></strong></p>
-<pre tabindex="0"><code>$ ps -eF | head -3
-UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
-root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
-root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -eF | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>UID</code> = User ID of the owner of the process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>PPID</code> = Parent process ID of the process</li>
@@ -207,11 +207,11 @@ root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
 <li><code>u</code> = shows the user</li>
 <li><code>x</code> = displays the processes not executed in the terminal</li>
 </ul>
-<pre tabindex="0"><code>$ ps aux | head -3
-USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
-root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps aux | head -3
+</span></span><span style="display:flex;"><span>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</span></span><span style="display:flex;"><span>root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>USER</code> = User account running process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>%CPU</code> = CPU time used by the process (in %)</li>
@@ -227,22 +227,22 @@ root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
 <p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
 <p><strong><code>-C, cmdlet</code></strong></p>
 <p><code>-C</code> can be used to search in ps with a command name.</p>
-<pre tabindex="0"><code>$ ps -C chrome
-    PID TTY          TIME CMD
-  23128 ?        00:01:49 chrome
-</code></pre><p><strong><code>-p, process id</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -C chrome
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  23128 ?        00:01:49 chrome
+</span></span></code></pre></div><p><strong><code>-p, process id</code></strong></p>
 <p><code>-p</code> can be used to search for process id</p>
-<pre tabindex="0"><code>$ ps -p 23128
-    PID TTY          TIME CMD
-  23128 ?        00:01:51 chrome
-</code></pre><p><strong><code>-u, userlist</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -p 23128
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  23128 ?        00:01:51 chrome
+</span></span></code></pre></div><p><strong><code>-u, userlist</code></strong></p>
 <p><code>-u</code> can be used to search by user</p>
-<pre tabindex="0"><code>$ ps -u bob
-    PID TTY          TIME CMD
-  17827 ?        00:00:00 systemd
-  17828 ?        00:00:00 (sd-pam)
-  17854 ?        00:00:00 dbus-daemon 
-</code></pre><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -u bob
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  17827 ?        00:00:00 systemd
+</span></span><span style="display:flex;"><span>  17828 ?        00:00:00 (sd-pam)
+</span></span><span style="display:flex;"><span>  17854 ?        00:00:00 dbus-daemon 
+</span></span></code></pre></div><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
 
       </div>
     </article>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="grep - Global Regular Expression Print" />
-<meta name="keywords" content=", linux, LTOTD, tip of the day, blog, grep" />
+<meta name="keywords" content="homepage, blog, linux, LTOTD, tip of the day, blog, grep" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/" />
@@ -156,12 +156,12 @@
 </span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
-<p><code>-i, --ignore-case</code></p>
+<p><strong><code>-i, --ignore-case</code></strong></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
-</span></span></code></pre></div><p><code>-v, --invert-match</code></p>
+</span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
 <p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
 </span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
@@ -169,7 +169,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log | grep -vi gnome
 </span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
-</span></span></code></pre></div><p><code>-c, --count</code></p>
+</span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
 <p><code>grep -c</code> can be used to provide the count for lines.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span>11
@@ -198,7 +198,7 @@
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
-</span></span></code></pre></div><p>You can use <code>-E, --extended-regexp</code> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
+</span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
 <p>Look for anything that starts with a number:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -E &#39;^[0-9]{1}&#39; testfile
 </span></span><span style="display:flex;"><span>123test

@@ -29,12 +29,12 @@ grep can be used by running grep [OPTION...] PATTERNS [FILE...]
 </span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
-<p><code>-i, --ignore-case</code></p>
+<p><strong><code>-i, --ignore-case</code></strong></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
-</span></span></code></pre></div><p><code>-v, --invert-match</code></p>
+</span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
 <p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
 </span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
@@ -42,7 +42,7 @@ grep can be used by running grep [OPTION...] PATTERNS [FILE...]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log | grep -vi gnome
 </span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
-</span></span></code></pre></div><p><code>-c, --count</code></p>
+</span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
 <p><code>grep -c</code> can be used to provide the count for lines.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span>11
@@ -71,7 +71,7 @@ grep can be used by running grep [OPTION...] PATTERNS [FILE...]
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
-</span></span></code></pre></div><p>You can use <code>-E, --extended-regexp</code> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
+</span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
 <p>Look for anything that starts with a number:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -E &#39;^[0-9]{1}&#39; testfile
 </span></span><span style="display:flex;"><span>123test
@@ -105,21 +105,21 @@ Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost 
 <li>Create an <code>ssl.conf</code> file in <code>/etc/httpd/conf.d/</code>.</li>
 <li>Create the following VirtualHost configuration:</li>
 </ol>
-<pre tabindex="0"><code>&lt;VirtualHost *:443&gt;
-&lt;Directory /var/www/html/website/public&gt;
-  Require all granted
-  AllowOverride All
-&lt;/Directory&gt;
-  ServerName website.com
-  DocumentRoot /var/www/html/website/public
-  ErrorLog /var/log/httpd/website.error.log
-  CustomLog /var/log/httpd/access.log combined
-  SSLEngine on
-  SSLCertificateFile /etc/ssl/certs/public.crt
-  SSLCertificateKeyFile /etc/ssl/private/private.key
-  SSLCertificateChainFile /etc/ssl/certs/chain.crt
-&lt;/VirtualHost&gt;
-</code></pre><p><code>SSLCertificateChainFile</code> might not be necessary in newer versions of Apache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">VirtualHost</span> <span style="color:#960050;background-color:#1e0010">*</span><span style="color:#a6e22e">:443</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">Directory</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">var</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">website</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">public</span>&gt;
+</span></span><span style="display:flex;"><span>  Require all granted
+</span></span><span style="display:flex;"><span>  AllowOverride All
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">Directory</span>&gt;
+</span></span><span style="display:flex;"><span>  ServerName website.com
+</span></span><span style="display:flex;"><span>  DocumentRoot /var/www/html/website/public
+</span></span><span style="display:flex;"><span>  ErrorLog /var/log/httpd/website.error.log
+</span></span><span style="display:flex;"><span>  CustomLog /var/log/httpd/access.log combined
+</span></span><span style="display:flex;"><span>  SSLEngine on
+</span></span><span style="display:flex;"><span>  SSLCertificateFile /etc/ssl/certs/public.crt
+</span></span><span style="display:flex;"><span>  SSLCertificateKeyFile /etc/ssl/private/private.key
+</span></span><span style="display:flex;"><span>  SSLCertificateChainFile /etc/ssl/certs/chain.crt
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">VirtualHost</span>&gt;
+</span></span></code></pre></div><p><code>SSLCertificateChainFile</code> might not be necessary in newer versions of Apache.</p>
 <ol start="3">
 <li>Restart <code>httpd</code>: <code>sudo systemctl restart httpd</code></li>
 </ol>
@@ -272,11 +272,11 @@ This is a fancy way of saying that ps shows all of the running processes on your
 <p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
 <p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
 <p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
-<pre tabindex="0"><code>$ ps
-    PID TTY          TIME CMD
-  43682 pts/1    00:00:00 bash
-  43706 pts/1    00:00:00 ps
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  43682 pts/1    00:00:00 bash
+</span></span><span style="display:flex;"><span>  43706 pts/1    00:00:00 ps
+</span></span></code></pre></div><ul>
 <li><code>PID</code> = Process ID</li>
 <li><code>TTY</code> = Name of console that the user is logged in at</li>
 <li><code>TIME</code> = Time that the process has been running</li>
@@ -284,17 +284,17 @@ This is a fancy way of saying that ps shows all of the running processes on your
 </ul>
 <p><strong><code>-e, select all processes</code></strong></p>
 <p><code>ps -e</code> lists all processes that have been started by all users.</p>
-<pre tabindex="0"><code>$ ps -e | head -3
-    PID TTY          TIME CMD
-      1 ?        00:00:03 systemd
-      2 ?        00:00:00 kthreadd
-</code></pre><p><strong><code>-f, full format listing</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -e | head -3
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>      1 ?        00:00:03 systemd
+</span></span><span style="display:flex;"><span>      2 ?        00:00:00 kthreadd
+</span></span></code></pre></div><p><strong><code>-f, full format listing</code></strong></p>
 <p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
-<pre tabindex="0"><code>$ ps -ef | head -3
-UID          PID    PPID  C STIME TTY          TIME CMD
-root           1       0  0 Mar06 ?        00:00:03 /sbin/init
-root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -ef | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           1       0  0 Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>UID</code> = User ID of the owner of the process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>PPID</code> = Parent process ID of the process</li>
@@ -305,11 +305,11 @@ root           2       0  0 Mar06 ?        00:00:00 [kthreadd]
 <li><code>CMD</code> = Command executed that launched the process</li>
 </ul>
 <p><strong><code>-F, Extra full format</code></strong></p>
-<pre tabindex="0"><code>$ ps -eF | head -3
-UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
-root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
-root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -eF | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           1       0  0 45072 11088   3 Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>UID</code> = User ID of the owner of the process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>PPID</code> = Parent process ID of the process</li>
@@ -329,11 +329,11 @@ root           2       0  0     0     0   3 Mar06 ?        00:00:00 [kthreadd]
 <li><code>u</code> = shows the user</li>
 <li><code>x</code> = displays the processes not executed in the terminal</li>
 </ul>
-<pre tabindex="0"><code>$ ps aux | head -3
-USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
-root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps aux | head -3
+</span></span><span style="display:flex;"><span>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</span></span><span style="display:flex;"><span>root           1  0.0  0.0 180288 11088 ?        Ss   Mar06   0:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
+</span></span></code></pre></div><ul>
 <li><code>USER</code> = User account running process</li>
 <li><code>PID</code> = Process ID</li>
 <li><code>%CPU</code> = CPU time used by the process (in %)</li>
@@ -349,22 +349,22 @@ root           2  0.0  0.0      0     0 ?        S    Mar06   0:00 [kthreadd]
 <p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
 <p><strong><code>-C, cmdlet</code></strong></p>
 <p><code>-C</code> can be used to search in ps with a command name.</p>
-<pre tabindex="0"><code>$ ps -C chrome
-    PID TTY          TIME CMD
-  23128 ?        00:01:49 chrome
-</code></pre><p><strong><code>-p, process id</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -C chrome
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  23128 ?        00:01:49 chrome
+</span></span></code></pre></div><p><strong><code>-p, process id</code></strong></p>
 <p><code>-p</code> can be used to search for process id</p>
-<pre tabindex="0"><code>$ ps -p 23128
-    PID TTY          TIME CMD
-  23128 ?        00:01:51 chrome
-</code></pre><p><strong><code>-u, userlist</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -p 23128
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  23128 ?        00:01:51 chrome
+</span></span></code></pre></div><p><strong><code>-u, userlist</code></strong></p>
 <p><code>-u</code> can be used to search by user</p>
-<pre tabindex="0"><code>$ ps -u bob
-    PID TTY          TIME CMD
-  17827 ?        00:00:00 systemd
-  17828 ?        00:00:00 (sd-pam)
-  17854 ?        00:00:00 dbus-daemon 
-</code></pre><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>$ ps -u bob
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  17827 ?        00:00:00 systemd
+</span></span><span style="display:flex;"><span>  17828 ?        00:00:00 (sd-pam)
+</span></span><span style="display:flex;"><span>  17854 ?        00:00:00 dbus-daemon 
+</span></span></code></pre></div><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
 ]]></content>
         </item>
         
@@ -405,32 +405,32 @@ What is du? According to the du man page, du is used to estimate file space usag
 <p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
 <p><strong><code>-s, --summarize</code></strong></p>
 <p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
-<pre tabindex="0"><code>~ $ du -s
-12669812	.
- ~ $ du -s *
-16	Desktop
-429860	Documents
-</code></pre><p><strong><code>-h, --human-readable</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>~ $ du -s
+</span></span><span style="display:flex;"><span>12669812	.
+</span></span><span style="display:flex;"><span> ~ $ du -s *
+</span></span><span style="display:flex;"><span>16	Desktop
+</span></span><span style="display:flex;"><span>429860	Documents
+</span></span></code></pre></div><p><strong><code>-h, --human-readable</code></strong></p>
 <p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
-<pre tabindex="0"><code> ~ $ du -sh *
-16K	Desktop
-420M	Documents
-</code></pre><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> ~ $ du -sh *
+</span></span><span style="display:flex;"><span>16K	Desktop
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span></code></pre></div><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
 <p><strong><code>-a, --all</code></strong></p>
 <p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
-<pre tabindex="0"><code>test $  du -ha
-0	./test/test/test.txt
-4.0K	./test/test
-8.0K	./test
-12K	.
-</code></pre><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
-<pre tabindex="0"><code>~ $  du -sh * | sort -hr | head -5
-4.6G	Downloads
-655M	games
-420M	Documents
-33M	github
-14M	Pictures
-</code></pre>]]></content>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>test $  du -ha
+</span></span><span style="display:flex;"><span>0	./test/test/test.txt
+</span></span><span style="display:flex;"><span>4.0K	./test/test
+</span></span><span style="display:flex;"><span>8.0K	./test
+</span></span><span style="display:flex;"><span>12K	.
+</span></span></code></pre></div><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>~ $  du -sh * | sort -hr | head -5
+</span></span><span style="display:flex;"><span>4.6G	Downloads
+</span></span><span style="display:flex;"><span>655M	games
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span><span style="display:flex;"><span>33M	github
+</span></span><span style="display:flex;"><span>14M	Pictures
+</span></span></code></pre></div>]]></content>
         </item>
         
         <item>
