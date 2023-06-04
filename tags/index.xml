@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://jocelynkhuu.github.io/tags/blog/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grep</title>
+      <link>https://jocelynkhuu.github.io/tags/grep/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/tags/grep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://jocelynkhuu.github.io/tags/linux/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LTOTD</title>
+      <link>https://jocelynkhuu.github.io/tags/ltotd/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/tags/ltotd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip of the day</title>
+      <link>https://jocelynkhuu.github.io/tags/tip-of-the-day/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/tags/tip-of-the-day/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>https</title>
       <link>https://jocelynkhuu.github.io/tags/https/</link>
@@ -32,15 +77,6 @@
       <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
       
       <guid>https://jocelynkhuu.github.io/tags/website/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://jocelynkhuu.github.io/tags/blog/</link>
-      <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
@@ -108,38 +144,11 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://jocelynkhuu.github.io/tags/linux/</link>
-      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LTOTD</title>
-      <link>https://jocelynkhuu.github.io/tags/ltotd/</link>
-      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/tags/ltotd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ps</title>
       <link>https://jocelynkhuu.github.io/tags/ps/</link>
       <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
       
       <guid>https://jocelynkhuu.github.io/tags/ps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip of the day</title>
-      <link>https://jocelynkhuu.github.io/tags/tip-of-the-day/</link>
-      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/tags/tip-of-the-day/</guid>
       <description></description>
     </item>
     

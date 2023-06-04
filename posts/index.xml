@@ -6,8 +6,89 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate>
+        <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Linux Tip of the Day - grep</title>
+            <link>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</link>
+            <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</guid>
+            <description>What is grep? According to the man page, grep is used to print lines that match patterns. It can be used to match regular expressions in plaintext.
+grep can be used by running grep [OPTION...] PATTERNS [FILE...]
+❯ grep export ~/.zshrc export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34; grep is helpful when parsing log files or files with a lot of text.
+❯ grep GNOME /var/log/boot.log [ OK ] Started GNOME Display Manager. Starting GNOME Display Manager.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-grep">What is grep?</h2>
+<p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
+<p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
+<pre tabindex="0"><code>❯ grep export ~/.zshrc
+export PATH=&#34;$HOME/.local/bin:$PATH&#34;
+</code></pre><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
+<pre tabindex="0"><code>❯ grep GNOME /var/log/boot.log 
+[  OK  ] Started GNOME Display Manager.
+         Starting GNOME Display Manager...
+</code></pre><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
+<p><code>-i, --ignore-case</code></p>
+<p><code>grep -i</code> ignores case when searching for matches.</p>
+<pre tabindex="0"><code>❯ grep -i gnome /var/log/boot.log
+[  OK  ] Started GNOME Display Manager.
+         Starting GNOME Display Manager...
+</code></pre><p><code>-v, --invert-match</code></p>
+<p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
+<pre tabindex="0"><code>❯ tail -2 /var/log/boot.log
+[  OK  ] Started Manage, Install and Generate Color Profiles.
+[  OK  ] Started GNOME Display Manager.
+
+❯ tail -2 /var/log/boot.log | grep -vi gnome
+[  OK  ] Started Manage, Install and Generate Color Profiles.
+</code></pre><p><code>-c, --count</code></p>
+<p><code>grep -c</code> can be used to provide the count for lines.</p>
+<pre tabindex="0"><code>❯ grep -ci gnome /var/log/boot.log
+11
+</code></pre><h3 id="using-regular-expressions-with-grep">Using regular expressions with <code>grep</code></h3>
+<p>Let&rsquo;s say we have a test file:</p>
+<pre tabindex="0"><code>❯ cat testfile 
+test
+TEST
+TeST
+123test
+1TE34St
+456tEST
+</code></pre><p>Look for lines with <code>test</code> regardless of case:</p>
+<pre tabindex="0"><code>❯ grep -i test testfile 
+test
+TEST
+TeST
+123test
+456tEST
+</code></pre><p>Look for lines that start with capital <code>T</code>:</p>
+<pre tabindex="0"><code>❯ grep &#39;^T&#39; testfile
+TEST
+TeST
+</code></pre><p>Look for lines that end with lowercase <code>t</code>:</p>
+<pre tabindex="0"><code>❯ grep &#39;t$&#39; testfile
+test
+123test
+1TE34St
+</code></pre><p>You can use <code>-E, --extended-regexp</code> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
+<p>Look for anything that starts with a number:</p>
+<pre tabindex="0"><code>❯ grep -E &#39;^[0-9]{1}&#39; testfile
+123test
+1TE34St
+456tEST
+</code></pre><p>Look for lines that start with 3 numbers:</p>
+<pre tabindex="0"><code>❯ grep -E &#39;^[0-9]{3}&#39; testfile 
+123test
+456tEST
+</code></pre><p>Look for anything that ends with <code>test</code></p>
+<pre tabindex="0"><code>❯ grep -E &#39;test$&#39; testfile 
+test
+123test
+</code></pre><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
+<p>I&rsquo;ve only provided a few options with basics for <code>grep</code> but it is a powerful tool that can be used to parse plaintext files.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Configuring https on a CentOS webserver</title>

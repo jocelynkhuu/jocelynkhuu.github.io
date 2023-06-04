@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="grep - Global Regular Expression Print" />
+<meta name="keywords" content=", linux, LTOTD, tip of the day, blog, grep" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/" />
+
+
+    <title>
+        
+            Linux Tip of the Day - grep :: Jocelyn Khuu  — Welcome to my page!
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="https://jocelynkhuu.github.io/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://jocelynkhuu.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://jocelynkhuu.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://jocelynkhuu.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://jocelynkhuu.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://jocelynkhuu.github.io/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://jocelynkhuu.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Linux Tip of the Day - grep">
+<meta itemprop="description" content="grep - Global Regular Expression Print"><meta itemprop="datePublished" content="2023-06-03T02:41:51-04:00" />
+<meta itemprop="dateModified" content="2023-06-03T02:41:51-04:00" />
+<meta itemprop="wordCount" content="378"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="keywords" content="linux,LTOTD,tip of the day,blog,grep," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
+
+<meta name="twitter:title" content="Linux Tip of the Day - grep"/>
+<meta name="twitter:description" content="grep - Global Regular Expression Print"/>
+
+
+
+    <meta property="og:title" content="Linux Tip of the Day - grep" />
+<meta property="og:description" content="grep - Global Regular Expression Print" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-03T02:41:51-04:00" />
+<meta property="article:modified_time" content="2023-06-03T02:41:51-04:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-06-03 02:41:51 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://jocelynkhuu.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://jocelynkhuu.github.io/posts">posts</a></li><li><a href="https://jocelynkhuu.github.io/resume">resume</a></li><li><a href="https://jocelynkhuu.github.io/about">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        2 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/">Linux Tip of the Day - grep</a>
+      </h1>
+
+      
+        <div class="post-excerpt">grep - Global Regular Expression Print</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="what-is-grep">What is grep?</h2>
+<p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
+<p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
+<pre tabindex="0"><code>❯ grep export ~/.zshrc
+export PATH=&#34;$HOME/.local/bin:$PATH&#34;
+</code></pre><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
+<pre tabindex="0"><code>❯ grep GNOME /var/log/boot.log 
+[  OK  ] Started GNOME Display Manager.
+         Starting GNOME Display Manager...
+</code></pre><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
+<p><code>-i, --ignore-case</code></p>
+<p><code>grep -i</code> ignores case when searching for matches.</p>
+<pre tabindex="0"><code>❯ grep -i gnome /var/log/boot.log
+[  OK  ] Started GNOME Display Manager.
+         Starting GNOME Display Manager...
+</code></pre><p><code>-v, --invert-match</code></p>
+<p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
+<pre tabindex="0"><code>❯ tail -2 /var/log/boot.log
+[  OK  ] Started Manage, Install and Generate Color Profiles.
+[  OK  ] Started GNOME Display Manager.
+
+❯ tail -2 /var/log/boot.log | grep -vi gnome
+[  OK  ] Started Manage, Install and Generate Color Profiles.
+</code></pre><p><code>-c, --count</code></p>
+<p><code>grep -c</code> can be used to provide the count for lines.</p>
+<pre tabindex="0"><code>❯ grep -ci gnome /var/log/boot.log
+11
+</code></pre><h3 id="using-regular-expressions-with-grep">Using regular expressions with <code>grep</code></h3>
+<p>Let&rsquo;s say we have a test file:</p>
+<pre tabindex="0"><code>❯ cat testfile 
+test
+TEST
+TeST
+123test
+1TE34St
+456tEST
+</code></pre><p>Look for lines with <code>test</code> regardless of case:</p>
+<pre tabindex="0"><code>❯ grep -i test testfile 
+test
+TEST
+TeST
+123test
+456tEST
+</code></pre><p>Look for lines that start with capital <code>T</code>:</p>
+<pre tabindex="0"><code>❯ grep &#39;^T&#39; testfile
+TEST
+TeST
+</code></pre><p>Look for lines that end with lowercase <code>t</code>:</p>
+<pre tabindex="0"><code>❯ grep &#39;t$&#39; testfile
+test
+123test
+1TE34St
+</code></pre><p>You can use <code>-E, --extended-regexp</code> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
+<p>Look for anything that starts with a number:</p>
+<pre tabindex="0"><code>❯ grep -E &#39;^[0-9]{1}&#39; testfile
+123test
+1TE34St
+456tEST
+</code></pre><p>Look for lines that start with 3 numbers:</p>
+<pre tabindex="0"><code>❯ grep -E &#39;^[0-9]{3}&#39; testfile 
+123test
+456tEST
+</code></pre><p>Look for anything that ends with <code>test</code></p>
+<pre tabindex="0"><code>❯ grep -E &#39;test$&#39; testfile 
+test
+123test
+</code></pre><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
+<p>I&rsquo;ve only provided a few options with basics for <code>grep</code> but it is a powerful tool that can be used to parse plaintext files.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/linux/">linux</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/ltotd/">LTOTD</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/tip-of-the-day/">tip of the day</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/grep/">grep</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        378 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2023-06-03 02:41
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/">
+                    <span class="button__text">Configuring https on a CentOS webserver</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://jocelynkhuu.github.io/bundle.min.3285bac296fd592c2fed6541b76ae71f22e191263130d0189838d04cf171402c7d19f9e7781bc4bd8a9f77eec9369860301f4ac8c5b43e9741b2c1997ae2adbd.js" integrity="sha512-MoW6wpb9WSwv7WVBt2rnHyLhkSYxMNAYmDjQTPFxQCx9GfnneBvEvYqfd&#43;7JNphgMB9KyMW0PpdBssGZeuKtvQ=="></script>
+
+
+
+    </body>
+</html>

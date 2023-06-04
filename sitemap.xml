@@ -2,29 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jocelynkhuu.github.io/tags/blog/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/grep/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/linux/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/ltotd/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/posts/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/tip-of-the-day/</loc>
+    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
+  </url><url>
     <loc>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/https/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
   </url><url>
-    <loc>https://jocelynkhuu.github.io/</loc>
-    <lastmod>2022-12-09T00:44:03-05:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/posts/</loc>
-    <lastmod>2022-12-09T00:44:03-05:00</lastmod>
-  </url><url>
     <loc>https://jocelynkhuu.github.io/tags/security/</loc>
-    <lastmod>2022-12-09T00:44:03-05:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/website/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/blog/</loc>
-    <lastmod>2022-09-22T00:54:03-04:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/post/</loc>
     <lastmod>2022-09-22T00:54:03-04:00</lastmod>
@@ -62,19 +77,10 @@
     <loc>https://jocelynkhuu.github.io/tags/ransomware/</loc>
     <lastmod>2021-05-20T22:12:27-07:00</lastmod>
   </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/linux/</loc>
-    <lastmod>2021-03-24T21:30:06-07:00</lastmod>
-  </url><url>
     <loc>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</loc>
     <lastmod>2021-03-24T21:30:06-07:00</lastmod>
   </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/ltotd/</loc>
-    <lastmod>2021-03-24T21:30:06-07:00</lastmod>
-  </url><url>
     <loc>https://jocelynkhuu.github.io/tags/ps/</loc>
-    <lastmod>2021-03-24T21:30:06-07:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/tip-of-the-day/</loc>
     <lastmod>2021-03-24T21:30:06-07:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</loc>

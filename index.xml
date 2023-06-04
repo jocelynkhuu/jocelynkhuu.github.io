@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tip of the Day - grep</title>
+      <link>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</guid>
+      <description>What is grep? According to the man page, grep is used to print lines that match patterns. It can be used to match regular expressions in plaintext.
+grep can be used by running grep [OPTION...] PATTERNS [FILE...]
+❯ grep export ~/.zshrc export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34; grep is helpful when parsing log files or files with a lot of text.
+❯ grep GNOME /var/log/boot.log [ OK ] Started GNOME Display Manager. Starting GNOME Display Manager.</description>
+    </item>
+    
     <item>
       <title>Configuring https on a CentOS webserver</title>
       <link>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</link>
