@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>note to self on Jocelyn Khuu</title>
-    <link>https://jocelynkhuu.github.io/tags/note-to-self/</link>
-    <description>Recent content in note to self on Jocelyn Khuu</description>
+    <title>servers on Jocelyn Khuu</title>
+    <link>https://jocelynkhuu.github.io/tags/servers/</link>
+    <description>Recent content in servers on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/note-to-self/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Dec 2022 00:44:03 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/servers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configuring https on a CentOS webserver</title>
       <link>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</link>
@@ -17,17 +17,6 @@
       <description>I tried to configure https for a webserver recently and wanted to document what worked for me.
 This worked on CentOS 7 running Apache version 2.4.6.
 Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost configuration: &amp;lt;VirtualHost *:443&amp;gt; &amp;lt;Directory /var/www/html/website/public&amp;gt; Require all granted AllowOverride All &amp;lt;/Directory&amp;gt; ServerName website.com DocumentRoot /var/www/html/website/public ErrorLog /var/log/httpd/website.error.log CustomLog /var/log/httpd/access.log combined SSLEngine on SSLCertificateFile /etc/ssl/certs/public.crt SSLCertificateKeyFile /etc/ssl/private/private.key SSLCertificateChainFile /etc/ssl/certs/chain.crt &amp;lt;/VirtualHost&amp;gt; SSLCertificateChainFile might not be necessary in newer versions of Apache.</description>
-    </item>
-    
-    <item>
-      <title>Setting up Python Virtual Environment</title>
-      <link>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</link>
-      <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
-      
-      <guid>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</guid>
-      <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.
-Steps:
-Install Miniconda: Conda cheatsheet Verify conda is installed running conda -V Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Install any other libraries needed: ex.</description>
     </item>
     
   </channel>
