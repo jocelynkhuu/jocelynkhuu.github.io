@@ -154,33 +154,33 @@
         <h2 id="what-is-grep">What is grep?</h2>
 <p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
 <p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep export ~/.zshrc
-</span></span><span style="display:flex;"><span>export PATH=&#34;$HOME/.local/bin:$PATH&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
-</span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
 <p><strong><code>-i, --ignore-case</code></strong></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
-</span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
 <p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
-</span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
-</span></span><span style="display:flex;"><span>[  OK  ] Started GNOME Display Manager.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log | grep -vi gnome
-</span></span><span style="display:flex;"><span>[  OK  ] Started Manage, Install and Generate Color Profiles.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
 </span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
 <p><code>grep -c</code> can be used to provide the count for lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
-</span></span><span style="display:flex;"><span>11
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>
 </span></span></code></pre></div><h3 id="using-regular-expressions-with-grep">Using regular expressions with grep</h3>
 <p>Let&rsquo;s say we have a test file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ cat testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
@@ -188,33 +188,33 @@
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines with <code>test</code> regardless of case:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -i test testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with capital <code>T</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep &#39;^T&#39; testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span></code></pre></div><p>Look for lines that end with lowercase <code>t</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep &#39;t$&#39; testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
 <p>Look for anything that starts with a number:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -E &#39;^[0-9]{1}&#39; testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with 3 numbers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -E &#39;^[0-9]{3}&#39; testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for anything that ends with <code>test</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>❯ grep -E &#39;test$&#39; testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span></code></pre></div><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
