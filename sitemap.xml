@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jocelynkhuu.github.io/tags/blog/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/linux/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/post/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/posts/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
+    <loc>https://jocelynkhuu.github.io/tags/</loc>
+    <lastmod>2023-10-24T01:54:39-04:00</lastmod>
+  </url><url>
     <loc>https://jocelynkhuu.github.io/about/</loc>
     <lastmod>2023-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/blog/</loc>
-    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
-  </url><url>
     <loc>https://jocelynkhuu.github.io/tags/grep/</loc>
-    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/</loc>
-    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/linux/</loc>
     <lastmod>2023-06-03T02:41:51-04:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</loc>
     <lastmod>2023-06-03T02:41:51-04:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/ltotd/</loc>
-    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/posts/</loc>
-    <lastmod>2023-06-03T02:41:51-04:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/</loc>
     <lastmod>2023-06-03T02:41:51-04:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/tip-of-the-day/</loc>
@@ -49,9 +55,6 @@
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/website/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
-  </url><url>
-    <loc>https://jocelynkhuu.github.io/tags/post/</loc>
-    <lastmod>2022-09-22T00:54:03-04:00</lastmod>
   </url><url>
     <loc>https://jocelynkhuu.github.io/tags/security-news/</loc>
     <lastmod>2022-09-22T00:54:03-04:00</lastmod>

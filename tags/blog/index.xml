@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Oct 2023 01:54:39 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Missing grub menu after update</title>
+      <link>https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/</link>
+      <pubDate>Tue, 24 Oct 2023 01:54:39 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/</guid>
+      <description>Failed to open \EFI\BOOT\grubx64.efi - Not Found I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.
+Here is the error that I was receiving.
+Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\grubx64.efi: Not Found start_image() returned Not Found My Ubuntu version:
+❯ cat /etc/os-release PRETTY_NAME=&amp;#34;Ubuntu 22.</description>
+    </item>
+    
     <item>
       <title>Linux Tip of the Day - grep</title>
       <link>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</link>
