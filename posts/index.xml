@@ -19,7 +19,7 @@
 Here is the error that I was receiving.
 Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\grubx64.efi: Not Found start_image() returned Not Found My Ubuntu version:
 ❯ cat /etc/os-release PRETTY_NAME=&amp;#34;Ubuntu 22.</description>
-            <content type="html"><![CDATA[<h1 id="failed-to-open-efibootgrubx64efi---not-found">Failed to open \EFI\BOOT\grubx64.efi - Not Found</h1>
+            <content type="html"><![CDATA[<h2 id="failed-to-open-efibootgrubx64efi---not-found">Failed to open \EFI\BOOT\grubx64.efi - Not Found</h2>
 <p>I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.</p>
 <p>Here is the error that I was receiving.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to open <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi - Not Found  
