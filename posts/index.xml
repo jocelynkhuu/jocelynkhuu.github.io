@@ -51,8 +51,6 @@ Installing, this may take a few minutes... WslRegisterDistribution failed with e
 <li>Then run <code>p10k configure</code> to configure it</li>
 </ul>
 <p>I thought this was pretty cool as it was my first time using WSL. My experience with powershell is limited so I thought this would be helpful for me to navigate my Windows system faster.</p>
-<p>TEST iframe</p>
-<!-- raw HTML omitted -->
 ]]></content>
         </item>
         
