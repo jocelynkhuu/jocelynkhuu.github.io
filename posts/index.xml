@@ -6,8 +6,53 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 24 Oct 2023 01:54:39 -0400</lastBuildDate>
+        <lastBuildDate>Wed, 25 Oct 2023 03:35:17 -0400</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Windows Subsystem for Linux (WSL)</title>
+            <link>https://jocelynkhuu.github.io/posts/2023/october/102523_wslwindows/</link>
+            <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2023/october/102523_wslwindows/</guid>
+            <description>I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.
+Installing WSL Following this article on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the Terminal app on Windows 11:
+Installing, this may take a few minutes... WslRegisterDistribution failed with error: 0x80370114 Error: 0x80370114 The operation could not be started because a required feature is not installed.</description>
+            <content type="html"><![CDATA[<p>I don&rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&rsquo;m much more familiar with navigating linux than using powershell.</p>
+<h3 id="installing-wsl">Installing WSL</h3>
+<p>Following this <a href="https://learn.microsoft.com/en-us/windows/wsl/install">article</a> on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the <code>Terminal</code> app on Windows 11:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Installing, this may take a few minutes...
+</span></span><span style="display:flex;"><span>WslRegisterDistribution failed with error: 0x80370114
+</span></span><span style="display:flex;"><span>Error: 0x80370114 The operation could not be started because a required feature is not installed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Press any key to <span style="color:#66d9ef">continue</span>...
+</span></span></code></pre></div><p>I manually enabled the features in <code>Turn Windows features On or Off</code> then restarted:</p>
+<ul>
+<li><code>Virtual Machine Platform</code></li>
+<li><code>Windows Hypervisor Platform</code></li>
+<li><code>Windows Subsystem for Linux</code></li>
+</ul>
+<h3 id="using-wsl">Using WSL</h3>
+<p><code>wsl --list</code> shows all the Linux distros installed and <code>wsl -d &lt;distro&gt;</code> launches the distro.</p>
+<p>In WSL, the C Drive is mounted in <code>/mnt/c/</code> so I was able to use linux to navigate to all of my Windows files in <code>/mnt/c/Users/&lt;user&gt;</code> #hooray!</p>
+<p>Everything else seemed the same as a regular Linux system including having a home directory in <code>/home/&lt;user&gt;</code>.</p>
+<h3 id="zsh-on-wsl">ZSH on WSL</h3>
+<p>It looks like by default it runs bash and I wanted to switch to zsh and install Powerlevel10k.</p>
+<ul>
+<li>Install zsh: <code>sudo apt install zsh</code></li>
+<li>Install Oh my zsh!: <code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</code></li>
+<li>Set theme to Powerlevel10k: <code>git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code></li>
+<li>Install <a href="https://github.com/romkatv/powerlevel10k#fonts">MesloLGS NF</a> fonts on Windows 11 and change it in the default profile in Terminal
+<ul>
+<li>Hit <code>CTRL + ,</code> to open Terminal settings</li>
+<li>Profiles &gt; Defaults &gt; Appearance &gt; Font face &gt; MesloLGS NF</li>
+</ul>
+</li>
+<li>Then run <code>p10k configure</code> to configure it</li>
+</ul>
+<p>I thought this was pretty cool as it was my first time using WSL. My experience with powershell is limited so I thought this would be helpful for me to navigate my Windows system faster.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Missing grub menu after update</title>

@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 24 Oct 2023 01:54:39 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/note-to-self/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Oct 2023 03:35:17 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/note-to-self/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Subsystem for Linux (WSL)</title>
+      <link>https://jocelynkhuu.github.io/posts/2023/october/102523_wslwindows/</link>
+      <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2023/october/102523_wslwindows/</guid>
+      <description>I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.
+Installing WSL Following this article on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the Terminal app on Windows 11:
+Installing, this may take a few minutes... WslRegisterDistribution failed with error: 0x80370114 Error: 0x80370114 The operation could not be started because a required feature is not installed.</description>
+    </item>
+    
     <item>
       <title>Missing grub menu after update</title>
       <link>https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/</link>
