@@ -32,6 +32,16 @@ Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\
     </item>
     
     <item>
+      <title>Authentication vs Authorization</title>
+      <link>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</link>
+      <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+      
+      <guid>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</guid>
+      <description>Authentication vs Authorization: OAuth, OIDC, and SAML Authentication (AuthN) proves who someone is and Authorization (AuthZ) allows that someone to access certain resources.
+Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</description>
+    </item>
+    
+    <item>
       <title>Uber Hack - Another Social Engineering Attack</title>
       <link>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</link>
       <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>

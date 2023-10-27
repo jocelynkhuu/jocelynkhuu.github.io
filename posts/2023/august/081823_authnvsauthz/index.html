@@ -5,17 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="I took the Security&#43; exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
-The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly." />
-<meta name="keywords" content=", personal, thoughts, post, blog" />
+<meta name="description" content="How do authentication and authorization differ?" />
+<meta name="keywords" content=", security, thoughts, post, blog, iam" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/" />
+<link rel="canonical" href="https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/" />
 
 
     <title>
         
-            Passing Security&#43; :: Jocelyn Khuu  — Welcome to my page!
+            Authentication vs Authorization :: Jocelyn Khuu  — Welcome to my page!
         
     </title>
 
@@ -36,35 +35,32 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Passing Security&#43;">
-<meta itemprop="description" content="I took the Security&#43; exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
-The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly."><meta itemprop="datePublished" content="2022-02-17T03:24:13-05:00" />
-<meta itemprop="dateModified" content="2022-02-17T03:24:13-05:00" />
-<meta itemprop="wordCount" content="328"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
-<meta itemprop="keywords" content="personal,thoughts,post,blog," />
+<meta itemprop="name" content="Authentication vs Authorization">
+<meta itemprop="description" content="How do authentication and authorization differ?"><meta itemprop="datePublished" content="2023-08-18T16:17:47-04:00" />
+<meta itemprop="dateModified" content="2023-08-18T16:17:47-04:00" />
+<meta itemprop="wordCount" content="530"><meta itemprop="image" content="https://jocelynkhuu.github.io"/>
+<meta itemprop="keywords" content="security,thoughts,post,blog,iam," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jocelynkhuu.github.io"/>
 
-<meta name="twitter:title" content="Passing Security&#43;"/>
-<meta name="twitter:description" content="I took the Security&#43; exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
-The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly."/>
+<meta name="twitter:title" content="Authentication vs Authorization"/>
+<meta name="twitter:description" content="How do authentication and authorization differ?"/>
 
 
 
-    <meta property="og:title" content="Passing Security&#43;" />
-<meta property="og:description" content="I took the Security&#43; exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
-The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly." />
+    <meta property="og:title" content="Authentication vs Authorization" />
+<meta property="og:description" content="How do authentication and authorization differ?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-02-17T03:24:13-05:00" />
-<meta property="article:modified_time" content="2022-02-17T03:24:13-05:00" />
+<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/" /><meta property="og:image" content="https://jocelynkhuu.github.io"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-18T16:17:47-04:00" />
+<meta property="article:modified_time" content="2023-08-18T16:17:47-04:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2022-02-17 03:24:13 -0500 EST" />
+    <meta property="article:published_time" content="2023-08-18 16:17:47 -0400 EDT" />
 
 
 
@@ -135,7 +131,7 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -143,9 +139,11 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
 
     <article>
       <h1 class="post-title">
-        <a href="https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/">Passing Security+</a>
+        <a href="https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/">Authentication vs Authorization</a>
       </h1>
 
+      
+        <div class="post-excerpt">How do authentication and authorization differ?</div>
       
 
       
@@ -153,22 +151,55 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
       
 
       <div class="post-content">
-        <p>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.</p>
-<h3 id="the-testing-experience">The Testing Experience</h3>
-<p>I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</p>
-<p>Like lots of others I thought I had failed for sure during the test. I flagged all PBQs and dedicated about 30 minutes after finishing the multiple choice to go over them. I ran out of time in the end to double-check all of my answers but made sure to submit something on all of the questions regardless of whether I was sure or not.</p>
-<h3 id="resources">Resources</h3>
+        <h1 id="authentication-vs-authorization-oauth-oidc-and-saml">Authentication vs Authorization: OAuth, OIDC, and SAML</h1>
+<p><strong>Authentication</strong> (AuthN) proves who someone is and <strong>Authorization</strong> (AuthZ) allows that someone to access certain resources.</p>
+<p>Basic authentication is what we&rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</p>
+<p>There are several authentication factors that are widely used and some are:</p>
 <ul>
-<li>Darril Gibson&rsquo;s GCGA</li>
-<li>Professor Messer&rsquo;s Practice Exams and Videos</li>
-<li>Jason Dion&rsquo;s Udemy Practice Exams</li>
-<li>Mike Chapple&rsquo;s Cert Prep (Linkedin Learning)</li>
+<li>Something a person knows</li>
+<li>Something a person has</li>
+<li>Something a person is</li>
+<li>Somewhere a person is</li>
 </ul>
-<p>I mainly watched Prof. Messer&rsquo;s and Mike Chapple&rsquo;s videos at 1.75x speed to help clarify things I didn&rsquo;t understand.</p>
-<p>I spent about a month of serious studying and dedicated about 4-5 hours of study after work. I ended up passing with an 825.</p>
-<h3 id="what-was-helpful-for-me">What was helpful for me</h3>
-<p>Practice Exams! The practice exams really gave me an idea of what I needed to focus on. I wasn&rsquo;t scoring very high on Dion&rsquo;s practice exams (low to mid 70s) but on Prof. Messer&rsquo;s exams I was getting mid to high 80s. I would definitely recommend purchasing Prof. Messer&rsquo;s exams as they were super helpful.</p>
-<p>A year and half later, I have found that while the cert did help me with gaining basic security knowledge, it wasn&rsquo;t very helpful for helping me land a job. I don&rsquo;t think that companies value the cert as much as people say they do. I would still recommed getting the cert as it definitely teaches good foundations that are important during interviews.</p>
+<p>If you can&rsquo;t prove who you are, then then you won&rsquo;t be allowed to access the resource as authorization should always follow after authentication. Authorization grants/denies permissions to resources.</p>
+<h2 id="what-is-oauth-20">What is OAuth 2.0?</h2>
+<p>OAuth 2.0 (Open Authoriation) is the standard to allow one application access to another application without sharing your credentials. It grants <strong>authorization</strong> for one application to access data or features in another application for you. It uses <strong>Access Tokens</strong> to hold information about your user and permissions.</p>
+<h2 id="what-is-oidc">What is OIDC?</h2>
+<p>OIDC (OpenID Connect) is an authentication protocol based on OAuth 2.0 and enables users to sign into one application and receive access to another. It is used to provide SSO for applications. For example, when you need to log into one website and it gives you the option to log in using your Google account, this is using OIDC authentication. OIDC uses <strong>ID Tokens</strong>, usually in the form of a JSON Web Token (JWT), which include information such as email address and name.</p>
+<p>According to <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-openid-connect-oidc">Microsoft</a>, <em>&ldquo;OIDC was built on top of OAuth 2.0 to add authentication. The OAuth 2.0 protocol was developed first and then OIDC was added to enhance its capabilities. The difference between the two is that OAuth 2.0 provides authorization, while OIDC provides authentication. OAuth 2.0 is what allows users to gain access to a relying party, using their account with an OpenID provider, and OIDC is what allows the OpenID provider to pass along a user profile to the relying party. OIDC also allows organizations to offer their users single sign-on.&rdquo;</em></p>
+<p>Okta has an illustrated guide that goes over how OAuth and OIDC work together <a href="https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc">here</a>.</p>
+<h2 id="what-is-saml">What is SAML?</h2>
+<p>SAML (Security Assertion Markup Language) is an XML-based authentication protocol used for transferring identity data between an idP (identity provider) and SP (service provider). It enables SSO for applications similar to OIDC.</p>
+<p>An idP provides the user&rsquo;s identity and authorization to the SP. For example, Okta would be an idP and an SP could be something like Slack. You would log into Okta and it would authenticate you into Slack using SAML.</p>
+<h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
+<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically with 3 primary differences:</p>
+<table>
+<thead>
+<tr>
+<th>Differences</th>
+<th>SAML</th>
+<th>OIDC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data format</td>
+<td>XML</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Data sent</td>
+<td>SAML Assertion</td>
+<td>Claims</td>
+</tr>
+<tr>
+<td>Application name</td>
+<td>Service Provider</td>
+<td>Relying Party</td>
+</tr>
+</tbody>
+</table>
+<p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
 
       </div>
     </article>
@@ -180,10 +211,11 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/personal/">personal</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/security/">security</a></span>
         <span class="tag"><a href="https://jocelynkhuu.github.io/tags/thoughts/">thoughts</a></span>
         <span class="tag"><a href="https://jocelynkhuu.github.io/tags/post/">post</a></span>
         <span class="tag"><a href="https://jocelynkhuu.github.io/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://jocelynkhuu.github.io/tags/iam/">iam</a></span>
         
     </p>
 
@@ -197,7 +229,7 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        328 Words
+        530 Words
       </p>
 
       <p>
@@ -208,7 +240,7 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2022-02-17 03:24
+          2023-08-18 16:17
         
 
          
@@ -229,17 +261,17 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
         <div class="pagination__buttons">
             
             <span class="button previous">
-                <a href="https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/">
+                <a href="https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/">
                     <span class="button__icon">←</span>
-                    <span class="button__text">Setting up Python Virtual Environment</span>
+                    <span class="button__text">Missing grub menu after update</span>
                 </a>
             </span>
             
 
             
             <span class="button next">
-                <a href="https://jocelynkhuu.github.io/posts/2022/february/020122_1stsecurityjob/">
-                    <span class="button__text">How I Got My First Security Job</span>
+                <a href="https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/">
+                    <span class="button__text">Linux Tip of the Day - grep</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>

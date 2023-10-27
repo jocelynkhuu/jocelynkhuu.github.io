@@ -137,6 +137,66 @@ Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\
         </item>
         
         <item>
+            <title>Authentication vs Authorization</title>
+            <link>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</link>
+            <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</guid>
+            <description>Authentication vs Authorization: OAuth, OIDC, and SAML Authentication (AuthN) proves who someone is and Authorization (AuthZ) allows that someone to access certain resources.
+Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</description>
+            <content type="html"><![CDATA[<h1 id="authentication-vs-authorization-oauth-oidc-and-saml">Authentication vs Authorization: OAuth, OIDC, and SAML</h1>
+<p><strong>Authentication</strong> (AuthN) proves who someone is and <strong>Authorization</strong> (AuthZ) allows that someone to access certain resources.</p>
+<p>Basic authentication is what we&rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</p>
+<p>There are several authentication factors that are widely used and some are:</p>
+<ul>
+<li>Something a person knows</li>
+<li>Something a person has</li>
+<li>Something a person is</li>
+<li>Somewhere a person is</li>
+</ul>
+<p>If you can&rsquo;t prove who you are, then then you won&rsquo;t be allowed to access the resource as authorization should always follow after authentication. Authorization grants/denies permissions to resources.</p>
+<h2 id="what-is-oauth-20">What is OAuth 2.0?</h2>
+<p>OAuth 2.0 (Open Authoriation) is the standard to allow one application access to another application without sharing your credentials. It grants <strong>authorization</strong> for one application to access data or features in another application for you. It uses <strong>Access Tokens</strong> to hold information about your user and permissions.</p>
+<h2 id="what-is-oidc">What is OIDC?</h2>
+<p>OIDC (OpenID Connect) is an authentication protocol based on OAuth 2.0 and enables users to sign into one application and receive access to another. It is used to provide SSO for applications. For example, when you need to log into one website and it gives you the option to log in using your Google account, this is using OIDC authentication. OIDC uses <strong>ID Tokens</strong>, usually in the form of a JSON Web Token (JWT), which include information such as email address and name.</p>
+<p>According to <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-openid-connect-oidc">Microsoft</a>, <em>&ldquo;OIDC was built on top of OAuth 2.0 to add authentication. The OAuth 2.0 protocol was developed first and then OIDC was added to enhance its capabilities. The difference between the two is that OAuth 2.0 provides authorization, while OIDC provides authentication. OAuth 2.0 is what allows users to gain access to a relying party, using their account with an OpenID provider, and OIDC is what allows the OpenID provider to pass along a user profile to the relying party. OIDC also allows organizations to offer their users single sign-on.&rdquo;</em></p>
+<p>Okta has an illustrated guide that goes over how OAuth and OIDC work together <a href="https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc">here</a>.</p>
+<h2 id="what-is-saml">What is SAML?</h2>
+<p>SAML (Security Assertion Markup Language) is an XML-based authentication protocol used for transferring identity data between an idP (identity provider) and SP (service provider). It enables SSO for applications similar to OIDC.</p>
+<p>An idP provides the user&rsquo;s identity and authorization to the SP. For example, Okta would be an idP and an SP could be something like Slack. You would log into Okta and it would authenticate you into Slack using SAML.</p>
+<h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
+<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically with 3 primary differences:</p>
+<table>
+<thead>
+<tr>
+<th>Differences</th>
+<th>SAML</th>
+<th>OIDC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data format</td>
+<td>XML</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Data sent</td>
+<td>SAML Assertion</td>
+<td>Claims</td>
+</tr>
+<tr>
+<td>Application name</td>
+<td>Service Provider</td>
+<td>Relying Party</td>
+</tr>
+</tbody>
+</table>
+<p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Linux Tip of the Day - grep</title>
             <link>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</link>
             <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
