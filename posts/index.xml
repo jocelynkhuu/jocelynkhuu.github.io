@@ -121,7 +121,7 @@ Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>DISKPART&gt; exit
 </span></span></code></pre></div><p>After that, I turned off Secure Boot in my BIOS and booted into the Ubuntu live usb.</p>
-<h3 id="in-the-ubuntu-live-usb">In the Ubuntu live usb</h3>
+<h3 id="on-the-ubuntu-live-usb-side">On the Ubuntu live usb side</h3>
 <ul>
 <li>Select the <code>Try Ubuntu</code> option</li>
 <li>Launch terminal and add the boot-repair ppa from <a href="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair">YannUbuntu</a>
