@@ -165,7 +165,7 @@ Basic authentication is what we&amp;rsquo;re all used to with something like a u
 <p>SAML (Security Assertion Markup Language) is an XML-based authentication protocol used for transferring identity data between an idP (identity provider) and SP (service provider). It enables SSO for applications similar to OIDC.</p>
 <p>An idP provides the user&rsquo;s identity and authorization to the SP. For example, Okta would be an idP and an SP could be something like Slack. You would log into Okta and it would authenticate you into Slack using SAML.</p>
 <h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
-<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically with 3 primary differences:</p>
+<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically the same with 3 primary differences:</p>
 <table>
 <thead>
 <tr>
