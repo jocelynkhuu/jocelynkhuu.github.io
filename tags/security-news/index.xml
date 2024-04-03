@@ -1,92 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>security news on Jocelyn Khuu</title>
+    <title>Security News on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/security-news/</link>
-    <description>Recent content in security news on Jocelyn Khuu</description>
+    <description>Recent content in Security News on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Sep 2022 00:54:03 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/security-news/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 00:54:03 -0400</lastBuildDate>
+    <atom:link href="https://jocelynkhuu.github.io/tags/security-news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Uber Hack - Another Social Engineering Attack</title>
       <link>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</link>
       <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</guid>
       <description>On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</description>
     </item>
-    
     <item>
       <title>Panic Buying Gas?</title>
       <link>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</link>
       <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</guid>
-      <description>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;
-What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</description>
+      <description>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;&#xA;What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</description>
     </item>
-    
     <item>
       <title>Microsoft Exchange Server exploits compromises over 30,000 orgs&#39; Emails</title>
       <link>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</link>
       <pubDate>Sun, 07 Mar 2021 13:34:26 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</guid>
-      <description>On 3/5/21, KrebsOnSecurity published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.
-When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</description>
+      <description>On 3/5/21, KrebsOnSecurity published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.&#xA;When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</description>
     </item>
-    
     <item>
       <title>Security Researcher Hacks over 35 Companies</title>
       <link>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</link>
       <pubDate>Mon, 15 Feb 2021 04:33:31 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</guid>
-      <description>Another Simple Supply Chain Attack Article on BleepingComputer and TechXplore
-A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.
-Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</description>
+      <description>Another Simple Supply Chain Attack Article on BleepingComputer and TechXplore&#xA;A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.&#xA;Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</description>
     </item>
-    
     <item>
       <title>Hack on Oldsmar, Fl. Water Treatment Facility</title>
       <link>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</link>
       <pubDate>Sat, 13 Feb 2021 03:29:31 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</guid>
-      <description>Poisoning Water? Earlier this week, Reuters reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.
-We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by Engadget that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been updated or supported by Microsoft in over a year.</description>
+      <description>Poisoning Water? Earlier this week, Reuters reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.&#xA;We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by Engadget that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been updated or supported by Microsoft in over a year.</description>
     </item>
-    
     <item>
       <title>Sudo Vulnerability</title>
       <link>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</link>
       <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</guid>
-      <description>A Sudo Vulnerability CVE-2021-3156
-On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.
-With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
+      <description>A Sudo Vulnerability CVE-2021-3156&#xA;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&#xA;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
     </item>
-    
     <item>
       <title>SolarWinds Supply Chain Attack</title>
       <link>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</link>
       <pubDate>Thu, 17 Dec 2020 05:17:52 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</guid>
       <description>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised. What exactly is SolarWinds and what happened? SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform.</description>
     </item>
-    
     <item>
       <title>FireEye Hack</title>
       <link>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</link>
       <pubDate>Sat, 12 Dec 2020 12:32:22 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</guid>
-      <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.
-This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.
-FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
+      <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.&#xA;This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.&#xA;FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
     </item>
-    
   </channel>
 </rss>

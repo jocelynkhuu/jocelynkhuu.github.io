@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iam on Jocelyn Khuu</title>
+    <title>Iam on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/iam/</link>
-    <description>Recent content in iam on Jocelyn Khuu</description>
+    <description>Recent content in Iam on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Aug 2023 16:17:47 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/iam/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Aug 2023 16:17:47 -0400</lastBuildDate>
+    <atom:link href="https://jocelynkhuu.github.io/tags/iam/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Authentication vs Authorization</title>
       <link>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</link>
       <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</guid>
-      <description>OAuth, OIDC, and SAML Authentication (AuthN) proves who someone is and Authorization (AuthZ) allows that someone to access certain resources.
-Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</description>
+      <description>OAuth, OIDC, and SAML Authentication (AuthN) proves who someone is and Authorization (AuthZ) allows that someone to access certain resources.&#xA;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</description>
     </item>
-    
   </channel>
 </rss>

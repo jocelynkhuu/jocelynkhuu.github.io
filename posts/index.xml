@@ -5,8 +5,155 @@
         <description>Recent content in Posts on Jocelyn Khuu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 25 Oct 2023 03:35:17 -0400</lastBuildDate>
+        <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Intro to Podman</title>
+            <link>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</link>
+            <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</guid>
+            <description>Podman Basics I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose Podman as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.
+To setup podman cli, we can install it from brew or download the pkg directly from the website and follow the instructions to init and start.</description>
+            <content type="html"><![CDATA[<h2 id="podman-basics">Podman Basics</h2>
+<p>I needed to test some scripts on Linux (I&rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose <a href="https://podman.io/">Podman</a> as it&rsquo;s free and open source, making it a great Docker alternative especially for enterprises.</p>
+<p>To setup podman cli, we can install it from brew or download the pkg directly from the <a href="https://podman.io/docs/installation">website</a> and follow the instructions to init and start.</p>
+<p>Some basic podman commands to know:</p>
+<ul>
+<li><code>podman search</code> - searches registry for images</li>
+<li><code>podman pull &lt;image_name&gt;</code> - pulls an image from a registry</li>
+<li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
+<li><code>podman images</code> - shows all images downloaded</li>
+<li><code>podman rmi &lt;image_name&gt;</code> - remove image</li>
+<li><code>docker build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
+<li><code>docker run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
+<li><code>podman exec</code> - run a process in a container</li>
+</ul>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
+<p>Here&rsquo;s a sample Ubuntu image Dockerfile, created with the help of chatgpt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu:latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install required tools</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gnupg2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   vim <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   net-tools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   wget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   unzip <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   netcat <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl -fsSL https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gpg --dearmor -o /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">## Add gopass repository to apt sources</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/gopass-archive-keyring.gpg] https://packages.gopass.pw/repos/gopass stable main&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   &gt; /etc/apt/sources.list.d/gopass.list<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Update package index and install gopass</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass-archive-keyring <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Clean up</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm -rf /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copies local file called bashrc &amp; vimrc in local host directory to /tmp/bashrc &amp; /tmp/vimrc on container</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> bashrc /tmp/bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/bashrc &gt;&gt; ~/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> vimrc /tmp/vimrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/vimrc &gt;&gt; ~/.vimrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /root</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Defines default command</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>First we pull the image we want from the registry after searching for it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman search ubuntu
+</span></span><span style="display:flex;"><span>INDEX       NAME                                      DESCRIPTION                                      STARS       OFFICIAL    AUTOMATED
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu                  Ubuntu is a Debian-based Linux operating sys...  <span style="color:#ae81ff">16977</span>       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-debootstrap      DEPRECATED; use <span style="color:#e6db74">&#34;ubuntu&#34;</span> instead                 <span style="color:#ae81ff">52</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/neurodebian             NeuroDebian provides neuroscience research s...  <span style="color:#ae81ff">107</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/websphere-liberty       WebSphere Liberty multi-architecture images ...  <span style="color:#ae81ff">298</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/open-liberty            Open Liberty multi-architecture images based...  <span style="color:#ae81ff">64</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-upstart          DEPRECATED, as is Upstart <span style="color:#f92672">(</span>find other proces...  <span style="color:#ae81ff">115</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/ubuntu/nginx                    Nginx, a high-performance reverse proxy &amp; we...  <span style="color:#ae81ff">112</span>                     
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman pull ubuntu                   
+</span></span><span style="display:flex;"><span>Resolved <span style="color:#e6db74">&#34;ubuntu&#34;</span> as an alias <span style="color:#f92672">(</span>/etc/containers/registries.conf.d/shortnames.conf<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Trying to pull docker.io/library/ubuntu:latest...
+</span></span><span style="display:flex;"><span>Getting image source signatures
+</span></span><span style="display:flex;"><span>Copying blob bccd10f490ab <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Copying config ca2b0f2696 <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Writing manifest to image destination
+</span></span><span style="display:flex;"><span>Storing signatures
+</span></span><span style="display:flex;"><span>ca2b0f26964cf2e80ba3e084d5983dab293fdb87485dc6445f3f7bbfc89d7459
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu  latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago  80.4 MB
+</span></span></code></pre></div><p>After pulling the image, we can create a custom image using the Dockerfile. The beginning of the dockerfile specifies a base image we can use: <code>FROM ubuntu:latest</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
+</span></span><span style="display:flex;"><span>STEP 1/12: FROM ubuntu:latest
+</span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget    unzip    netcat <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                     TAG         IMAGE ID      CREATED         SIZE
+</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">22</span> seconds ago  <span style="color:#ae81ff">285</span> MB
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago     80.4 MB
+</span></span></code></pre></div><p>Now we can create a container and run an interactive shell using the <code>-it</code> option. They stand for &ldquo;interactive&rdquo; and &ldquo;pseudo-TTY&rdquo;. The <code>-i</code> option makes the session interactive, and the <code>-t</code> option allocates a pseudo-TTY, allowing you to interact with the shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -it --name ubuntu_container ubuntu_custom_image
+</span></span><span style="display:flex;"><span>root@1623365303af:~# ls -a
+</span></span><span style="display:flex;"><span>.  ..  .bashrc  .profile  .vimrc
+</span></span></code></pre></div><p>We can check the status of our container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS                         PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">2</span> minutes ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> About a minute ago              ubuntu_container
+</span></span></code></pre></div><p>To get back in, we need to make sure that it&rsquo;s started.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman start ubuntu_container             
+</span></span><span style="display:flex;"><span>ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman ps -a                              
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS            PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">4</span> minutes ago  Up <span style="color:#ae81ff">6</span> seconds ago              ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec -it ubuntu_container /bin/bash <span style="color:#75715e">#this starts an interactive shell </span>
+</span></span><span style="display:flex;"><span>root@1623365303af:~# 
+</span></span></code></pre></div><p>We can also just execute the command without an interactive shell from within the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman exec ubuntu_container ls -la  
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:18 .
+</span></span><span style="display:flex;"><span>dr-xr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:17 ..
+</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">16</span> Apr  <span style="color:#ae81ff">3</span> 07:23 .bash_history
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">3237</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .bashrc
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">161</span> Jul  <span style="color:#ae81ff">9</span>  <span style="color:#ae81ff">2019</span> .profile
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">100</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .vimrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec ubuntu_container cat /etc/os-release
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu 22.04.4 LTS&#34;</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04.4 LTS (Jammy Jellyfish)&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span><span style="display:flex;"><span>ID<span style="color:#f92672">=</span>ubuntu
+</span></span><span style="display:flex;"><span>ID_LIKE<span style="color:#f92672">=</span>debian
+</span></span><span style="display:flex;"><span>HOME_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>SUPPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://help.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.launchpad.net/ubuntu/&#34;</span>
+</span></span><span style="display:flex;"><span>PRIVACY_POLICY_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;</span>
+</span></span><span style="display:flex;"><span>UBUNTU_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span></code></pre></div><p>Now we can run whatever we want on our containers! It&rsquo;s a pretty light and easy way to test things without impacting our host system or running a VM with a gui.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Windows Subsystem for Linux (WSL)</title>
@@ -322,7 +469,7 @@ Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost 
             <content type="html"><![CDATA[<p>On September 15, <a href="https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html">reports came in</a> that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</p>
 <p>The alleged timeline that took place according to hacker from multiple reports is that they were able to social engineer an employee, spam the employee with MFA notifications until they accepted, connect to vpn, profit.</p>
 <p>Screenshot of telegram exchange <a href="https://twitter.com/malwaretechblog/status/1570600059909345280?s=21">here</a>
-<img src="/static/uber.jpeg" alt="ubertelegram"></p>
+<img alt="ubertelegram" src="/static/uber.jpeg"></p>
 <p>In my opinion, there were multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
 <ol>
 <li>Account lock for exessive MFA attempts - so that MFA wouldn&rsquo;t have been spammed</li>
@@ -405,7 +552,7 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
             <description>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.
 For some context, here is my work experience:
 5 years of IT support experience overall 2 years at a FAANG doing internal IT support 6 months running IT at a startup as the sole IT person I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.</description>
-            <content type="html"><![CDATA[<p><img src="/static/entrylevel.png" alt="Entry Level"></p>
+            <content type="html"><![CDATA[<p><img alt="Entry Level" src="/static/entrylevel.png"></p>
 <p>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.</p>
 <p>For some context, here is my work experience:</p>
 <ul>
@@ -570,7 +717,7 @@ CVE is managed by the MITRE corporation and is funded by the DHS CISA. According
 <h2 id="what-are-the-requirements-for-a-cve">What are the requirements for a CVE?</h2>
 <p>Not all vulnerabilities will receive a CVE ID.</p>
 <p>RedHat provides a list of criteria.</p>
-<p><img src="/static/cvecriteria.png" alt="CVE Criteria"></p>
+<p><img alt="CVE Criteria" src="/static/cvecriteria.png"></p>
 <blockquote>
 <p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p>
 </blockquote>
@@ -684,7 +831,7 @@ We all know that certain government branches have less funding than others and a
 On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.
 With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
             <content type="html"><![CDATA[<h2 id="a-sudo-vulnerability">A Sudo Vulnerability</h2>
-<p><img src="/static/sudo.jpg" alt="Sudo"></p>
+<p><img alt="Sudo" src="/static/sudo.jpg"></p>
 <p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156">CVE-2021-3156</a></p>
 <p>On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &lsquo;sudo&rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &lsquo;', however, a bug has made it possible to run &lsquo;sudoedit&rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.</p>
 <p>With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</p>
@@ -705,7 +852,7 @@ With these exploits, researchers were able to obtain full root privileges withou
             <guid>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</guid>
             <description>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised. What exactly is SolarWinds and what happened? SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform.</description>
             <content type="html"><![CDATA[<p>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
-<img src="/static/solarwinds.png" alt="SolarWinds"></p>
+<img alt="SolarWinds" src="/static/solarwinds.png"></p>
 <h2 id="what-exactly-is-solarwinds-and-what-happened">What exactly is SolarWinds and what happened?</h2>
 <p>SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">called SUNBURST by FireEye</a>, as part of a legitimate update from SolarWinds&rsquo; servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed <a href="https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/">(sans.org)</a>. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.</p>
 <p>What was very interesting about this malware but that it did not do anything for up to 2 weeks and used &ldquo;obfuscated blocklists to identify forensic and anti-virus tools running as processes, services, and drivers&rdquo; according to <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">FireEye</a>. They were able to copy existing SolarWinds protocols to hide their traffic and appear as legit SolarWinds activity.</p>
@@ -721,7 +868,7 @@ With these exploits, researchers were able to obtain full root privileges withou
             <guid>https://jocelynkhuu.github.io/posts/2020/121420_puppy/</guid>
             <description>Literally just a picture of a puppy </description>
             <content type="html"><![CDATA[<h2 id="literally-just-a-picture-of-a-puppy">Literally just a picture of a puppy</h2>
-<p><img src="/static/puppy.png" alt="Puppy"></p>
+<p><img alt="Puppy" src="/static/puppy.png"></p>
 ]]></content>
         </item>
         
@@ -734,7 +881,7 @@ With these exploits, researchers were able to obtain full root privileges withou
             <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.
 This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.
 FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
-            <content type="html"><![CDATA[<p><img src="/static/fireeye.png" alt="FireEye"></p>
+            <content type="html"><![CDATA[<p><img alt="FireEye" src="/static/fireeye.png"></p>
 <h2 id="fireeye-attack-a-reminder-that-no-one-is-safe">FireEye Attack, a reminder that no one is safe</h2>
 <p>On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.</p>
 <p>This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.</p>

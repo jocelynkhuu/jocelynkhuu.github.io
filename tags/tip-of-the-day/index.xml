@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tip of the day on Jocelyn Khuu</title>
+    <title>Tip of the Day on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/tip-of-the-day/</link>
-    <description>Recent content in tip of the day on Jocelyn Khuu</description>
+    <description>Recent content in Tip of the Day on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/tip-of-the-day/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate>
+    <atom:link href="https://jocelynkhuu.github.io/tags/tip-of-the-day/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Tip of the Day - grep</title>
       <link>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</link>
       <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</guid>
-      <description>What is grep? According to the man page, grep is used to print lines that match patterns. It can be used to match regular expressions in plaintext.
-grep can be used by running grep [OPTION...] PATTERNS [FILE...]
-❯ grep export ~/.zshrc export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34; grep is helpful when parsing log files or files with a lot of text.
-❯ grep GNOME /var/log/boot.log [ OK ] Started GNOME Display Manager. Starting GNOME Display Manager.</description>
+      <description>What is grep? According to the man page, grep is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&#xA;grep can be used by running grep [OPTION...] PATTERNS [FILE...]&#xA;❯ grep export ~/.zshrc export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34; grep is helpful when parsing log files or files with a lot of text.&#xA;❯ grep GNOME /var/log/boot.log [ OK ] Started GNOME Display Manager. Starting GNOME Display Manager.</description>
     </item>
-    
     <item>
       <title>Linux Tip of the Day - ps</title>
       <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
       <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
-      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
-This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&#xA;This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
     </item>
-    
     <item>
       <title>Linux Tip of the Day - du</title>
       <link>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</link>
       <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</guid>
-      <description>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.
-What is du? According to the du man page, du is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking.</description>
+      <description>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&#xA;What is du? According to the du man page, du is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking.</description>
     </item>
-    
   </channel>
 </rss>

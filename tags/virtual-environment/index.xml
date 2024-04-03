@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>virtual environment on Jocelyn Khuu</title>
+    <title>Virtual Environment on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/virtual-environment/</link>
-    <description>Recent content in virtual environment on Jocelyn Khuu</description>
+    <description>Recent content in Virtual Environment on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Mar 2022 02:47:19 -0500</lastBuildDate><atom:link href="https://jocelynkhuu.github.io/tags/virtual-environment/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 02:47:19 -0500</lastBuildDate>
+    <atom:link href="https://jocelynkhuu.github.io/tags/virtual-environment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up Python Virtual Environment</title>
       <link>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</link>
       <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
-      
       <guid>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</guid>
-      <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.
-Steps:
-Install Miniconda: Conda cheatsheet Verify conda is installed running conda -V Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Install any other libraries needed: ex.</description>
+      <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.&#xA;Steps:&#xA;Install Miniconda: Conda cheatsheet Verify conda is installed running conda -V Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Install any other libraries needed: ex.</description>
     </item>
-    
   </channel>
 </rss>
