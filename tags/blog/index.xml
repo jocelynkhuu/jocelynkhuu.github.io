@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
     <atom:link href="https://jocelynkhuu.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using GPG Keys</title>
+      <link>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</guid>
+      <description>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.&#xA;Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</description>
+    </item>
     <item>
       <title>Intro to Podman</title>
       <link>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</link>

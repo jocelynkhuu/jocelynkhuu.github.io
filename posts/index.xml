@@ -5,8 +5,171 @@
         <description>Recent content in Posts on Jocelyn Khuu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
+        <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Using GPG Keys</title>
+            <link>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</link>
+            <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+            
+            <guid>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</guid>
+            <description>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.
+Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</description>
+            <content type="html"><![CDATA[<p>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.</p>
+<p>Let&rsquo;s give a hypothetical situation on how this can be used. Let&rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</p>
+<ol>
+<li>Generate a GPG key which would include a public and private key</li>
+<li>Share the public key with my coworker.</li>
+<li>My coworker could then encrypt the file with my public key then send it back to me</li>
+<li>Then I could use my private key to decrypt the file</li>
+</ol>
+<p>Now let&rsquo;s go over the actual steps of how to do this.</p>
+<h3 id="key-generation">Key Generation</h3>
+<p>We can generate our own key by running <code>gpg --full-generate-key</code> which will guide us through a series of questions such as what key algorithm we want to use, the keysize, and the length of time the key should be valid for. At the end of the key generation, it will prompt for a password for the key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> what kind of key you want:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
+</span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>RSA keys may be between <span style="color:#ae81ff">1024</span> and <span style="color:#ae81ff">4096</span> bits long.
+</span></span><span style="display:flex;"><span>What keysize <span style="color:#66d9ef">do</span> you want? <span style="color:#f92672">(</span>3072<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>Requested keysize is <span style="color:#ae81ff">3072</span> bits
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>         0 <span style="color:#f92672">=</span> key does not expire
+</span></span><span style="display:flex;"><span>      &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
+</span></span><span style="display:flex;"><span>      &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
+</span></span><span style="display:flex;"><span>      &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
+</span></span><span style="display:flex;"><span>      &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Key expires at Wed <span style="color:#ae81ff">17</span> Apr <span style="color:#ae81ff">2024</span> 02:38:19 AM EDT
+</span></span><span style="display:flex;"><span>Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GnuPG needs to construct a user ID to identify your key.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Real name: jocelyn
+</span></span><span style="display:flex;"><span>Email address: jk@test.com
+</span></span><span style="display:flex;"><span>Comment: To test gpg
+</span></span><span style="display:flex;"><span>You selected this USER-ID:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
+</span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-secret-keys
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>sec   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ file publickey.asc 
+</span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --armor --export 44EF66288AF 
+</span></span><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
+</span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
+</span></span></code></pre></div><h3 id="encrypting-a-message">Encrypting a Message</h3>
+<p>We can encrypt a message using the public key by running <code>gpg -ear &lt;USER&gt;</code>.</p>
+<ul>
+<li><code>-e</code> = encrypt data</li>
+<li><code>-a</code> = ASCII armored output</li>
+<li><code>-r</code> = recipient USER-ID</li>
+</ul>
+<p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys joce 
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys test
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys none  
+</span></span><span style="display:flex;"><span>gpg: error reading key: No public key
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
+</span></span><span style="display:flex;"><span>thisisatest!
+</span></span><span style="display:flex;"><span>WE CAN DO MULTIPLE LINES
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span></code></pre></div><h3 id="decrypting-a-message">Decrypting a Message</h3>
+<p>Now if we want to decrypt it, we can run <code>gpg -d</code>, paste in the message, hit ENTER, and CTRL+D.</p>
+<ul>
+<li><code>-d</code> = decrypt</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>THISISATEST!!!%            
+</span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg 
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg -d test.gpg 
+</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>this is a test message
+</span></span></code></pre></div><h3 id="importing-a-key">Importing a Key</h3>
+<p>Now let&rsquo;s say we need to import a public key from someone else to use it to encrypt something. We can run <code>gpg --import</code> and it will show up in our <code>gpg --list-keys</code>.</p>
+<h3 id="deleting-a-key">Deleting a Key</h3>
+<p>We can delete a public key by running <code>gpg --delete-key &lt;KEY_ID_OR_EMAIL&gt;</code>.</p>
+<p>To delete a private key, we will need to run <code>gpg --delete-secret-key &lt;KEY_ID_OR_EMAIL&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>This is a secret key! - really delete? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --delete-key 44EF66288AF
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pub  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span></code></pre></div><p>And that is the basics of using GPG keys! This personally helped me learn how asymmetric encryption works.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Intro to Podman</title>

@@ -6,13 +6,41 @@
     <description>Recent content in Tags on Jocelyn Khuu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
     <atom:link href="https://jocelynkhuu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
       <link>https://jocelynkhuu.github.io/tags/blog/</link>
-      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
       <guid>https://jocelynkhuu.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Encryption</title>
+      <link>https://jocelynkhuu.github.io/tags/encryption/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://jocelynkhuu.github.io/tags/encryption/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gpg</title>
+      <link>https://jocelynkhuu.github.io/tags/gpg/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://jocelynkhuu.github.io/tags/gpg/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Post</title>
+      <link>https://jocelynkhuu.github.io/tags/post/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://jocelynkhuu.github.io/tags/post/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://jocelynkhuu.github.io/tags/security/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://jocelynkhuu.github.io/tags/security/</guid>
       <description></description>
     </item>
     <item>
@@ -27,20 +55,6 @@
       <link>https://jocelynkhuu.github.io/tags/podman/</link>
       <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
       <guid>https://jocelynkhuu.github.io/tags/podman/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Post</title>
-      <link>https://jocelynkhuu.github.io/tags/post/</link>
-      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
-      <guid>https://jocelynkhuu.github.io/tags/post/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>https://jocelynkhuu.github.io/tags/security/</link>
-      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
-      <guid>https://jocelynkhuu.github.io/tags/security/</guid>
       <description></description>
     </item>
     <item>
