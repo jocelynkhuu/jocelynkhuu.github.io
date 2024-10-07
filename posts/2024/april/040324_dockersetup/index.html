@@ -38,7 +38,7 @@
 <meta itemprop="name" content="Intro to Podman">
 <meta itemprop="description" content="How to set up linux containers with Podman"><meta itemprop="datePublished" content="2024-04-03T01:37:12-04:00" />
 <meta itemprop="dateModified" content="2024-04-03T01:37:12-04:00" />
-<meta itemprop="wordCount" content="856"><meta itemprop="image" content="https://jocelynkhuu.github.io/" />
+<meta itemprop="wordCount" content="1192"><meta itemprop="image" content="https://jocelynkhuu.github.io/" />
 <meta itemprop="keywords" content="security,thoughts,post,blog,docker,podman," />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://jocelynkhuu.github.io/" /><meta name="twitter:title" content="Intro to Podman"/>
@@ -58,7 +58,7 @@
 
 
 
-    <meta property="article:published_time" content="2024-04-03 01:37:12 -0400 EDT" />
+    <meta property="article:published_time" content="2024-04-03 01:37:12 -0400 -0400" />
 
 
 
@@ -129,7 +129,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        5 minutes
+        6 minutes
 
         
       </p>
@@ -154,6 +154,7 @@
 <p>To setup podman cli, we can install it from brew or download the pkg directly from the <a href="https://podman.io/docs/installation">website</a> and follow the instructions to init and start.</p>
 <p>Some basic podman commands to know:</p>
 <ul>
+<li><code>podman -h</code> - displays the podman help page and shows available commands</li>
 <li><code>podman search</code> - searches registry for images</li>
 <li><code>podman pull &lt;image_name&gt;</code> - pulls an image from a registry</li>
 <li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
@@ -162,6 +163,8 @@
 <li><code>docker build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
 <li><code>docker run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
 <li><code>podman exec</code> - run a process in a container</li>
+<li><code>podman start &lt;container_name&gt;</code> - starts container</li>
+<li><code>podman stop &lt;container_name&gt;</code> - stops container</li>
 </ul>
 <h3 id="dockerfile">Dockerfile</h3>
 <p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
@@ -284,6 +287,52 @@
 </span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.launchpad.net/ubuntu/&#34;</span>
 </span></span><span style="display:flex;"><span>PRIVACY_POLICY_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;</span>
 </span></span><span style="display:flex;"><span>UBUNTU_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span></code></pre></div><p>If we have aliases in our <code>.bashrc</code> file that we want to execute, we can do that too by making bash run as a login shell to read the system profile files and user-specific initialization files like <code>~/.bashrc</code>. This is helpful if you need to copy something to your local clipboard as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Will copy the contents of .bashrc to local clipboard</span>
+</span></span><span style="display:flex;"><span>❯ podman exec ubuntu bash -lc <span style="color:#e6db74">&#39;cat .bashrc&#39;</span> | xclip
+</span></span></code></pre></div><p>It looks like I forgot to set the hostname of the container. Let&rsquo;s recreate the container. If there are any changes that you want to keep, you can create a new image of it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED       STATUS            PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">6</span> months ago  Up <span style="color:#ae81ff">3</span> minutes ago              ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman stop ubuntu_container
+</span></span><span style="display:flex;"><span>ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images                   
+</span></span><span style="display:flex;"><span>REPOSITORY                     TAG         IMAGE ID      CREATED       SIZE
+</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">6</span> months ago  <span style="color:#ae81ff">285</span> MB
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">7</span> months ago  80.4 MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman commit ubuntu_container ubuntu_container_image
+</span></span><span style="display:flex;"><span>Getting image source signatures
+</span></span><span style="display:flex;"><span>Copying blob 5498e8c22f69 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 795c620bf4a4 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 4ef9d311e013 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 0379c64b1491 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 5c33b247ce4b skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 6504a8f51f1c skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob f6a77e952ac3 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 9bd76eb5a9a5 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 731f1d8a9436 skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 0ada207182dd skipped: already exists  
+</span></span><span style="display:flex;"><span>Copying blob 90d609d57bac <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Copying config 0eed63eec3 <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Writing manifest to image destination
+</span></span><span style="display:flex;"><span>Storing signatures
+</span></span><span style="display:flex;"><span>0eed63eec3254a76d5ad6600007e9ddac26f336d3db50b5ceef9e0dadab443fe
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images                                         
+</span></span><span style="display:flex;"><span>REPOSITORY                        TAG         IMAGE ID      CREATED        SIZE
+</span></span><span style="display:flex;"><span>localhost/ubuntu_container_image  latest      0eed63eec325  <span style="color:#ae81ff">6</span> seconds ago  <span style="color:#ae81ff">459</span> MB
+</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image     latest      6d689e465837  <span style="color:#ae81ff">6</span> months ago   <span style="color:#ae81ff">285</span> MB
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu          latest      ca2b0f26964c  <span style="color:#ae81ff">7</span> months ago   80.4 MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman run -it --hostname podman-ubuntu --name ubuntu ubuntu_container_image
+</span></span><span style="display:flex;"><span>root@podman-ubuntu:~#
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                    COMMAND     CREATED         STATUS                     PORTS       NAMES
+</span></span><span style="display:flex;"><span>0378697e904a  localhost/ubuntu_container_image:latest  /bin/bash   <span style="color:#ae81ff">51</span> seconds ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">29</span> seconds ago              ubuntu
 </span></span></code></pre></div><p>Now we can run whatever we want on our containers! It&rsquo;s a pretty light and easy way to test things without impacting our host system or running a VM with a gui.</p>
 
       </div>
@@ -315,7 +364,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        856 Words
+        1192 Words
       </p>
 
       <p>
@@ -326,7 +375,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2024-04-03 01:37
+          2024-04-02 22:37
         
 
          
