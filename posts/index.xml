@@ -5,171 +5,8 @@
         <description>Recent content in Posts on Jocelyn Khuu</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
+        <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
         <atom:link href="https://jocelynkhuu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Using GPG Keys</title>
-            <link>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</link>
-            <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
-            
-            <guid>https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/</guid>
-            <description>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.
-Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</description>
-            <content type="html"><![CDATA[<p>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.</p>
-<p>Let&rsquo;s give a hypothetical situation on how this can be used. Let&rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</p>
-<ol>
-<li>Generate a GPG key which would include a public and private key</li>
-<li>Share the public key with my coworker.</li>
-<li>My coworker could then encrypt the file with my public key then send it back to me</li>
-<li>Then I could use my private key to decrypt the file</li>
-</ol>
-<p>Now let&rsquo;s go over the actual steps of how to do this.</p>
-<h3 id="key-generation">Key Generation</h3>
-<p>We can generate our own key by running <code>gpg --full-generate-key</code> which will guide us through a series of questions such as what key algorithm we want to use, the keysize, and the length of time the key should be valid for. At the end of the key generation, it will prompt for a password for the key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
-</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
-</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
-</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> what kind of key you want:
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
-</span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>RSA keys may be between <span style="color:#ae81ff">1024</span> and <span style="color:#ae81ff">4096</span> bits long.
-</span></span><span style="display:flex;"><span>What keysize <span style="color:#66d9ef">do</span> you want? <span style="color:#f92672">(</span>3072<span style="color:#f92672">)</span> 
-</span></span><span style="display:flex;"><span>Requested keysize is <span style="color:#ae81ff">3072</span> bits
-</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
-</span></span><span style="display:flex;"><span>         0 <span style="color:#f92672">=</span> key does not expire
-</span></span><span style="display:flex;"><span>      &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
-</span></span><span style="display:flex;"><span>      &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
-</span></span><span style="display:flex;"><span>      &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
-</span></span><span style="display:flex;"><span>      &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
-</span></span><span style="display:flex;"><span>Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>Key expires at Wed <span style="color:#ae81ff">17</span> Apr <span style="color:#ae81ff">2024</span> 02:38:19 AM EDT
-</span></span><span style="display:flex;"><span>Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>GnuPG needs to construct a user ID to identify your key.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Real name: jocelyn
-</span></span><span style="display:flex;"><span>Email address: jk@test.com
-</span></span><span style="display:flex;"><span>Comment: To test gpg
-</span></span><span style="display:flex;"><span>You selected this USER-ID:
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
-</span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
-</span></span><span style="display:flex;"><span>------------------------------
-</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
-</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-secret-keys
-</span></span><span style="display:flex;"><span>------------------------------
-</span></span><span style="display:flex;"><span>sec   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
-</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ file publickey.asc 
-</span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --armor --export 44EF66288AF 
-</span></span><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
-</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
-</span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
-</span></span></code></pre></div><h3 id="encrypting-a-message">Encrypting a Message</h3>
-<p>We can encrypt a message using the public key by running <code>gpg -ear &lt;USER&gt;</code>.</p>
-<ul>
-<li><code>-e</code> = encrypt data</li>
-<li><code>-a</code> = ASCII armored output</li>
-<li><code>-r</code> = recipient USER-ID</li>
-</ul>
-<p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
-</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
-</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-keys joce 
-</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
-</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-keys test
-</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
-</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-keys none  
-</span></span><span style="display:flex;"><span>gpg: error reading key: No public key
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
-</span></span><span style="display:flex;"><span>thisisatest!
-</span></span><span style="display:flex;"><span>WE CAN DO MULTIPLE LINES
-</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
-</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
-</span></span></code></pre></div><h3 id="decrypting-a-message">Decrypting a Message</h3>
-<p>Now if we want to decrypt it, we can run <code>gpg -d</code>, paste in the message, hit ENTER, and CTRL+D.</p>
-<ul>
-<li><code>-d</code> = decrypt</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
-</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
-</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>THISISATEST!!!%            
-</span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg 
-</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg -d test.gpg 
-</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>this is a test message
-</span></span></code></pre></div><h3 id="importing-a-key">Importing a Key</h3>
-<p>Now let&rsquo;s say we need to import a public key from someone else to use it to encrypt something. We can run <code>gpg --import</code> and it will show up in our <code>gpg --list-keys</code>.</p>
-<h3 id="deleting-a-key">Deleting a Key</h3>
-<p>We can delete a public key by running <code>gpg --delete-key &lt;KEY_ID_OR_EMAIL&gt;</code>.</p>
-<p>To delete a private key, we will need to run <code>gpg --delete-secret-key &lt;KEY_ID_OR_EMAIL&gt;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
-</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
-</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
-</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sec  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-</span></span><span style="display:flex;"><span>This is a secret key! - really delete? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --delete-key 44EF66288AF
-</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
-</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
-</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>pub  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-</span></span></code></pre></div><p>And that is the basics of using GPG keys! This personally helped me learn how asymmetric encryption works.</p>
-]]></content>
-        </item>
         
         <item>
             <title>Intro to Podman</title>
@@ -177,14 +14,14 @@ Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;r
             <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</guid>
-            <description>Podman Basics I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose Podman as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.
-To setup podman cli, we can install it from brew or download the pkg directly from the website and follow the instructions to init and start.</description>
+            <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;
+&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;
+&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="podman-basics">Podman Basics</h2>
 <p>I needed to test some scripts on Linux (I&rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose <a href="https://podman.io/">Podman</a> as it&rsquo;s free and open source, making it a great Docker alternative especially for enterprises.</p>
 <p>To setup podman cli, we can install it from brew or download the pkg directly from the <a href="https://podman.io/docs/installation">website</a> and follow the instructions to init and start.</p>
 <p>Some basic podman commands to know:</p>
 <ul>
-<li><code>podman -h</code> - displays the podman help page and shows available commands</li>
 <li><code>podman search</code> - searches registry for images</li>
 <li><code>podman pull &lt;image_name&gt;</code> - pulls an image from a registry</li>
 <li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
@@ -193,8 +30,6 @@ To setup podman cli, we can install it from brew or download the pkg directly fr
 <li><code>docker build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
 <li><code>docker run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
 <li><code>podman exec</code> - run a process in a container</li>
-<li><code>podman start &lt;container_name&gt;</code> - starts container</li>
-<li><code>podman stop &lt;container_name&gt;</code> - stops container</li>
 </ul>
 <h3 id="dockerfile">Dockerfile</h3>
 <p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
@@ -317,52 +152,6 @@ To setup podman cli, we can install it from brew or download the pkg directly fr
 </span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.launchpad.net/ubuntu/&#34;</span>
 </span></span><span style="display:flex;"><span>PRIVACY_POLICY_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;</span>
 </span></span><span style="display:flex;"><span>UBUNTU_CODENAME<span style="color:#f92672">=</span>jammy
-</span></span></code></pre></div><p>If we have aliases in our <code>.bashrc</code> file that we want to execute, we can do that too by making bash run as a login shell to read the system profile files and user-specific initialization files like <code>~/.bashrc</code>. This is helpful if you need to copy something to your local clipboard as well.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Will copy the contents of .bashrc to local clipboard</span>
-</span></span><span style="display:flex;"><span>❯ podman exec ubuntu bash -lc <span style="color:#e6db74">&#39;cat .bashrc&#39;</span> | xclip
-</span></span></code></pre></div><p>It looks like I forgot to set the hostname of the container. Let&rsquo;s recreate the container. If there are any changes that you want to keep, you can create a new image of it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
-</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED       STATUS            PORTS       NAMES
-</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">6</span> months ago  Up <span style="color:#ae81ff">3</span> minutes ago              ubuntu_container
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman stop ubuntu_container
-</span></span><span style="display:flex;"><span>ubuntu_container
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman images                   
-</span></span><span style="display:flex;"><span>REPOSITORY                     TAG         IMAGE ID      CREATED       SIZE
-</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">6</span> months ago  <span style="color:#ae81ff">285</span> MB
-</span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">7</span> months ago  80.4 MB
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman commit ubuntu_container ubuntu_container_image
-</span></span><span style="display:flex;"><span>Getting image source signatures
-</span></span><span style="display:flex;"><span>Copying blob 5498e8c22f69 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 795c620bf4a4 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 4ef9d311e013 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 0379c64b1491 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 5c33b247ce4b skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 6504a8f51f1c skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob f6a77e952ac3 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 9bd76eb5a9a5 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 731f1d8a9436 skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 0ada207182dd skipped: already exists  
-</span></span><span style="display:flex;"><span>Copying blob 90d609d57bac <span style="color:#66d9ef">done</span>  
-</span></span><span style="display:flex;"><span>Copying config 0eed63eec3 <span style="color:#66d9ef">done</span>  
-</span></span><span style="display:flex;"><span>Writing manifest to image destination
-</span></span><span style="display:flex;"><span>Storing signatures
-</span></span><span style="display:flex;"><span>0eed63eec3254a76d5ad6600007e9ddac26f336d3db50b5ceef9e0dadab443fe
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman images                                         
-</span></span><span style="display:flex;"><span>REPOSITORY                        TAG         IMAGE ID      CREATED        SIZE
-</span></span><span style="display:flex;"><span>localhost/ubuntu_container_image  latest      0eed63eec325  <span style="color:#ae81ff">6</span> seconds ago  <span style="color:#ae81ff">459</span> MB
-</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image     latest      6d689e465837  <span style="color:#ae81ff">6</span> months ago   <span style="color:#ae81ff">285</span> MB
-</span></span><span style="display:flex;"><span>docker.io/library/ubuntu          latest      ca2b0f26964c  <span style="color:#ae81ff">7</span> months ago   80.4 MB
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman run -it --hostname podman-ubuntu --name ubuntu ubuntu_container_image
-</span></span><span style="display:flex;"><span>root@podman-ubuntu:~#
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ podman ps -a
-</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                    COMMAND     CREATED         STATUS                     PORTS       NAMES
-</span></span><span style="display:flex;"><span>0378697e904a  localhost/ubuntu_container_image:latest  /bin/bash   <span style="color:#ae81ff">51</span> seconds ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">29</span> seconds ago              ubuntu
 </span></span></code></pre></div><p>Now we can run whatever we want on our containers! It&rsquo;s a pretty light and easy way to test things without impacting our host system or running a VM with a gui.</p>
 ]]></content>
         </item>
@@ -373,9 +162,15 @@ To setup podman cli, we can install it from brew or download the pkg directly fr
             <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2023/october/102523_wslwindows/</guid>
-            <description>I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.
-Installing WSL Following this article on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the Terminal app on Windows 11:
-Installing, this may take a few minutes... WslRegisterDistribution failed with error: 0x80370114 Error: 0x80370114 The operation could not be started because a required feature is not installed.</description>
+            <description>&lt;p&gt;I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.&lt;/p&gt;
+&lt;h3 id=&#34;installing-wsl&#34;&gt;Installing WSL&lt;/h3&gt;
+&lt;p&gt;Following this &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install&#34;&gt;article&lt;/a&gt; on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the &lt;code&gt;Terminal&lt;/code&gt; app on Windows 11:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WslRegisterDistribution failed with error: 0x80370114
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: 0x80370114 The operation could not be started because a required feature is not installed.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press any key to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I manually enabled the features in &lt;code&gt;Turn Windows features On or Off&lt;/code&gt; then restarted:&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>I don&rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&rsquo;m much more familiar with navigating linux than using powershell.</p>
 <h3 id="installing-wsl">Installing WSL</h3>
 <p>Following this <a href="https://learn.microsoft.com/en-us/windows/wsl/install">article</a> on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the <code>Terminal</code> app on Windows 11:</p>
@@ -418,10 +213,16 @@ Installing, this may take a few minutes... WslRegisterDistribution failed with e
             <pubDate>Tue, 24 Oct 2023 01:54:39 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2023/october/102423_brokengrub/</guid>
-            <description>Failed to open \EFI\BOOT\grubx64.efi - Not Found I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.
-Here is the error that I was receiving.
-Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\grubx64.efi: Not Found start_image() returned Not Found My Ubuntu version:
-❯ cat /etc/os-release PRETTY_NAME=&amp;#34;Ubuntu 22.</description>
+            <description>&lt;h2 id=&#34;failed-to-open-efibootgrubx64efi---not-found&#34;&gt;Failed to open \EFI\BOOT\grubx64.efi - Not Found&lt;/h2&gt;
+&lt;p&gt;I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.&lt;/p&gt;
+&lt;p&gt;Here is the error that I was receiving.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to open &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi - Not Found  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to load image &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi: Not Found    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;start_image&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; returned Not Found 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My Ubuntu version:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ cat /etc/os-release 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PRETTY_NAME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ubuntu 22.04.3 LTS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to create a post to write about how I fixed the issue for future reference.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="failed-to-open-efibootgrubx64efi---not-found">Failed to open \EFI\BOOT\grubx64.efi - Not Found</h2>
 <p>I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.</p>
 <p>Here is the error that I was receiving.</p>
@@ -482,7 +283,7 @@ Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\
 <h3 id="on-the-ubuntu-live-usb-side">On the Ubuntu live usb side</h3>
 <ul>
 <li>Select the <code>Try Ubuntu</code> option</li>
-<li>Launch terminal and add the boot-repair ppa from <a href="https://launchpad.net/~yannubuntu/+archive/ubuntu/boot-repair">YannUbuntu</a>
+<li>Launch terminal and add the boot-repair ppa from <a href="https://launchpad.net/~yannubuntu/&#43;archive/ubuntu/boot-repair">YannUbuntu</a>
 <ul>
 <li><code>sudo add-apt-repository ppa:yannubuntu/boot-repair</code></li>
 <li><code>sudo apt update</code></li>
@@ -500,8 +301,9 @@ Failed to open \EFI\BOOT\grubx64.efi - Not Found Failed to load image \EFI\BOOT\
             <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2023/august/081823_authnvsauthz/</guid>
-            <description>OAuth, OIDC, and SAML Authentication (AuthN) proves who someone is and Authorization (AuthZ) allows that someone to access certain resources.
-Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</description>
+            <description>&lt;h1 id=&#34;oauth-oidc-and-saml&#34;&gt;OAuth, OIDC, and SAML&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; (AuthN) proves who someone is and &lt;strong&gt;Authorization&lt;/strong&gt; (AuthZ) allows that someone to access certain resources.&lt;/p&gt;
+&lt;p&gt;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h1 id="oauth-oidc-and-saml">OAuth, OIDC, and SAML</h1>
 <p><strong>Authentication</strong> (AuthN) proves who someone is and <strong>Authorization</strong> (AuthZ) allows that someone to access certain resources.</p>
 <p>Basic authentication is what we&rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</p>
@@ -525,30 +327,30 @@ Basic authentication is what we&amp;rsquo;re all used to with something like a u
 <h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
 <p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically the same with 3 primary differences:</p>
 <table>
-<thead>
-<tr>
-<th>Differences</th>
-<th>SAML</th>
-<th>OIDC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data format</td>
-<td>XML</td>
-<td>JSON</td>
-</tr>
-<tr>
-<td>Data sent</td>
-<td>SAML Assertion</td>
-<td>Claims</td>
-</tr>
-<tr>
-<td>Application name</td>
-<td>Service Provider</td>
-<td>Relying Party</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Differences</th>
+          <th>SAML</th>
+          <th>OIDC</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Data format</td>
+          <td>XML</td>
+          <td>JSON</td>
+      </tr>
+      <tr>
+          <td>Data sent</td>
+          <td>SAML Assertion</td>
+          <td>Claims</td>
+      </tr>
+      <tr>
+          <td>Application name</td>
+          <td>Service Provider</td>
+          <td>Relying Party</td>
+      </tr>
+  </tbody>
 </table>
 <p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
 ]]></content>
@@ -560,10 +362,16 @@ Basic authentication is what we&amp;rsquo;re all used to with something like a u
             <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2023/june/060323_ltotd_grep/</guid>
-            <description>What is grep? According to the man page, grep is used to print lines that match patterns. It can be used to match regular expressions in plaintext.
-grep can be used by running grep [OPTION...] PATTERNS [FILE...]
-❯ grep export ~/.zshrc export PATH=&amp;#34;$HOME/.local/bin:$PATH&amp;#34; grep is helpful when parsing log files or files with a lot of text.
-❯ grep GNOME /var/log/boot.log [ OK ] Started GNOME Display Manager. Starting GNOME Display Manager.</description>
+            <description>&lt;h2 id=&#34;what-is-grep&#34;&gt;What is grep?&lt;/h2&gt;
+&lt;p&gt;According to the man page, &lt;code&gt;grep&lt;/code&gt; is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can be used by running &lt;code&gt;grep [OPTION...] PATTERNS [FILE...]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.local/bin:&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is helpful when parsing log files or files with a lot of text.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;  OK  &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Started GNOME Display Manager.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         Starting GNOME Display Manager...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because it can search using regular expressions, it is case sensitive. Using &lt;code&gt;grep gnome /var/log/boot.log&lt;/code&gt; in this case would show no results but we can use different options to help with this.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="what-is-grep">What is grep?</h2>
 <p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
 <p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
@@ -641,9 +449,27 @@ grep can be used by running grep [OPTION...] PATTERNS [FILE...]
             <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2022/december/120922_confighttps/</guid>
-            <description>I tried to configure https for a webserver recently and wanted to document what worked for me.
-This worked on CentOS 7 running Apache version 2.4.6.
-Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost configuration: &amp;lt;VirtualHost *:443&amp;gt; &amp;lt;Directory /var/www/html/website/public&amp;gt; Require all granted AllowOverride All &amp;lt;/Directory&amp;gt; ServerName website.com DocumentRoot /var/www/html/website/public ErrorLog /var/log/httpd/website.error.log CustomLog /var/log/httpd/access.log combined SSLEngine on SSLCertificateFile /etc/ssl/certs/public.crt SSLCertificateKeyFile /etc/ssl/private/private.key SSLCertificateChainFile /etc/ssl/certs/chain.crt &amp;lt;/VirtualHost&amp;gt; SSLCertificateChainFile might not be necessary in newer versions of Apache.</description>
+            <description>&lt;p&gt;I tried to configure https for a webserver recently and wanted to document what worked for me.&lt;/p&gt;
+&lt;p&gt;This worked on CentOS 7 running Apache version 2.4.6.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an &lt;code&gt;ssl.conf&lt;/code&gt; file in &lt;code&gt;/etc/httpd/conf.d/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Create the following VirtualHost configuration:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apacheconf&#34; data-lang=&#34;apacheconf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;*:443&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Require &lt;span style=&#34;color:#66d9ef&#34;&gt;all&lt;/span&gt; granted
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  AllowOverride &lt;span style=&#34;color:#66d9ef&#34;&gt;All&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ServerName website.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DocumentRoot &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ErrorLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/website.error.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  CustomLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/access.log&lt;/span&gt; combined
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;on&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/public.crt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateKeyFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/private/private.key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateChainFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/chain.crt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;SSLCertificateChainFile&lt;/code&gt; might not be necessary in newer versions of Apache.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>I tried to configure https for a webserver recently and wanted to document what worked for me.</p>
 <p>This worked on CentOS 7 running Apache version 2.4.6.</p>
 <ol>
@@ -677,11 +503,11 @@ Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost 
             <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2022/september/092222_uberhack/</guid>
-            <description>On September 15, reports came in that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</description>
+            <description>&lt;p&gt;On September 15, &lt;a href=&#34;https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html&#34;&gt;reports came in&lt;/a&gt; that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>On September 15, <a href="https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html">reports came in</a> that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</p>
 <p>The alleged timeline that took place according to hacker from multiple reports is that they were able to social engineer an employee, spam the employee with MFA notifications until they accepted, connect to vpn, profit.</p>
 <p>Screenshot of telegram exchange <a href="https://twitter.com/malwaretechblog/status/1570600059909345280?s=21">here</a>
-<img alt="ubertelegram" src="/static/uber.jpeg"></p>
+<img src="/static/uber.jpeg" alt="ubertelegram"></p>
 <p>In my opinion, there were multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
 <ol>
 <li>Account lock for exessive MFA attempts - so that MFA wouldn&rsquo;t have been spammed</li>
@@ -707,9 +533,21 @@ Create an ssl.conf file in /etc/httpd/conf.d/. Create the following VirtualHost 
             <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2022/march/030322_pyvirtenv/</guid>
-            <description>Setting up Python Virtual Environment This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.
-Steps:
-Install Miniconda: Conda cheatsheet Verify conda is installed running conda -V Create new virtual environment (in this example, we are using python 3.9): conda create --name py39 python=3.9 Check that env shows in conda env list To start the environment: conda activate py39 Install IPython: pip install ipython Install any other libraries needed: ex.</description>
+            <description>&lt;h2 id=&#34;setting-up-python-virtual-environment&#34;&gt;Setting up Python Virtual Environment&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links&#34;&gt;Miniconda&lt;/a&gt;: &lt;a href=&#34;https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf&#34;&gt;Conda cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Verify &lt;code&gt;conda&lt;/code&gt; is installed running &lt;code&gt;conda -V&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create new virtual environment (in this example, we are using python 3.9): &lt;code&gt;conda create --name py39 python=3.9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check that env shows in &lt;code&gt;conda env list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To start the environment: &lt;code&gt;conda activate py39&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install IPython: &lt;code&gt;pip install ipython&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install any other libraries needed: ex. &lt;code&gt;pip install requests&lt;/code&gt;, &lt;code&gt;pip install python-ldap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start ipython: &lt;code&gt;ipython&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To exit ipython: &lt;code&gt;exit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To leave virtual env: &lt;code&gt;conda deactivate&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
             <content type="html"><![CDATA[<h2 id="setting-up-python-virtual-environment">Setting up Python Virtual Environment</h2>
 <p><em>This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.</em></p>
 <p><strong>Steps:</strong></p>
@@ -734,8 +572,9 @@ Install Miniconda: Conda cheatsheet Verify conda is installed running conda -V C
             <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2022/february/021722_security&#43;/</guid>
-            <description>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.
-The Testing Experience I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</description>
+            <description>&lt;p&gt;I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.&lt;/p&gt;
+&lt;h3 id=&#34;the-testing-experience&#34;&gt;The Testing Experience&lt;/h3&gt;
+&lt;p&gt;I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.</p>
 <h3 id="the-testing-experience">The Testing Experience</h3>
 <p>I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</p>
@@ -761,10 +600,16 @@ The Testing Experience I took the test via OnVue and was super nervous about pot
             <pubDate>Wed, 02 Feb 2022 00:19:34 -0500</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2022/february/020122_1stsecurityjob/</guid>
-            <description>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.
-For some context, here is my work experience:
-5 years of IT support experience overall 2 years at a FAANG doing internal IT support 6 months running IT at a startup as the sole IT person I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.</description>
-            <content type="html"><![CDATA[<p><img alt="Entry Level" src="/static/entrylevel.png"></p>
+            <description>&lt;p&gt;&lt;img src=&#34;https://jocelynkhuu.github.io/static/entrylevel.png&#34; alt=&#34;Entry Level&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.&lt;/p&gt;
+&lt;p&gt;For some context, here is my work experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5 years of IT support experience overall&lt;/li&gt;
+&lt;li&gt;2 years at a FAANG doing internal IT support&lt;/li&gt;
+&lt;li&gt;6 months running IT at a startup as the sole IT person&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><img src="/static/entrylevel.png" alt="Entry Level"></p>
 <p>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.</p>
 <p>For some context, here is my work experience:</p>
 <ul>
@@ -791,8 +636,8 @@ For some context, here is my work experience:
             <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/may/032021_darksidegaspipeline/</guid>
-            <description>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;
-What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</description>
+            <description>&lt;p&gt;Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that &lt;a href=&#34;https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/&#34;&gt;they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that <a href="https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/">they only target companies that can pay the specified ransom as they do not &ldquo;want to kill your business&rdquo;</a></p>
 <p>What&rsquo;s also nice of them is that they have a list of &ldquo;principles&rdquo; where they won&rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</p>
 <p>Colonial pipeline however, provides approximately 45% of the fuel for the east coast. On May 19th, Joseph Blount (CEO of Colonial Pipeline) announced that he had made the decision to pay a $4.4 million in bitcoin to try to get their systems back online.</p>
@@ -811,8 +656,9 @@ What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;princi
             <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
-            <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.
-This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+            <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;
+&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;
+&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="what-is-ps">What is ps?</h2>
 <p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
 <p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
@@ -919,8 +765,8 @@ This is a fancy way of saying that ps shows all of the running processes on your
             <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_whatiscve/</guid>
-            <description>CVE is short for &amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;.
-CVE is managed by the MITRE corporation and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</description>
+            <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>CVE is short for <strong>&ldquo;Common Vulnerabilities and Exposures&rdquo;</strong>.</p>
 <p>CVE is managed by the <a href="https://cve.mitre.org/">MITRE corporation</a> and is funded by the DHS CISA. According to the Mitre site, &ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</p>
 <p>CVE provides an identifier assigned by a CVE Numbering Authority (CNA). Once an issue is brought up to a CNA, they can assign the issue/information a CVE ID and provide a brief description to post on the CVE website.</p>
@@ -929,7 +775,7 @@ CVE is managed by the MITRE corporation and is funded by the DHS CISA. According
 <h2 id="what-are-the-requirements-for-a-cve">What are the requirements for a CVE?</h2>
 <p>Not all vulnerabilities will receive a CVE ID.</p>
 <p>RedHat provides a list of criteria.</p>
-<p><img alt="CVE Criteria" src="/static/cvecriteria.png"></p>
+<p><img src="/static/cvecriteria.png" alt="CVE Criteria"></p>
 <blockquote>
 <p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p>
 </blockquote>
@@ -942,8 +788,9 @@ CVE is managed by the MITRE corporation and is funded by the DHS CISA. According
             <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_ltotd_du/</guid>
-            <description>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.
-What is du? According to the du man page, du is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking.</description>
+            <description>&lt;p&gt;&lt;em&gt;I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-is-du&#34;&gt;What is du?&lt;/h2&gt;
+&lt;p&gt;According to the &lt;code&gt;du&lt;/code&gt; man page, &lt;code&gt;du&lt;/code&gt; is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the &lt;code&gt;du&lt;/code&gt; cmd has helped to figure out which files/folders are the culprits.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p><em>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.</em></p>
 <h2 id="what-is-du">What is du?</h2>
 <p>According to the <code>du</code> man page, <code>du</code> is used to estimate file space usage. It&rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the <code>du</code> cmd has helped to figure out which files/folders are the culprits.</p>
@@ -984,8 +831,9 @@ What is du? According to the du man page, du is used to estimate file space usag
             <pubDate>Sun, 07 Mar 2021 13:34:26 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/march/030721_mseexploits/</guid>
-            <description>On 3/5/21, KrebsOnSecurity published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.
-When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</description>
+            <description>&lt;p&gt;On 3/5/21, &lt;a href=&#34;https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/&#34;&gt;KrebsOnSecurity&lt;/a&gt; published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.&lt;/p&gt;
+&lt;p&gt;When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.&lt;/p&gt;
+&lt;p&gt;According to Chris Krebs, orgs that run OWA servers exposed to the internet should assume compromise between 02/26-03/03 and should check for 8 character aspx files in &lt;code&gt;C:\\inetpub\wwwroot\aspnet\_client\system\_web\&lt;/code&gt;.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>On 3/5/21, <a href="https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/">KrebsOnSecurity</a> published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.</p>
 <p>When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</p>
 <p>According to Chris Krebs, orgs that run OWA servers exposed to the internet should assume compromise between 02/26-03/03 and should check for 8 character aspx files in <code>C:\\inetpub\wwwroot\aspnet\_client\system\_web\</code>.</p>
@@ -1004,9 +852,10 @@ When these servers were compromised, a web shell was left as a backdoor for them
             <pubDate>Mon, 15 Feb 2021 04:33:31 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/february/021521_scaon35comps/</guid>
-            <description>Another Simple Supply Chain Attack Article on BleepingComputer and TechXplore
-A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.
-Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</description>
+            <description>&lt;h2 id=&#34;another-simple-supply-chain-attack&#34;&gt;Another Simple Supply Chain Attack&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Article on &lt;a href=&#34;https://www.bleepingcomputer.com/news/security/researcher-hacks-over-35-tech-firms-in-novel-supply-chain-attack/&#34;&gt;BleepingComputer&lt;/a&gt; and &lt;a href=&#34;https://techxplore.com/news/2021-02-hacks-major-technology-firms.html&#34;&gt;TechXplore&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.&lt;/p&gt;
+&lt;p&gt;Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="another-simple-supply-chain-attack">Another Simple Supply Chain Attack</h2>
 <p><em>Article on <a href="https://www.bleepingcomputer.com/news/security/researcher-hacks-over-35-tech-firms-in-novel-supply-chain-attack/">BleepingComputer</a> and <a href="https://techxplore.com/news/2021-02-hacks-major-technology-firms.html">TechXplore</a></em></p>
 <p>A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.</p>
@@ -1023,8 +872,9 @@ Birsan was able to find names of internal packages and their dependencies for va
             <pubDate>Sat, 13 Feb 2021 03:29:31 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/february/021321_flwater/</guid>
-            <description>Poisoning Water? Earlier this week, Reuters reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.
-We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by Engadget that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been updated or supported by Microsoft in over a year.</description>
+            <description>&lt;h2 id=&#34;poisoning-water&#34;&gt;Poisoning Water?&lt;/h2&gt;
+&lt;p&gt;Earlier this week, &lt;a href=&#34;https://www.reuters.com/article/us-usa-cyber-florida-idUSKBN2A82FV&#34;&gt;Reuters&lt;/a&gt; reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.&lt;/p&gt;
+&lt;p&gt;We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by &lt;a href=&#34;https://www.engadget.com/hacked-water-plant-computer-had-shared-passwords-andofdate-windows-os-082552973.html&#34;&gt;Engadget&lt;/a&gt; that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been &lt;a href=&#34;https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962#:~:text=The%20specific%20end%20of%20support,longer%20available%20for%20the%20product.&#34;&gt;updated or supported by Microsoft&lt;/a&gt; in over a year. TeamViewer, a remote desktop software, was not secured by a strong password and was brute-forced to allow unauthorized access. The systems were also connected directly to the internet without any firewalls, essentially leaving them exposed to the rest of the world. SCADA systems are typically on isolated networks but it didn&amp;rsquo;t seem like this was the case here.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="poisoning-water">Poisoning Water?</h2>
 <p>Earlier this week, <a href="https://www.reuters.com/article/us-usa-cyber-florida-idUSKBN2A82FV">Reuters</a> reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.</p>
 <p>We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by <a href="https://www.engadget.com/hacked-water-plant-computer-had-shared-passwords-andofdate-windows-os-082552973.html">Engadget</a> that the facility&rsquo;s systems were running Windows 7, which hasn&rsquo;t been <a href="https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962#:~:text=The%20specific%20end%20of%20support,longer%20available%20for%20the%20product.">updated or supported by Microsoft</a> in over a year. TeamViewer, a remote desktop software, was not secured by a strong password and was brute-forced to allow unauthorized access. The systems were also connected directly to the internet without any firewalls, essentially leaving them exposed to the rest of the world. SCADA systems are typically on isolated networks but it didn&rsquo;t seem like this was the case here.</p>
@@ -1039,11 +889,13 @@ We all know that certain government branches have less funding than others and a
             <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2021/january/012621_sudovuln/</guid>
-            <description>A Sudo Vulnerability CVE-2021-3156
-On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.
-With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</description>
+            <description>&lt;h2 id=&#34;a-sudo-vulnerability&#34;&gt;A Sudo Vulnerability&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://jocelynkhuu.github.io/static/sudo.jpg&#34; alt=&#34;Sudo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156&#34;&gt;CVE-2021-3156&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&lt;/p&gt;
+&lt;p&gt;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="a-sudo-vulnerability">A Sudo Vulnerability</h2>
-<p><img alt="Sudo" src="/static/sudo.jpg"></p>
+<p><img src="/static/sudo.jpg" alt="Sudo"></p>
 <p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156">CVE-2021-3156</a></p>
 <p>On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &lsquo;sudo&rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &lsquo;', however, a bug has made it possible to run &lsquo;sudoedit&rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.</p>
 <p>With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</p>
@@ -1062,9 +914,12 @@ With these exploits, researchers were able to obtain full root privileges withou
             <pubDate>Thu, 17 Dec 2020 05:17:52 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2020/121720_solarwinds/</guid>
-            <description>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised. What exactly is SolarWinds and what happened? SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform.</description>
+            <description>&lt;p&gt;The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
+&lt;img src=&#34;https://jocelynkhuu.github.io/static/solarwinds.png&#34; alt=&#34;SolarWinds&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-exactly-is-solarwinds-and-what-happened&#34;&gt;What exactly is SolarWinds and what happened?&lt;/h2&gt;
+&lt;p&gt;SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, &lt;a href=&#34;https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html&#34;&gt;called SUNBURST by FireEye&lt;/a&gt;, as part of a legitimate update from SolarWinds&amp;rsquo; servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed &lt;a href=&#34;https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/&#34;&gt;(sans.org)&lt;/a&gt;. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
-<img alt="SolarWinds" src="/static/solarwinds.png"></p>
+<img src="/static/solarwinds.png" alt="SolarWinds"></p>
 <h2 id="what-exactly-is-solarwinds-and-what-happened">What exactly is SolarWinds and what happened?</h2>
 <p>SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">called SUNBURST by FireEye</a>, as part of a legitimate update from SolarWinds&rsquo; servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed <a href="https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/">(sans.org)</a>. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.</p>
 <p>What was very interesting about this malware but that it did not do anything for up to 2 weeks and used &ldquo;obfuscated blocklists to identify forensic and anti-virus tools running as processes, services, and drivers&rdquo; according to <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">FireEye</a>. They were able to copy existing SolarWinds protocols to hide their traffic and appear as legit SolarWinds activity.</p>
@@ -1078,9 +933,10 @@ With these exploits, researchers were able to obtain full root privileges withou
             <pubDate>Mon, 14 Dec 2020 20:00:05 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2020/121420_puppy/</guid>
-            <description>Literally just a picture of a puppy </description>
+            <description>&lt;h2 id=&#34;literally-just-a-picture-of-a-puppy&#34;&gt;Literally just a picture of a puppy&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://jocelynkhuu.github.io/static/puppy.png&#34; alt=&#34;Puppy&#34;&gt;&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="literally-just-a-picture-of-a-puppy">Literally just a picture of a puppy</h2>
-<p><img alt="Puppy" src="/static/puppy.png"></p>
+<p><img src="/static/puppy.png" alt="Puppy"></p>
 ]]></content>
         </item>
         
@@ -1090,10 +946,12 @@ With these exploits, researchers were able to obtain full root privileges withou
             <pubDate>Sat, 12 Dec 2020 12:32:22 -0800</pubDate>
             
             <guid>https://jocelynkhuu.github.io/posts/2020/121220_fireeye/</guid>
-            <description>FireEye Attack, a reminder that no one is safe On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.
-This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.
-FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack.</description>
-            <content type="html"><![CDATA[<p><img alt="FireEye" src="/static/fireeye.png"></p>
+            <description>&lt;p&gt;&lt;img src=&#34;https://jocelynkhuu.github.io/static/fireeye.png&#34; alt=&#34;FireEye&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fireeye-attack-a-reminder-that-no-one-is-safe&#34;&gt;FireEye Attack, a reminder that no one is safe&lt;/h2&gt;
+&lt;p&gt;On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.&lt;/p&gt;
+&lt;p&gt;This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.&lt;/p&gt;
+&lt;p&gt;FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack. Kevin Mandia stated that the attackers were &amp;ldquo;highly trained in operational security and executed with discipline and focus. They operated clandestinly, using methods that counter security tools and forensic examination.&amp;rdquo; The attackers got their hands on a number of FireEye Red Team tools, which FireEye posted a list of countermeasures for &lt;a href=&#34;https://github.com/fireeye/red_team_tool_countermeasures&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><img src="/static/fireeye.png" alt="FireEye"></p>
 <h2 id="fireeye-attack-a-reminder-that-no-one-is-safe">FireEye Attack, a reminder that no one is safe</h2>
 <p>On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.</p>
 <p>This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.</p>

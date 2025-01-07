@@ -4,7 +4,7 @@
     <title>Ps on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/ps/</link>
     <description>Recent content in Ps on Jocelyn Khuu</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Mar 2021 21:30:06 -0700</lastBuildDate>
     <atom:link href="https://jocelynkhuu.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</link>
       <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
       <guid>https://jocelynkhuu.github.io/posts/2021/march/032421_ltotd_ps/</guid>
-      <description>What is ps? According to the man page, the ps utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&#xA;This is a fancy way of saying that ps shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</description>
+      <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;&#xA;&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

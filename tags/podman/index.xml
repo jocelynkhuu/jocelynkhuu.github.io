@@ -4,7 +4,7 @@
     <title>Podman on Jocelyn Khuu</title>
     <link>https://jocelynkhuu.github.io/tags/podman/</link>
     <description>Recent content in Podman on Jocelyn Khuu</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
     <atom:link href="https://jocelynkhuu.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</link>
       <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
       <guid>https://jocelynkhuu.github.io/posts/2024/april/040324_dockersetup/</guid>
-      <description>Podman Basics I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose Podman as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&#xA;To setup podman cli, we can install it from brew or download the pkg directly from the website and follow the instructions to init and start.</description>
+      <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;&#xA;&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;&#xA;&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
