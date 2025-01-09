@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="Intro on how to use GPG keys" />
@@ -22,7 +23,9 @@
 
 
 
-<link rel="stylesheet" href="https://jocelynkhuu.github.io/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
+  <link rel="stylesheet" href="https://jocelynkhuu.github.io/main.min.244183cde1a38e0b08f82c11791181288f9aac1cc9618cd6f4e9e7710c5768ba.css" integrity="sha256-JEGDzeGjjgsI&#43;CwReRGBKI&#43;arBzJYYzW9OnncQxXaLo=" crossorigin="anonymous">
+
+
 
 
 
@@ -35,23 +38,37 @@
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Using GPG Keys">
-<meta itemprop="description" content="Intro on how to use GPG keys"><meta itemprop="datePublished" content="2024-04-16T02:12:55-04:00" />
-<meta itemprop="dateModified" content="2024-04-16T02:12:55-04:00" />
-<meta itemprop="wordCount" content="991"><meta itemprop="image" content="https://jocelynkhuu.github.io/" />
-<meta itemprop="keywords" content="security,gpg,encryption,post,blog," />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://jocelynkhuu.github.io/" /><meta name="twitter:title" content="Using GPG Keys"/>
-<meta name="twitter:description" content="Intro on how to use GPG keys"/>
+
+  <meta itemprop="name" content="Using GPG Keys">
+  <meta itemprop="description" content="Intro on how to use GPG keys">
+  <meta itemprop="datePublished" content="2024-04-16T02:12:55-04:00">
+  <meta itemprop="dateModified" content="2024-04-16T02:12:55-04:00">
+  <meta itemprop="wordCount" content="991">
+  <meta itemprop="image" content="https://jocelynkhuu.github.io/">
+  <meta itemprop="keywords" content="Security,Gpg,Encryption,Post,Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jocelynkhuu.github.io/">
+  <meta name="twitter:title" content="Using GPG Keys">
+  <meta name="twitter:description" content="Intro on how to use GPG keys">
 
 
 
-    <meta property="og:title" content="Using GPG Keys" />
-<meta property="og:description" content="Intro on how to use GPG keys" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/" /><meta property="og:image" content="https://jocelynkhuu.github.io/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-04-16T02:12:55-04:00" />
-<meta property="article:modified_time" content="2024-04-16T02:12:55-04:00" />
+    <meta property="og:url" content="https://jocelynkhuu.github.io/posts/2024/april/041624_gpgkeys/">
+  <meta property="og:site_name" content="Jocelyn Khuu">
+  <meta property="og:title" content="Using GPG Keys">
+  <meta property="og:description" content="Intro on how to use GPG keys">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-16T02:12:55-04:00">
+    <meta property="article:modified_time" content="2024-04-16T02:12:55-04:00">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Gpg">
+    <meta property="article:tag" content="Encryption">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Blog">
+    <meta property="og:image" content="https://jocelynkhuu.github.io/">
 
 
 
@@ -59,6 +76,7 @@
 
 
     <meta property="article:published_time" content="2024-04-16 02:12:55 -0400 -0400" />
+
 
 
 
@@ -96,9 +114,8 @@
 
 
         <span class="header__right">
-            
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://jocelynkhuu.github.io/posts">posts</a></li><li><a href="https://jocelynkhuu.github.io/resume">resume</a></li><li><a href="https://jocelynkhuu.github.io/about">whoami</a></li>
+    <ul class="menu__inner"><li><a href="https://jocelynkhuu.github.io/about">whoami</a></li><li><a href="https://jocelynkhuu.github.io/posts">posts</a></li><li><a href="https://jocelynkhuu.github.io/resume">resume</a></li>
     </ul>
 </nav>
 
@@ -108,7 +125,6 @@
                         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
                     </svg>
                 </span>
-            
                 <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
    <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
    3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
@@ -165,24 +181,25 @@
 </span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
 </span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> what kind of key you want:
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
 </span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>RSA keys may be between <span style="color:#ae81ff">1024</span> and <span style="color:#ae81ff">4096</span> bits long.
-</span></span><span style="display:flex;"><span>What keysize <span style="color:#66d9ef">do</span> you want? <span style="color:#f92672">(</span>3072<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>What keysize <span style="color:#66d9ef">do</span> you want? <span style="color:#f92672">(</span>3072<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Requested keysize is <span style="color:#ae81ff">3072</span> bits
 </span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
-</span></span><span style="display:flex;"><span>         0 <span style="color:#f92672">=</span> key does not expire
-</span></span><span style="display:flex;"><span>      &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
-</span></span><span style="display:flex;"><span>      &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
-</span></span><span style="display:flex;"><span>      &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
-</span></span><span style="display:flex;"><span>      &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
+</span></span><span style="display:flex;"><span>        0 <span style="color:#f92672">=</span> key does not expire
+</span></span><span style="display:flex;"><span>     &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
+</span></span><span style="display:flex;"><span>     &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
+</span></span><span style="display:flex;"><span>     &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
+</span></span><span style="display:flex;"><span>     &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
 </span></span><span style="display:flex;"><span>Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>Key expires at Wed <span style="color:#ae81ff">17</span> Apr <span style="color:#ae81ff">2024</span> 02:38:19 AM EDT
 </span></span><span style="display:flex;"><span>Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
@@ -193,30 +210,30 @@
 </span></span><span style="display:flex;"><span>Email address: jk@test.com
 </span></span><span style="display:flex;"><span>Comment: To test gpg
 </span></span><span style="display:flex;"><span>You selected this USER-ID:
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
 </span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
 </span></span><span style="display:flex;"><span>------------------------------
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ gpg --list-secret-keys
 </span></span><span style="display:flex;"><span>------------------------------
 </span></span><span style="display:flex;"><span>sec   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ file publickey.asc 
+</span></span><span style="display:flex;"><span>❯ file publickey.asc
 </span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --armor --export 44EF66288AF 
+</span></span><span style="display:flex;"><span>❯ gpg --armor --export 44EF66288AF
 </span></span><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
 </span></span><span style="display:flex;"><span>RANDOM STUFF HERE
 </span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
@@ -230,23 +247,23 @@
 <p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-keys joce 
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys joce
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ gpg --list-keys test
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>      44EF66288AF
+</span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg --list-keys none  
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys none 
 </span></span><span style="display:flex;"><span>gpg: error reading key: No public key
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
 </span></span><span style="display:flex;"><span>thisisatest!
@@ -265,17 +282,17 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>THISISATEST!!!%            
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>THISISATEST!!!%           
 </span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>❯ gpg -d test.gpg 
+</span></span><span style="display:flex;"><span>❯ gpg -d test.gpg
 </span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>this is a test message
 </span></span></code></pre></div><h3 id="importing-a-key">Importing a Key</h3>
 <p>Now let&rsquo;s say we need to import a public key from someone else to use it to encrypt something. We can run <code>gpg --import</code> and it will show up in our <code>gpg --list-keys</code>.</p>
@@ -397,7 +414,7 @@
 
 
 
-<script type="text/javascript" src="https://jocelynkhuu.github.io/bundle.min.85fad2de4f13fec3bcb3b3cb10430cdb44a7b4a9749b32938241a5c6e77718df7624f1002b880521fdc26e24ec1077fda214bf1cb36ee3045510760d09638cae.js" integrity="sha512-hfrS3k8T/sO8s7PLEEMM20SntKl0mzKTgkGlxud3GN92JPEAK4gFIf3CbiTsEHf9ohS/HLNu4wRVEHYNCWOMrg=="></script>
+<script type="text/javascript" src="https://jocelynkhuu.github.io/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
 
 
 
