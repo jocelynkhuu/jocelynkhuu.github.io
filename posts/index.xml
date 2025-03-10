@@ -662,36 +662,6 @@
         </item>
         
         <item>
-            <title>Uber Hack - Another Social Engineering Attack</title>
-            <link>https://khuuj.com/posts/2022/september/092222_uberhack/</link>
-            <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
-            
-            <guid>https://khuuj.com/posts/2022/september/092222_uberhack/</guid>
-            <description>&lt;p&gt;On September 15, &lt;a href=&#34;https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html&#34;&gt;reports came in&lt;/a&gt; that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&amp;rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&amp;rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>On September 15, <a href="https://www.nytimes.com/2022/09/15/technology/uber-hacking-breach.html">reports came in</a> that Uber was hacked and the hacker basically had the keys to the kingdom. The hacker was able to get access to Uber&rsquo;s intranet after a social engineering attack that allowed the hacker to access vpn and subsequently Uber&rsquo;s intranet. That was only the beginning though as the hacker was then able to pivot by looking through network shares and finding a powershell script with hardcoded admin credentials giving them admin access to multiple systems including AWS, GSuite, Slack, etc.</p>
-<p>The alleged timeline that took place according to hacker from multiple reports is that they were able to social engineer an employee, spam the employee with MFA notifications until they accepted, connect to vpn, profit.</p>
-<p>Screenshot of telegram exchange <a href="https://twitter.com/malwaretechblog/status/1570600059909345280?s=21">here</a>
-<img src="/static/uber.jpeg" alt="ubertelegram"></p>
-<p>In my opinion, there were multiple security measures that could have been implemented to safeguard Uber&rsquo;s data.</p>
-<ol>
-<li>Account lock for exessive MFA attempts - so that MFA wouldn&rsquo;t have been spammed</li>
-<li>FIDO Authentication so that MFA wouldn&rsquo;t have been so easily bypassed</li>
-<li>Certificate based authentication for VPN so that the hacker couldn&rsquo;t connect to VPN</li>
-<li>No hardcoded admin credentials in scripts - This one was probably the biggest issue that someone hardcoded their admin credentials and they seemd to have admin access to everything.</li>
-<li>Least privilege/auditing - Why was there an account that allowed the hacker to get admin access to everything?</li>
-</ol>
-<p>These were just some of my personal initial thoughts on the hack. I find it impressive how the hacker was able to pivot through and get admin access to eprivileged accounts even though it didn&rsquo;t seem that sophisticated of an attack. It sounded like it was just a teenager who did it because they could. The hacker even created a slack account and posted in Uber&rsquo;s slack channel stating that they hacked Uber and many folks thought it was just a joke. They were even able to get access to Uber&rsquo;s hackerone vulnerability reports which means that they can easily exploit more vulnerabilities in uber&rsquo;s infrastructure if those are still valid.</p>
-<p>We talk about APTs all the time but sometimes even folks&rsquo; with less resources than APTs can still cause damage and hit high profile targets.</p>
-<p>Best of luck to Uber&rsquo;s blue team as they assess the damage. Uber has stated that they don&rsquo;t see &ldquo;any evidence&rdquo; of the hacker accessing customers&rsquo; personal data. No evidence isn&rsquo;t very reassuring though becuase that could mean they just haven&rsquo;t located it yet.</p>
-<p>Today, Uber has released a statement that they think that Lapsus$ was behind the hack.</p>
-<p>sources:
-<a href="https://www.bleepingcomputer.com/news/security/uber-links-breach-to-lapsus-group-blames-contractor-for-hack/">bleepingcomputer</a>
-<a href="https://twitter.com/hacker_/status/1570582202697809920">twitter</a>
-<a href="https://twitter.com/BillDemirkapi/status/1570602097640607744">twitter</a></p>
-]]></content>
-        </item>
-        
-        <item>
             <title>Setting up Python Virtual Environment</title>
             <link>https://khuuj.com/posts/2022/march/030322_pyvirtenv/</link>
             <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
@@ -791,26 +761,6 @@
 <p>I couldn&rsquo;t have done it without the support of my friends, family, and peers. When I was having trouble with getting a security job, I made sure to look for IT opportunities that could at least lead to a specialization in Security, and made it clear to all hiring managers that that was my plan. If a job didn&rsquo;t have that potential, I didn&rsquo;t take it or move forward with the interview. All my coworkers, friends, and family supported me and helped me to network with security folks or sent me security resources.</p>
 <p>The most important thing is, don&rsquo;t give up. There were days when I felt done and thought maybe I should stick with IT support or maybe try moving into a systems admin/engineer role if security didn&rsquo;t work out. After those periods of lows, I would always fall back in love with learning about security and reading up on security news.</p>
 <p>I&rsquo;ll be creating a separate post on how I passed Security+ and what materials I used.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Panic Buying Gas?</title>
-            <link>https://khuuj.com/posts/2021/may/032021_darksidegaspipeline/</link>
-            <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
-            
-            <guid>https://khuuj.com/posts/2021/may/032021_darksidegaspipeline/</guid>
-            <description>&lt;p&gt;Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that &lt;a href=&#34;https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/&#34;&gt;they only target companies that can pay the specified ransom as they do not &amp;ldquo;want to kill your business&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;What&amp;rsquo;s also nice of them is that they have a list of &amp;ldquo;principles&amp;rdquo; where they won&amp;rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Gas prices are still steadily increasing as Colonial Pipeline recovers from the ransomware attack that hit earlier this month. The FBI has confirmed that the pipeline was compromised by DarkSide, a ransomware operation that states that <a href="https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/">they only target companies that can pay the specified ransom as they do not &ldquo;want to kill your business&rdquo;</a></p>
-<p>What&rsquo;s also nice of them is that they have a list of &ldquo;principles&rdquo; where they won&rsquo;t attack hospitals, schools, non-profit orgs and the government (but who knows how true this is).</p>
-<p>Colonial pipeline however, provides approximately 45% of the fuel for the east coast. On May 19th, Joseph Blount (CEO of Colonial Pipeline) announced that he had made the decision to pay a $4.4 million in bitcoin to try to get their systems back online.</p>
-<p>According to President Biden, there is evidence that the ransomware operation is in Russia as there haven&rsquo;t been attacks surfaced on Russian, Kazakh, and Ukrainian-speaking companies as reported by <a href="https://www.reuters.com/business/energy/ransom-group-linked-colonial-pipeline-hack-is-new-experienced-2021-05-09/">Reuters</a>.</p>
-<h3 id="is-panic-buying-gas-a-good-idea">Is panic buying gas a good idea?</h3>
-<p>There have been images circulating of people buying gas and putting them in plastic bags in the back of their car (not sure how true this is but nonetheless scary images)&hellip; please don&rsquo;t do this as it isn&rsquo;t safe, it causes more shortages, and is a huge fire risk. Reminds me of the panic buying for toilet paper when COVID first hit.</p>
-<blockquote>
-<p>sources: <a href="https://www.npr.org/2021/05/10/995405459/what-we-know-about-the-ransomware-attack-on-a-critical-u-s-pipeline">npr</a>, <a href="https://www.bleepingcomputer.com/news/security/darkside-new-targeted-ransomware-demands-million-dollar-ransoms/">bleepingcomputer</a>, <a href="https://www.wsj.com/amp/articles/colonial-pipeline-ceo-tells-why-he-paid-hackers-a-4-4-million-ransom-11621435636">WSJ</a>, <a href="https://www.reuters.com/business/energy/ransom-group-linked-colonial-pipeline-hack-is-new-experienced-2021-05-09/">Reuters</a></p>
-</blockquote>
 ]]></content>
         </item>
         
@@ -987,64 +937,6 @@
 </span></span><span style="display:flex;"><span>33M	github
 </span></span><span style="display:flex;"><span>14M	Pictures
 </span></span></code></pre></div>]]></content>
-        </item>
-        
-        <item>
-            <title>Microsoft Exchange Server exploits compromises over 30,000 orgs&#39; Emails</title>
-            <link>https://khuuj.com/posts/2021/march/030721_mseexploits/</link>
-            <pubDate>Sun, 07 Mar 2021 13:34:26 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2021/march/030721_mseexploits/</guid>
-            <description>&lt;p&gt;On 3/5/21, &lt;a href=&#34;https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/&#34;&gt;KrebsOnSecurity&lt;/a&gt; published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.&lt;/p&gt;
-&lt;p&gt;When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.&lt;/p&gt;
-&lt;p&gt;According to Chris Krebs, orgs that run OWA servers exposed to the internet should assume compromise between 02/26-03/03 and should check for 8 character aspx files in &lt;code&gt;C:\\inetpub\wwwroot\aspnet\_client\system\_web\&lt;/code&gt;.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>On 3/5/21, <a href="https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/">KrebsOnSecurity</a> published an article on a number of Microsoft Exchange Server vulnerabilities being exploited by Chinese cyber espionage groups.</p>
-<p>When these servers were compromised, a web shell was left as a backdoor for them to execute shell commands through a web browser to get admin access to the servers. Microsoft has released emergency security updates for patching as this impacts self-hosted, on-prem MS Exchange Servers 2013 - 2019.</p>
-<p>According to Chris Krebs, orgs that run OWA servers exposed to the internet should assume compromise between 02/26-03/03 and should check for 8 character aspx files in <code>C:\\inetpub\wwwroot\aspnet\_client\system\_web\</code>.</p>
-<p>Now that the hackers are in, it&rsquo;s time to clean house as patching these servers isn&rsquo;t enough. Orgs impacted should really be looking for any signs of malware or other backdoors left that might allow the attackers to come back. The best course of action would be to rebuild these servers completely to ensure no malicious software is installed.</p>
-<p>Microsoft has posted IOCs <a href="https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/">here</a>, the mitigation guide <a href="https://msrc-blog.microsoft.com/2021/03/05/microsoft-exchange-server-vulnerabilities-mitigations-march-2021/">here</a>, and information about the updates <a href="https://msrc-blog.microsoft.com/2021/03/02/multiple-security-updates-released-for-exchange-server/">here</a>.</p>
-<p>Microsoft has stated that this isn&rsquo;t connected to the SolarWinds attacks that happened earlier last year.</p>
-<blockquote>
-<p>Sources: <a href="https://arstechnica.com/gadgets/2021/03/tens-of-thousands-of-us-organizations-hit-in-ongoing-microsoft-exchange-hack/">arstechnica</a>, <a href="https://krebsonsecurity.com/2021/03/at-least-30000-u-s-organizations-newly-hacked-via-holes-in-microsofts-email-software/">KrebsOnSecurity</a></p>
-</blockquote>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Security Researcher Hacks over 35 Companies</title>
-            <link>https://khuuj.com/posts/2021/february/021521_scaon35comps/</link>
-            <pubDate>Mon, 15 Feb 2021 04:33:31 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2021/february/021521_scaon35comps/</guid>
-            <description>&lt;h2 id=&#34;another-simple-supply-chain-attack&#34;&gt;Another Simple Supply Chain Attack&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Article on &lt;a href=&#34;https://www.bleepingcomputer.com/news/security/researcher-hacks-over-35-tech-firms-in-novel-supply-chain-attack/&#34;&gt;BleepingComputer&lt;/a&gt; and &lt;a href=&#34;https://techxplore.com/news/2021-02-hacks-major-technology-firms.html&#34;&gt;TechXplore&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.&lt;/p&gt;
-&lt;p&gt;Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<h2 id="another-simple-supply-chain-attack">Another Simple Supply Chain Attack</h2>
-<p><em>Article on <a href="https://www.bleepingcomputer.com/news/security/researcher-hacks-over-35-tech-firms-in-novel-supply-chain-attack/">BleepingComputer</a> and <a href="https://techxplore.com/news/2021-02-hacks-major-technology-firms.html">TechXplore</a></em></p>
-<p>A security researcher, named Alex Birsan, managed to compromise over 35 companies by using a simple supply chain attack based on open-source repos.</p>
-<p>Birsan was able to find names of internal packages and their dependencies for various companies and create a fake version of the dependencies in public repos (such as npm and PYpi). When it came time to build the packages, the servers would search both public and private repos for the dependencies, but pull from the public repos first as it would think that it was a newer version.</p>
-<p>According to Birsan: &ldquo;vulnerabilities or design flaws in automated build or installation tools may cause public dependencies to be mistaken for internal dependencies with the exact same name&rdquo; resulting in a supply chain attack taking advantage of dependency confusion.</p>
-<p>Microsoft published a <a href="https://azure.microsoft.com/mediahandler/files/resourcefiles/3-ways-to-mitigate-risk-using-private-package-feeds/3%20Ways%20to%20Mitigate%20Risk%20When%20Using%20Private%20Package%20Feeds%20-%20v1.0.pdf">whitepaper</a> on this and some mitigation strategies such as referencing one private feed and not multiple, protecting packages using controlled scopes, and using client-side verification features such as specific version numbers for packages and dependencies.</p>
-<p>Overall, it seemed like a pretty simple supply chain attack and it highlighted the dangers of utilizing open-source libraries and certain dependency managers.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Hack on Oldsmar, Fl. Water Treatment Facility</title>
-            <link>https://khuuj.com/posts/2021/february/021321_flwater/</link>
-            <pubDate>Sat, 13 Feb 2021 03:29:31 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2021/february/021321_flwater/</guid>
-            <description>&lt;h2 id=&#34;poisoning-water&#34;&gt;Poisoning Water?&lt;/h2&gt;
-&lt;p&gt;Earlier this week, &lt;a href=&#34;https://www.reuters.com/article/us-usa-cyber-florida-idUSKBN2A82FV&#34;&gt;Reuters&lt;/a&gt; reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.&lt;/p&gt;
-&lt;p&gt;We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by &lt;a href=&#34;https://www.engadget.com/hacked-water-plant-computer-had-shared-passwords-andofdate-windows-os-082552973.html&#34;&gt;Engadget&lt;/a&gt; that the facility&amp;rsquo;s systems were running Windows 7, which hasn&amp;rsquo;t been &lt;a href=&#34;https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962#:~:text=The%20specific%20end%20of%20support,longer%20available%20for%20the%20product.&#34;&gt;updated or supported by Microsoft&lt;/a&gt; in over a year. TeamViewer, a remote desktop software, was not secured by a strong password and was brute-forced to allow unauthorized access. The systems were also connected directly to the internet without any firewalls, essentially leaving them exposed to the rest of the world. SCADA systems are typically on isolated networks but it didn&amp;rsquo;t seem like this was the case here.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<h2 id="poisoning-water">Poisoning Water?</h2>
-<p>Earlier this week, <a href="https://www.reuters.com/article/us-usa-cyber-florida-idUSKBN2A82FV">Reuters</a> reported that someone was able to gain unauthorized access to a system through various attack surfaces such as weak and reused passwords, out-of-date systems, and vulnerable software.</p>
-<p>We all know that certain government branches have less funding than others and a small municipal water treatment facility might not have the most up-to-date systems. It was reported by <a href="https://www.engadget.com/hacked-water-plant-computer-had-shared-passwords-andofdate-windows-os-082552973.html">Engadget</a> that the facility&rsquo;s systems were running Windows 7, which hasn&rsquo;t been <a href="https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962#:~:text=The%20specific%20end%20of%20support,longer%20available%20for%20the%20product.">updated or supported by Microsoft</a> in over a year. TeamViewer, a remote desktop software, was not secured by a strong password and was brute-forced to allow unauthorized access. The systems were also connected directly to the internet without any firewalls, essentially leaving them exposed to the rest of the world. SCADA systems are typically on isolated networks but it didn&rsquo;t seem like this was the case here.</p>
-<p>The bad actor was able to remote in through TeamViewer and tried to increase the levels of sodium hydroxide, or lye, from 100 parts per million to 11,000 parts per million, essentially <a href="https://www.nytimes.com/2021/02/08/us/oldsmar-florida-water-supply-hack.html">poisoning the water supply</a>. Luckily, an employee was monitoring the system and was able to see the hack live, revert the changes made, and report to the authorities.</p>
-<p>The scariest part of all of this is how easily a bad actor was able to exploit the system to commit a dangerous crime. A water treatment facility should have better security posture to implement defense in depth to avoid situations like these. I am fortunate enough to live in an area where I can drink tap water pretty safely, but events like these make me question the trust that I have.</p>
-]]></content>
         </item>
         
         <item>

@@ -89,12 +89,6 @@
     <loc>https://khuuj.com/tags/website/</loc>
     <lastmod>2022-12-09T00:44:03-05:00</lastmod>
   </url><url>
-    <loc>https://khuuj.com/tags/security-news/</loc>
-    <lastmod>2022-09-22T00:54:03-04:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/posts/2022/september/092222_uberhack/</loc>
-    <lastmod>2022-09-22T00:54:03-04:00</lastmod>
-  </url><url>
     <loc>https://khuuj.com/tags/python/</loc>
     <lastmod>2022-03-03T02:47:19-05:00</lastmod>
   </url><url>
@@ -112,15 +106,6 @@
   </url><url>
     <loc>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</loc>
     <lastmod>2022-02-02T00:19:34-05:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/tags/darkside/</loc>
-    <lastmod>2021-05-20T22:12:27-07:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/posts/2021/may/032021_darksidegaspipeline/</loc>
-    <lastmod>2021-05-20T22:12:27-07:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/tags/ransomware/</loc>
-    <lastmod>2021-05-20T22:12:27-07:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</loc>
     <lastmod>2021-03-24T21:30:06-07:00</lastmod>
@@ -140,14 +125,8 @@
     <loc>https://khuuj.com/posts/2021/march/030721_ltotd_du/</loc>
     <lastmod>2021-03-07T13:49:29-08:00</lastmod>
   </url><url>
-    <loc>https://khuuj.com/posts/2021/march/030721_mseexploits/</loc>
-    <lastmod>2021-03-07T13:34:26-08:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/posts/2021/february/021521_scaon35comps/</loc>
-    <lastmod>2021-02-15T04:33:31-08:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/posts/2021/february/021321_flwater/</loc>
-    <lastmod>2021-02-13T03:29:31-08:00</lastmod>
+    <loc>https://khuuj.com/tags/security-news/</loc>
+    <lastmod>2021-02-09T22:43:05-08:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/posts/2021/january/012621_sudovuln/</loc>
     <lastmod>2021-02-09T22:43:05-08:00</lastmod>

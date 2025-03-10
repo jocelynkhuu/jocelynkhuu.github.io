@@ -135,13 +135,6 @@
       <description></description>
     </item>
     <item>
-      <title>Security News</title>
-      <link>https://khuuj.com/tags/security-news/</link>
-      <pubDate>Thu, 22 Sep 2022 00:54:03 -0400</pubDate>
-      <guid>https://khuuj.com/tags/security-news/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Python</title>
       <link>https://khuuj.com/tags/python/</link>
       <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
@@ -163,20 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>Darkside</title>
-      <link>https://khuuj.com/tags/darkside/</link>
-      <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
-      <guid>https://khuuj.com/tags/darkside/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ransomware</title>
-      <link>https://khuuj.com/tags/ransomware/</link>
-      <pubDate>Thu, 20 May 2021 22:12:27 -0700</pubDate>
-      <guid>https://khuuj.com/tags/ransomware/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ps</title>
       <link>https://khuuj.com/tags/ps/</link>
       <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
@@ -195,6 +174,13 @@
       <link>https://khuuj.com/tags/du/</link>
       <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
       <guid>https://khuuj.com/tags/du/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security News</title>
+      <link>https://khuuj.com/tags/security-news/</link>
+      <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+      <guid>https://khuuj.com/tags/security-news/</guid>
       <description></description>
     </item>
   </channel>
