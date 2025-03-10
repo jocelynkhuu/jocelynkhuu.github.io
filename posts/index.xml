@@ -191,8 +191,8 @@
 <li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
 <li><code>podman images</code> - shows all images downloaded</li>
 <li><code>podman rmi &lt;image_name&gt;</code> - remove image</li>
-<li><code>docker build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
-<li><code>docker run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
+<li><code>podman build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
+<li><code>podman run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
 <li><code>podman exec</code> - run a process in a container</li>
 </ul>
 <h3 id="dockerfile">Dockerfile</h3>
