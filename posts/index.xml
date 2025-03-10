@@ -1072,59 +1072,5 @@
 ]]></content>
         </item>
         
-        <item>
-            <title>SolarWinds Supply Chain Attack</title>
-            <link>https://khuuj.com/posts/2020/121720_solarwinds/</link>
-            <pubDate>Thu, 17 Dec 2020 05:17:52 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2020/121720_solarwinds/</guid>
-            <description>&lt;p&gt;The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
-&lt;img src=&#34;https://khuuj.com/static/solarwinds.png&#34; alt=&#34;SolarWinds&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;what-exactly-is-solarwinds-and-what-happened&#34;&gt;What exactly is SolarWinds and what happened?&lt;/h2&gt;
-&lt;p&gt;SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, &lt;a href=&#34;https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html&#34;&gt;called SUNBURST by FireEye&lt;/a&gt;, as part of a legitimate update from SolarWinds&amp;rsquo; servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed &lt;a href=&#34;https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/&#34;&gt;(sans.org)&lt;/a&gt;. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>The cybersec world has been shaken up in the last couple of days by the SolarWinds Supply Chain Attack as more and more annoucements are made of new breaches. Several major government agencies in the US (DHS, Treasury, NIH, Commerce, etc.) have publicly announced that they have been compromised.
-<img src="/static/solarwinds.png" alt="SolarWinds"></p>
-<h2 id="what-exactly-is-solarwinds-and-what-happened">What exactly is SolarWinds and what happened?</h2>
-<p>SolarWinds is one of the largest IT enterprise software companies in the world, with Fortune 500 companies and government agencies utilizing their platform. On Monday, SolarWinds confirmed that Orion (its flagship NMS) was unknowingly used to deploy malware that created a backdoor, <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">called SUNBURST by FireEye</a>, as part of a legitimate update from SolarWinds&rsquo; servers. It was even issued a certificate by Symantec with serial number 0fe973752022a606adf2a36e345dc0ed <a href="https://www.sans.org/blog/what-you-need-to-know-about-the-solarwinds-supply-chain-attack/">(sans.org)</a>. These updates pushed out to almost 18,000 (out of the 300,000) Orion customers and was active since March.</p>
-<p>What was very interesting about this malware but that it did not do anything for up to 2 weeks and used &ldquo;obfuscated blocklists to identify forensic and anti-virus tools running as processes, services, and drivers&rdquo; according to <a href="https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html">FireEye</a>. They were able to copy existing SolarWinds protocols to hide their traffic and appear as legit SolarWinds activity.</p>
-<p>This was a highly sophisticated attack that took a lot of planning, skill, and confidence.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Look! A Puppy!</title>
-            <link>https://khuuj.com/posts/2020/121420_puppy/</link>
-            <pubDate>Mon, 14 Dec 2020 20:00:05 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2020/121420_puppy/</guid>
-            <description>&lt;h2 id=&#34;literally-just-a-picture-of-a-puppy&#34;&gt;Literally just a picture of a puppy&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/puppy.png&#34; alt=&#34;Puppy&#34;&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<h2 id="literally-just-a-picture-of-a-puppy">Literally just a picture of a puppy</h2>
-<p><img src="/static/puppy.png" alt="Puppy"></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>FireEye Hack</title>
-            <link>https://khuuj.com/posts/2020/121220_fireeye/</link>
-            <pubDate>Sat, 12 Dec 2020 12:32:22 -0800</pubDate>
-            
-            <guid>https://khuuj.com/posts/2020/121220_fireeye/</guid>
-            <description>&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/fireeye.png&#34; alt=&#34;FireEye&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;fireeye-attack-a-reminder-that-no-one-is-safe&#34;&gt;FireEye Attack, a reminder that no one is safe&lt;/h2&gt;
-&lt;p&gt;On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.&lt;/p&gt;
-&lt;p&gt;This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.&lt;/p&gt;
-&lt;p&gt;FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack. Kevin Mandia stated that the attackers were &amp;ldquo;highly trained in operational security and executed with discipline and focus. They operated clandestinly, using methods that counter security tools and forensic examination.&amp;rdquo; The attackers got their hands on a number of FireEye Red Team tools, which FireEye posted a list of countermeasures for &lt;a href=&#34;https://github.com/fireeye/red_team_tool_countermeasures&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p><img src="/static/fireeye.png" alt="FireEye"></p>
-<h2 id="fireeye-attack-a-reminder-that-no-one-is-safe">FireEye Attack, a reminder that no one is safe</h2>
-<p>On Tuesday, Dec. 8, 2020, FireEye, a global Cybersecurity firm, disclosed to the public that they had been breached.</p>
-<p>This was a huge reminder that no one is unhackable and that Blue Teamers often have their work cut out for them with threats, risks, and vulnerabilites.</p>
-<p>FireEye disclosed that the attackers were likely an APT due to the high level of sophistication of the attack. Kevin Mandia stated that the attackers were &ldquo;highly trained in operational security and executed with discipline and focus. They operated clandestinly, using methods that counter security tools and forensic examination.&rdquo; The attackers got their hands on a number of FireEye Red Team tools, which FireEye posted a list of countermeasures for <a href="https://github.com/fireeye/red_team_tool_countermeasures">here</a>.</p>
-<p>Are the attackers going to release these tools to the public like the Shadow Brokers did?</p>
-<p>FireEye has reassured us that no zero-day exploits were stolen and that only well-known methods used by red teams around the world were stolen.</p>
-<p>It&rsquo;s an interesting thought that in this digital world, no one is really safe from cyber attacks. It isn&rsquo;t enough to lock the door to our home anymore when people can just hack their way in.</p>
-]]></content>
-        </item>
-        
     </channel>
 </rss>
