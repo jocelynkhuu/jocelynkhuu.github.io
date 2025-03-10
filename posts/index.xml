@@ -191,8 +191,13 @@
 <li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
 <li><code>podman images</code> - shows all images downloaded</li>
 <li><code>podman rmi &lt;image_name&gt;</code> - remove image</li>
+<li><code>podman rm &lt;container_name&gt;</code> - remove container</li>
 <li><code>podman build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
-<li><code>podman run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image</li>
+<li><code>podman run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image
+<ul>
+<li>Can also add a <code>--hostname &lt;hostname&gt;</code> parameter to specify a hostname for your container</li>
+</ul>
+</li>
 <li><code>podman exec</code> - run a process in a container</li>
 </ul>
 <h3 id="dockerfile">Dockerfile</h3>
@@ -207,8 +212,6 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   vim <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   net-tools <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   wget <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   unzip <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   netcat <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
@@ -268,7 +271,7 @@
 </span></span></code></pre></div><p>After pulling the image, we can create a custom image using the Dockerfile. The beginning of the dockerfile specifies a base image we can use: <code>FROM ubuntu:latest</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
 </span></span><span style="display:flex;"><span>STEP 1/12: FROM ubuntu:latest
-</span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget    unzip    netcat <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget  <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ podman images
