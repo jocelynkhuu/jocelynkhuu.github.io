@@ -9,7 +9,7 @@
         <atom:link href="https://khuuj.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Updating the BIOS on an older Lenovo thinkpad - Linux Edition</title>
+            <title>Updating the BIOS on an older Lenovo Thinkpad - Linux Edition</title>
             <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
             <pubDate>Wed, 06 Aug 2025 01:05:58 -0700</pubDate>
             
@@ -26,7 +26,7 @@
 &lt;ol&gt;
 &lt;li&gt;Check the lenovo website for the latest BIOS update and download the latest &lt;code&gt;BIOS Update (Bootable CD)&lt;/code&gt; option&lt;/li&gt;
 &lt;li&gt;Insert a USB stick&lt;/li&gt;
-&lt;li&gt;Check the hash to make sure it matches after the download: `echo &amp;ldquo;&lt;!-- raw HTML omitted --&gt;&amp;rdquo; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/li&gt;
+&lt;li&gt;Check the hash to make sure it matches after the download: &lt;code&gt;echo &amp;quot;&amp;lt;sha256&amp;gt;&amp;quot; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sudo apt install geteltorito&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -52,7 +52,7 @@
 <ol>
 <li>Check the lenovo website for the latest BIOS update and download the latest <code>BIOS Update (Bootable CD)</code> option</li>
 <li>Insert a USB stick</li>
-<li>Check the hash to make sure it matches after the download: `echo &ldquo;<!-- raw HTML omitted -->&rdquo; &lt;location_to_file.iso&gt; | sha256sum -c</li>
+<li>Check the hash to make sure it matches after the download: <code>echo &quot;&lt;sha256&gt;&quot; &lt;location_to_file.iso&gt; | sha256sum -c</code></li>
 <li><code>sudo apt install geteltorito</code></li>
 </ol>
 <ul>
