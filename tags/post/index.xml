@@ -6,8 +6,15 @@
     <description>Recent content in Post on Jocelyn&#39;s mind wanderings</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 06 Aug 2025 01:05:58 -0700</lastBuildDate>
     <atom:link href="https://khuuj.com/tags/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updating the BIOS on an older Lenovo thinkpad - Linux Edition</title>
+      <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
+      <pubDate>Wed, 06 Aug 2025 01:05:58 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2025/august/080625_dd/</guid>
+      <description>&lt;h2 id=&#34;checking-for-updates-using-fwupdmgr&#34;&gt;Checking for updates using &lt;code&gt;fwupdmgr&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Start by checking if there are any firmware updates through fwupdmgr&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-devices&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr refresh&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-updates&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr update&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;when-fwupdmgr-fails&#34;&gt;When &lt;code&gt;fwupdmgr&lt;/code&gt; fails&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Check the lenovo website for the latest BIOS update and download the latest &lt;code&gt;BIOS Update (Bootable CD)&lt;/code&gt; option&lt;/li&gt;&#xA;&lt;li&gt;Insert a USB stick&lt;/li&gt;&#xA;&lt;li&gt;Check the hash to make sure it matches after the download: `echo &amp;ldquo;&lt;!-- raw HTML omitted --&gt;&amp;rdquo; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo apt install geteltorito&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If this doesn&amp;rsquo;t work, go directly to the github &lt;a href=&#34;https://github.com/rainer042/geteltorito&#34;&gt;repo&lt;/a&gt; to download the perl script and change the permissions with &lt;code&gt;chmod +x geteltorito&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;5&#34;&gt;&#xA;&lt;li&gt;Extract the image: &lt;code&gt;./geteltorito -o boot.img &amp;lt;location_to_file.iso&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Run &lt;code&gt;lsblk&lt;/code&gt; to find the usb&lt;/li&gt;&#xA;&lt;li&gt;Unmount the usb: &lt;code&gt;udisksctl unmount -b /dev/sdb&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Create the boot stick: &lt;code&gt;sudo dd if=boot.img of=/dev/sdb bs=1M status=progress&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Reboot the device: &lt;code&gt;sudo reboot&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Using GPG Keys</title>
       <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>

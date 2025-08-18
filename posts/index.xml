@@ -9,6 +9,68 @@
         <atom:link href="https://khuuj.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Updating the BIOS on an older Lenovo thinkpad - Linux Edition</title>
+            <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
+            <pubDate>Wed, 06 Aug 2025 01:05:58 -0700</pubDate>
+            
+            <guid>https://khuuj.com/posts/2025/august/080625_dd/</guid>
+            <description>&lt;h2 id=&#34;checking-for-updates-using-fwupdmgr&#34;&gt;Checking for updates using &lt;code&gt;fwupdmgr&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Start by checking if there are any firmware updates through fwupdmgr&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-devices&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr refresh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-updates&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr update&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;when-fwupdmgr-fails&#34;&gt;When &lt;code&gt;fwupdmgr&lt;/code&gt; fails&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Check the lenovo website for the latest BIOS update and download the latest &lt;code&gt;BIOS Update (Bootable CD)&lt;/code&gt; option&lt;/li&gt;
+&lt;li&gt;Insert a USB stick&lt;/li&gt;
+&lt;li&gt;Check the hash to make sure it matches after the download: `echo &amp;ldquo;&lt;!-- raw HTML omitted --&gt;&amp;rdquo; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt install geteltorito&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;If this doesn&amp;rsquo;t work, go directly to the github &lt;a href=&#34;https://github.com/rainer042/geteltorito&#34;&gt;repo&lt;/a&gt; to download the perl script and change the permissions with &lt;code&gt;chmod +x geteltorito&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Extract the image: &lt;code&gt;./geteltorito -o boot.img &amp;lt;location_to_file.iso&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;lsblk&lt;/code&gt; to find the usb&lt;/li&gt;
+&lt;li&gt;Unmount the usb: &lt;code&gt;udisksctl unmount -b /dev/sdb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create the boot stick: &lt;code&gt;sudo dd if=boot.img of=/dev/sdb bs=1M status=progress&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Reboot the device: &lt;code&gt;sudo reboot&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="checking-for-updates-using-fwupdmgr">Checking for updates using <code>fwupdmgr</code></h2>
+<p>Start by checking if there are any firmware updates through fwupdmgr</p>
+<ol>
+<li><code>sudo fwupdmgr get-devices</code></li>
+<li><code>sudo fwupdmgr refresh</code></li>
+<li><code>sudo fwupdmgr get-updates</code></li>
+<li><code>sudo fwupdmgr update</code></li>
+</ol>
+<h3 id="when-fwupdmgr-fails">When <code>fwupdmgr</code> fails</h3>
+<ol>
+<li>Check the lenovo website for the latest BIOS update and download the latest <code>BIOS Update (Bootable CD)</code> option</li>
+<li>Insert a USB stick</li>
+<li>Check the hash to make sure it matches after the download: `echo &ldquo;<!-- raw HTML omitted -->&rdquo; &lt;location_to_file.iso&gt; | sha256sum -c</li>
+<li><code>sudo apt install geteltorito</code></li>
+</ol>
+<ul>
+<li>If this doesn&rsquo;t work, go directly to the github <a href="https://github.com/rainer042/geteltorito">repo</a> to download the perl script and change the permissions with <code>chmod +x geteltorito</code></li>
+</ul>
+<ol start="5">
+<li>Extract the image: <code>./geteltorito -o boot.img &lt;location_to_file.iso&gt;</code></li>
+<li>Run <code>lsblk</code> to find the usb</li>
+<li>Unmount the usb: <code>udisksctl unmount -b /dev/sdb</code></li>
+<li>Create the boot stick: <code>sudo dd if=boot.img of=/dev/sdb bs=1M status=progress</code></li>
+<li>Reboot the device: <code>sudo reboot</code></li>
+</ol>
+<p>Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot</p>
+<p>Boot into the usb stick and follow the prompts to update the BIOS and revert your settings.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Using GPG Keys</title>
             <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>
             <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
