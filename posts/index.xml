@@ -196,7 +196,7 @@ They predict the next word in a sequence, which allows them to write, summarize,
 <p><img src="/static/openwebui.png" alt="openwebui"></p>
 <p>Now everything here is self-hosted so the data is safely stored on our local host.</p>
 <h2 id="how-about-using-it-in-vscode">How about using it in VSCode?</h2>
-<p>There is a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">Continue</a></p>
+<p>There is a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">Continue</a> that will automatically detect any local LLMs downloaded.</p>
 ]]></content>
         </item>
         
