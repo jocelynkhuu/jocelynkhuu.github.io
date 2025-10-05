@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="How do authentication and authorization differ?" />
+<meta name="keywords" content=", security, thoughts, post, blog, iam" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://khuuj.com/posts/2023/august/081823_authnvsauthz/" />
+
+
+    <title>
+        
+            Authentication vs Authorization :: Jocelyn&#39;s mind wanderings 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://khuuj.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://khuuj.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://khuuj.com/favicon-16x16.png">
+    <link rel="manifest" href="https://khuuj.com/site.webmanifest">
+    <link rel="mask-icon" href="https://khuuj.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://khuuj.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Authentication vs Authorization">
+  <meta itemprop="description" content="How do authentication and authorization differ?">
+  <meta itemprop="datePublished" content="2023-08-18T16:17:47-04:00">
+  <meta itemprop="dateModified" content="2023-08-18T16:17:47-04:00">
+  <meta itemprop="wordCount" content="529">
+  <meta itemprop="image" content="https://khuuj.com/">
+  <meta itemprop="keywords" content="Security,Thoughts,Post,Blog,Iam">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khuuj.com/">
+  <meta name="twitter:title" content="Authentication vs Authorization">
+  <meta name="twitter:description" content="How do authentication and authorization differ?">
+
+
+
+    <meta property="og:url" content="https://khuuj.com/posts/2023/august/081823_authnvsauthz/">
+  <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
+  <meta property="og:title" content="Authentication vs Authorization">
+  <meta property="og:description" content="How do authentication and authorization differ?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-18T16:17:47-04:00">
+    <meta property="article:modified_time" content="2023-08-18T16:17:47-04:00">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Thoughts">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Iam">
+    <meta property="og:image" content="https://khuuj.com/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-08-18 16:17:47 -0400 -0400" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://khuuj.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://khuuj.com/posts/2023/august/081823_authnvsauthz/">Authentication vs Authorization</a>
+      </h1>
+
+      
+        <div class="post-excerpt">How do authentication and authorization differ?</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h1 id="oauth-oidc-and-saml">OAuth, OIDC, and SAML</h1>
+<p><strong>Authentication</strong> (AuthN) proves who someone is and <strong>Authorization</strong> (AuthZ) allows that someone to access certain resources.</p>
+<p>Basic authentication is what we&rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</p>
+<p>There are several authentication factors that are widely used and some are:</p>
+<ul>
+<li>Something a person knows</li>
+<li>Something a person has</li>
+<li>Something a person is</li>
+<li>Somewhere a person is</li>
+</ul>
+<p>If you can&rsquo;t prove who you are, then then you won&rsquo;t be allowed to access the resource as authorization should always follow after authentication. Authorization grants/denies permissions to resources.</p>
+<h2 id="what-is-oauth-20">What is OAuth 2.0?</h2>
+<p>OAuth 2.0 (Open Authoriation) is the standard to allow one application access to another application without sharing your credentials. It grants <strong>authorization</strong> for one application to access data or features in another application for you. It uses <strong>Access Tokens</strong> to hold information about your user and permissions.</p>
+<h2 id="what-is-oidc">What is OIDC?</h2>
+<p>OIDC (OpenID Connect) is an authentication protocol based on OAuth 2.0 and enables users to sign into one application and receive access to another. It is used to provide SSO for applications. For example, when you need to log into one website and it gives you the option to log in using your Google account, this is using OIDC authentication. OIDC uses <strong>ID Tokens</strong>, usually in the form of a JSON Web Token (JWT), which include information such as email address and name.</p>
+<p>According to <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-openid-connect-oidc">Microsoft</a>, <em>&ldquo;OIDC was built on top of OAuth 2.0 to add authentication. The OAuth 2.0 protocol was developed first and then OIDC was added to enhance its capabilities. The difference between the two is that OAuth 2.0 provides authorization, while OIDC provides authentication. OAuth 2.0 is what allows users to gain access to a relying party, using their account with an OpenID provider, and OIDC is what allows the OpenID provider to pass along a user profile to the relying party. OIDC also allows organizations to offer their users single sign-on.&rdquo;</em></p>
+<p>Okta has an illustrated guide that goes over how OAuth and OIDC work together <a href="https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc">here</a>.</p>
+<h2 id="what-is-saml">What is SAML?</h2>
+<p>SAML (Security Assertion Markup Language) is an XML-based authentication protocol used for transferring identity data between an idP (identity provider) and SP (service provider). It enables SSO for applications similar to OIDC.</p>
+<p>An idP provides the user&rsquo;s identity and authorization to the SP. For example, Okta would be an idP and an SP could be something like Slack. You would log into Okta and it would authenticate you into Slack using SAML.</p>
+<h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
+<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically the same with 3 primary differences:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Differences</th>
+          <th>SAML</th>
+          <th>OIDC</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Data format</td>
+          <td>XML</td>
+          <td>JSON</td>
+      </tr>
+      <tr>
+          <td>Data sent</td>
+          <td>SAML Assertion</td>
+          <td>Claims</td>
+      </tr>
+      <tr>
+          <td>Application name</td>
+          <td>Service Provider</td>
+          <td>Relying Party</td>
+      </tr>
+  </tbody>
+</table>
+<p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://khuuj.com/tags/security/">security</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/thoughts/">thoughts</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/post/">post</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/iam/">iam</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        529 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2023-08-18 13:17
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://khuuj.com/posts/2023/october/102423_brokengrub/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Missing grub menu after update</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://khuuj.com/posts/2023/june/060323_ltotd_grep/">
+                    <span class="button__text">Linux Tip of the Day - grep</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Du on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/du/</link>
+    <description>Recent content in Du on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Mar 2021 13:49:29 -0800</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/du/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tip of the Day - du</title>
+      <link>https://khuuj.com/posts/2021/march/030721_ltotd_du/</link>
+      <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/030721_ltotd_du/</guid>
+      <description>&lt;p&gt;&lt;em&gt;I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-du&#34;&gt;What is du?&lt;/h2&gt;&#xA;&lt;p&gt;According to the &lt;code&gt;du&lt;/code&gt; man page, &lt;code&gt;du&lt;/code&gt; is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the &lt;code&gt;du&lt;/code&gt; cmd has helped to figure out which files/folders are the culprits.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

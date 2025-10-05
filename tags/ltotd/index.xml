@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LTOTD on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/ltotd/</link>
+    <description>Recent content in LTOTD on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Jun 2023 02:41:51 -0400</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/ltotd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tip of the Day - grep</title>
+      <link>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</guid>
+      <description>&lt;h2 id=&#34;what-is-grep&#34;&gt;What is grep?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, &lt;code&gt;grep&lt;/code&gt; is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can be used by running &lt;code&gt;grep [OPTION...] PATTERNS [FILE...]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.local/bin:&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is helpful when parsing log files or files with a lot of text.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;  OK  &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Started GNOME Display Manager.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         Starting GNOME Display Manager...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because it can search using regular expressions, it is case sensitive. Using &lt;code&gt;grep gnome /var/log/boot.log&lt;/code&gt; in this case would show no results but we can use different options to help with this.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Tip of the Day - ps</title>
+      <link>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</link>
+      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</guid>
+      <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;&#xA;&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Tip of the Day - du</title>
+      <link>https://khuuj.com/posts/2021/march/030721_ltotd_du/</link>
+      <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/030721_ltotd_du/</guid>
+      <description>&lt;p&gt;&lt;em&gt;I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-du&#34;&gt;What is du?&lt;/h2&gt;&#xA;&lt;p&gt;According to the &lt;code&gt;du&lt;/code&gt; man page, &lt;code&gt;du&lt;/code&gt; is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the &lt;code&gt;du&lt;/code&gt; cmd has helped to figure out which files/folders are the culprits.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

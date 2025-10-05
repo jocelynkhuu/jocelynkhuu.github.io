@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/blog/</link>
+    <description>Recent content in Blog on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Oct 2025 01:05:58 -0700</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ollama &#43; Open WebUI</title>
+      <link>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</link>
+      <pubDate>Sun, 05 Oct 2025 01:05:58 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</guid>
+      <description>&lt;h1 id=&#34;what-exactly-is-ai&#34;&gt;What exactly is AI?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: I will primary be using ChatGPT to define a lot of what this is&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.&lt;/p&gt;&#xA;&lt;p&gt;AI = Artificial Intelligence&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;From ChatGPT:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Updating the BIOS on an older Lenovo Thinkpad - Linux Edition</title>
+      <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
+      <pubDate>Wed, 06 Aug 2025 01:05:58 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2025/august/080625_dd/</guid>
+      <description>&lt;h2 id=&#34;checking-for-updates-using-fwupdmgr&#34;&gt;Checking for updates using &lt;code&gt;fwupdmgr&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Start by checking if there are any firmware updates through fwupdmgr&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-devices&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr refresh&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-updates&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo fwupdmgr update&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;when-fwupdmgr-fails&#34;&gt;When &lt;code&gt;fwupdmgr&lt;/code&gt; fails&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Check the lenovo website for the latest BIOS update and download the latest &lt;code&gt;BIOS Update (Bootable CD)&lt;/code&gt; option&lt;/li&gt;&#xA;&lt;li&gt;Insert a USB stick&lt;/li&gt;&#xA;&lt;li&gt;Check the hash to make sure it matches after the download: &lt;code&gt;echo &amp;quot;&amp;lt;sha256&amp;gt;&amp;quot; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sudo apt install geteltorito&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If this doesn&amp;rsquo;t work, go directly to the github &lt;a href=&#34;https://github.com/rainer042/geteltorito&#34;&gt;repo&lt;/a&gt; to download the perl script and change the permissions with &lt;code&gt;chmod +x geteltorito&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;5&#34;&gt;&#xA;&lt;li&gt;Extract the image: &lt;code&gt;./geteltorito -o boot.img &amp;lt;location_to_file.iso&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Run &lt;code&gt;lsblk&lt;/code&gt; to find the usb&lt;/li&gt;&#xA;&lt;li&gt;Unmount the usb: &lt;code&gt;udisksctl unmount -b /dev/sdb&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Create the boot stick: &lt;code&gt;sudo dd if=boot.img of=/dev/sdb bs=1M status=progress&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Reboot the device: &lt;code&gt;sudo reboot&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using GPG Keys</title>
+      <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/041624_gpgkeys/</guid>
+      <description>&lt;p&gt;GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intro to Podman</title>
+      <link>https://khuuj.com/posts/2024/april/040324_dockersetup/</link>
+      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/040324_dockersetup/</guid>
+      <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;&#xA;&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;&#xA;&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Windows Subsystem for Linux (WSL)</title>
+      <link>https://khuuj.com/posts/2023/october/102523_wslwindows/</link>
+      <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/october/102523_wslwindows/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.&lt;/p&gt;&#xA;&lt;h3 id=&#34;installing-wsl&#34;&gt;Installing WSL&lt;/h3&gt;&#xA;&lt;p&gt;Following this &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install&#34;&gt;article&lt;/a&gt; on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the &lt;code&gt;Terminal&lt;/code&gt; app on Windows 11:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WslRegisterDistribution failed with error: 0x80370114&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: 0x80370114 The operation could not be started because a required feature is not installed.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press any key to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I manually enabled the features in &lt;code&gt;Turn Windows features On or Off&lt;/code&gt; then restarted:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Missing grub menu after update</title>
+      <link>https://khuuj.com/posts/2023/october/102423_brokengrub/</link>
+      <pubDate>Tue, 24 Oct 2023 01:54:39 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/october/102423_brokengrub/</guid>
+      <description>&lt;h2 id=&#34;failed-to-open-efibootgrubx64efi---not-found&#34;&gt;Failed to open \EFI\BOOT\grubx64.efi - Not Found&lt;/h2&gt;&#xA;&lt;p&gt;I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.&lt;/p&gt;&#xA;&lt;p&gt;Here is the error that I was receiving.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to open &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi - Not Found  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to load image &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi: Not Found    &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;start_image&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; returned Not Found &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My Ubuntu version:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ cat /etc/os-release &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PRETTY_NAME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ubuntu 22.04.3 LTS&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to create a post to write about how I fixed the issue for future reference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication vs Authorization</title>
+      <link>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</link>
+      <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</guid>
+      <description>&lt;h1 id=&#34;oauth-oidc-and-saml&#34;&gt;OAuth, OIDC, and SAML&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; (AuthN) proves who someone is and &lt;strong&gt;Authorization&lt;/strong&gt; (AuthZ) allows that someone to access certain resources.&lt;/p&gt;&#xA;&lt;p&gt;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Tip of the Day - grep</title>
+      <link>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</link>
+      <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</guid>
+      <description>&lt;h2 id=&#34;what-is-grep&#34;&gt;What is grep?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, &lt;code&gt;grep&lt;/code&gt; is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can be used by running &lt;code&gt;grep [OPTION...] PATTERNS [FILE...]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.local/bin:&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is helpful when parsing log files or files with a lot of text.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;  OK  &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Started GNOME Display Manager.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         Starting GNOME Display Manager...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because it can search using regular expressions, it is case sensitive. Using &lt;code&gt;grep gnome /var/log/boot.log&lt;/code&gt; in this case would show no results but we can use different options to help with this.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up Python Virtual Environment</title>
+      <link>https://khuuj.com/posts/2022/march/030322_pyvirtenv/</link>
+      <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/march/030322_pyvirtenv/</guid>
+      <description>&lt;h2 id=&#34;setting-up-python-virtual-environment&#34;&gt;Setting up Python Virtual Environment&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Install &lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links&#34;&gt;Miniconda&lt;/a&gt;: &lt;a href=&#34;https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf&#34;&gt;Conda cheatsheet&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Verify &lt;code&gt;conda&lt;/code&gt; is installed running &lt;code&gt;conda -V&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Create new virtual environment (in this example, we are using python 3.9): &lt;code&gt;conda create --name py39 python=3.9&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Check that env shows in &lt;code&gt;conda env list&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;To start the environment: &lt;code&gt;conda activate py39&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install IPython: &lt;code&gt;pip install ipython&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install any other libraries needed: ex. &lt;code&gt;pip install requests&lt;/code&gt;, &lt;code&gt;pip install python-ldap&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Start ipython: &lt;code&gt;ipython&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;To exit ipython: &lt;code&gt;exit&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;To leave virtual env: &lt;code&gt;conda deactivate&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Passing Security&#43;</title>
+      <link>https://khuuj.com/posts/2022/february/021722_security&#43;/</link>
+      <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/021722_security&#43;/</guid>
+      <description>&lt;p&gt;I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-testing-experience&#34;&gt;The Testing Experience&lt;/h3&gt;&#xA;&lt;p&gt;I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I Got My First Security Job</title>
+      <link>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</link>
+      <pubDate>Wed, 02 Feb 2022 00:19:34 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/entrylevel.png&#34; alt=&#34;Entry Level&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.&lt;/p&gt;&#xA;&lt;p&gt;For some context, here is my work experience:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;5 years of IT support experience overall&lt;/li&gt;&#xA;&lt;li&gt;2 years at a FAANG doing internal IT support&lt;/li&gt;&#xA;&lt;li&gt;6 months running IT at a startup as the sole IT person&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Tip of the Day - ps</title>
+      <link>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</link>
+      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</guid>
+      <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;&#xA;&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is a CVE?</title>
+      <link>https://khuuj.com/posts/2021/march/032421_whatiscve/</link>
+      <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_whatiscve/</guid>
+      <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Tip of the Day - du</title>
+      <link>https://khuuj.com/posts/2021/march/030721_ltotd_du/</link>
+      <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/030721_ltotd_du/</guid>
+      <description>&lt;p&gt;&lt;em&gt;I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-du&#34;&gt;What is du?&lt;/h2&gt;&#xA;&lt;p&gt;According to the &lt;code&gt;du&lt;/code&gt; man page, &lt;code&gt;du&lt;/code&gt; is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the &lt;code&gt;du&lt;/code&gt; cmd has helped to figure out which files/folders are the culprits.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sudo Vulnerability</title>
+      <link>https://khuuj.com/posts/2021/january/012621_sudovuln/</link>
+      <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/january/012621_sudovuln/</guid>
+      <description>&lt;h2 id=&#34;a-sudo-vulnerability&#34;&gt;A Sudo Vulnerability&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/sudo.jpg&#34; alt=&#34;Sudo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156&#34;&gt;CVE-2021-3156&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&lt;/p&gt;&#xA;&lt;p&gt;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

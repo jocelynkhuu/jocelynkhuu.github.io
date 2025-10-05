@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="How to set up linux containers with Podman" />
+<meta name="keywords" content=", security, thoughts, post, blog, docker, podman" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://khuuj.com/posts/2024/april/040324_dockersetup/" />
+
+
+    <title>
+        
+            Intro to Podman :: Jocelyn&#39;s mind wanderings 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://khuuj.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://khuuj.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://khuuj.com/favicon-16x16.png">
+    <link rel="manifest" href="https://khuuj.com/site.webmanifest">
+    <link rel="mask-icon" href="https://khuuj.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://khuuj.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Intro to Podman">
+  <meta itemprop="description" content="How to set up linux containers with Podman">
+  <meta itemprop="datePublished" content="2024-04-03T01:37:12-04:00">
+  <meta itemprop="dateModified" content="2024-04-03T01:37:12-04:00">
+  <meta itemprop="wordCount" content="871">
+  <meta itemprop="image" content="https://khuuj.com/">
+  <meta itemprop="keywords" content="Security,Thoughts,Post,Blog,Docker,Podman">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khuuj.com/">
+  <meta name="twitter:title" content="Intro to Podman">
+  <meta name="twitter:description" content="How to set up linux containers with Podman">
+
+
+
+    <meta property="og:url" content="https://khuuj.com/posts/2024/april/040324_dockersetup/">
+  <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
+  <meta property="og:title" content="Intro to Podman">
+  <meta property="og:description" content="How to set up linux containers with Podman">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-03T01:37:12-04:00">
+    <meta property="article:modified_time" content="2024-04-03T01:37:12-04:00">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Thoughts">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Podman">
+    <meta property="og:image" content="https://khuuj.com/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2024-04-03 01:37:12 -0400 -0400" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://khuuj.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://khuuj.com/posts/2024/april/040324_dockersetup/">Intro to Podman</a>
+      </h1>
+
+      
+        <div class="post-excerpt">How to set up linux containers with Podman</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="podman-basics">Podman Basics</h2>
+<p>I needed to test some scripts on Linux (I&rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose <a href="https://podman.io/">Podman</a> as it&rsquo;s free and open source, making it a great Docker alternative especially for enterprises.</p>
+<p>To setup podman cli, we can install it from brew or download the pkg directly from the <a href="https://podman.io/docs/installation">website</a> and follow the instructions to init and start.</p>
+<p>Some basic podman commands to know:</p>
+<ul>
+<li><code>podman search</code> - searches registry for images</li>
+<li><code>podman pull &lt;image_name&gt;</code> - pulls an image from a registry</li>
+<li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
+<li><code>podman images</code> - shows all images downloaded</li>
+<li><code>podman rmi &lt;image_name&gt;</code> - remove image</li>
+<li><code>podman rm &lt;container_name&gt;</code> - remove container</li>
+<li><code>podman build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
+<li><code>podman run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image
+<ul>
+<li>Can also add a <code>--hostname &lt;hostname&gt;</code> parameter to specify a hostname for your container</li>
+</ul>
+</li>
+<li><code>podman exec</code> - run a process in a container</li>
+</ul>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
+<p>Here&rsquo;s a sample Ubuntu image Dockerfile, created with the help of chatgpt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">ubuntu:latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install required tools</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gnupg2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   vim <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   net-tools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   wget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>   tee /usr/share/keyrings/gopass-archive-keyring.gpg &gt; /dev/null<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">## Add gopass repository to apt sources</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/gopass-archive-keyring.gpg] https://packages.gopass.pw/repos/gopass stable main&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   tee /etc/apt/sources.list.d/gopass.list<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Update package index and install gopass</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass-archive-keyring <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Clean up</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm -rf /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copies local file called bashrc &amp; vimrc in local host directory to /tmp/bashrc &amp; /tmp/vimrc on container</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> bashrc /tmp/bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/bashrc &gt;&gt; ~/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># COPY vimrc /tmp/vimrc</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/vimrc &gt;&gt; ~/.vimrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/root</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Defines default command</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>First we pull the image we want from the registry after searching for it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman search ubuntu
+</span></span><span style="display:flex;"><span>INDEX       NAME                                      DESCRIPTION                                      STARS       OFFICIAL    AUTOMATED
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu                  Ubuntu is a Debian-based Linux operating sys...  <span style="color:#ae81ff">16977</span>       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-debootstrap      DEPRECATED; use <span style="color:#e6db74">&#34;ubuntu&#34;</span> instead                 <span style="color:#ae81ff">52</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/neurodebian             NeuroDebian provides neuroscience research s...  <span style="color:#ae81ff">107</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/websphere-liberty       WebSphere Liberty multi-architecture images ...  <span style="color:#ae81ff">298</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/open-liberty            Open Liberty multi-architecture images based...  <span style="color:#ae81ff">64</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-upstart          DEPRECATED, as is Upstart <span style="color:#f92672">(</span>find other proces...  <span style="color:#ae81ff">115</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/ubuntu/nginx                    Nginx, a high-performance reverse proxy &amp; we...  <span style="color:#ae81ff">112</span>                     
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman pull ubuntu                   
+</span></span><span style="display:flex;"><span>Resolved <span style="color:#e6db74">&#34;ubuntu&#34;</span> as an alias <span style="color:#f92672">(</span>/etc/containers/registries.conf.d/shortnames.conf<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Trying to pull docker.io/library/ubuntu:latest...
+</span></span><span style="display:flex;"><span>Getting image source signatures
+</span></span><span style="display:flex;"><span>Copying blob bccd10f490ab <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Copying config ca2b0f2696 <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Writing manifest to image destination
+</span></span><span style="display:flex;"><span>Storing signatures
+</span></span><span style="display:flex;"><span>ca2b0f26964cf2e80ba3e084d5983dab293fdb87485dc6445f3f7bbfc89d7459
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu  latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago  80.4 MB
+</span></span></code></pre></div><p>After pulling the image, we can create a custom image using the Dockerfile. The beginning of the dockerfile specifies a base image we can use: <code>FROM ubuntu:latest</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
+</span></span><span style="display:flex;"><span>STEP 1/12: FROM ubuntu:latest
+</span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget  <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                     TAG         IMAGE ID      CREATED         SIZE
+</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">22</span> seconds ago  <span style="color:#ae81ff">285</span> MB
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago     80.4 MB
+</span></span></code></pre></div><p>Now we can create a container and run an interactive shell using the <code>-it</code> option. They stand for &ldquo;interactive&rdquo; and &ldquo;pseudo-TTY&rdquo;. The <code>-i</code> option makes the session interactive, and the <code>-t</code> option allocates a pseudo-TTY, allowing you to interact with the shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -it --name ubuntu_container ubuntu_custom_image
+</span></span><span style="display:flex;"><span>root@1623365303af:~# ls -a
+</span></span><span style="display:flex;"><span>.  ..  .bashrc  .profile  .vimrc
+</span></span></code></pre></div><p>We can check the status of our container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS                         PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">2</span> minutes ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> About a minute ago              ubuntu_container
+</span></span></code></pre></div><p>To get back in, we need to make sure that it&rsquo;s started.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman start ubuntu_container             
+</span></span><span style="display:flex;"><span>ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman ps -a                              
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS            PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">4</span> minutes ago  Up <span style="color:#ae81ff">6</span> seconds ago              ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec -it ubuntu_container /bin/bash <span style="color:#75715e">#this starts an interactive shell </span>
+</span></span><span style="display:flex;"><span>root@1623365303af:~# 
+</span></span></code></pre></div><p>We can also just execute the command without an interactive shell from within the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman exec ubuntu_container ls -la  
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:18 .
+</span></span><span style="display:flex;"><span>dr-xr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:17 ..
+</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">16</span> Apr  <span style="color:#ae81ff">3</span> 07:23 .bash_history
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">3237</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .bashrc
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">161</span> Jul  <span style="color:#ae81ff">9</span>  <span style="color:#ae81ff">2019</span> .profile
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">100</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .vimrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec ubuntu_container cat /etc/os-release
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu 22.04.4 LTS&#34;</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04.4 LTS (Jammy Jellyfish)&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span><span style="display:flex;"><span>ID<span style="color:#f92672">=</span>ubuntu
+</span></span><span style="display:flex;"><span>ID_LIKE<span style="color:#f92672">=</span>debian
+</span></span><span style="display:flex;"><span>HOME_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>SUPPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://help.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.launchpad.net/ubuntu/&#34;</span>
+</span></span><span style="display:flex;"><span>PRIVACY_POLICY_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;</span>
+</span></span><span style="display:flex;"><span>UBUNTU_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span></code></pre></div><p>Now we can run whatever we want on our containers! It&rsquo;s a pretty light and easy way to test things without impacting our host system or running a VM with a gui.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://khuuj.com/tags/security/">security</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/thoughts/">thoughts</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/post/">post</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/docker/">docker</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/podman/">podman</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        871 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2024-04-02 22:37
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://khuuj.com/posts/2024/april/041624_gpgkeys/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Using GPG Keys</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://khuuj.com/posts/2023/october/102523_wslwindows/">
+                    <span class="button__text">Windows Subsystem for Linux (WSL)</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,1226 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Jocelyn&#39;s mind wanderings</title>
+        <link>https://khuuj.com/posts/</link>
+        <description>Recent content in Posts on Jocelyn&#39;s mind wanderings</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <lastBuildDate>Sun, 05 Oct 2025 01:05:58 -0700</lastBuildDate>
+        <atom:link href="https://khuuj.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Ollama &#43; Open WebUI</title>
+            <link>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</link>
+            <pubDate>Sun, 05 Oct 2025 01:05:58 -0700</pubDate>
+            
+            <guid>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</guid>
+            <description>&lt;h1 id=&#34;what-exactly-is-ai&#34;&gt;What exactly is AI?&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Note: I will primary be using ChatGPT to define a lot of what this is&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.&lt;/p&gt;
+&lt;p&gt;AI = Artificial Intelligence&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;From ChatGPT:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h1 id="what-exactly-is-ai">What exactly is AI?</h1>
+<p><em>Note: I will primary be using ChatGPT to define a lot of what this is</em></p>
+<p>AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.</p>
+<p>AI = Artificial Intelligence</p>
+<p><strong>From ChatGPT:</strong></p>
+<blockquote>
+<p>AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.</p>
+<p>Examples:</p>
+<ul>
+<li>A chatbot that can answer questions</li>
+<li>A self-driving car that detects pedestrians</li>
+<li>A spam filter that learns to block unwanted emails</li>
+</ul></blockquote>
+<p>You may also hear the term &ldquo;ML&rdquo; for Machine Learning which is a subset of AI and how most AI learn.</p>
+<blockquote>
+<p>Instead of being explicitly programmed with rules, ML models learn from data.
+They look for patterns and improve automatically as they see more examples.</p>
+<p>Example:</p>
+<ul>
+<li>If you feed a model thousands of cat and dog photos labeled correctly, it learns to recognize cats vs dogs without you hard-coding “cats have whiskers.”</li>
+</ul></blockquote>
+<p>Then there&rsquo;s &ldquo;DL&rdquo; for Deep Learning which is a subset of ML.</p>
+<blockquote>
+<p>Deep Learning is a subset of Machine Learning that uses artificial neural networks — lots of layers (“deep”) that learn patterns from raw data.</p>
+<p>Instead of humans deciding which features to look for, the network figures them out automatically.
+One of the most classic deep learning examples is a Convolutional Neural Network (CNN) that identifies what’s in an image.</p>
+<p>For example:</p>
+<ul>
+<li>You feed in a picture of a cat 🐱</li>
+<li>The network’s early layers detect edges</li>
+<li>Middle layers detect shapes (ears, eyes, whiskers)</li>
+<li>Deep layers detect whole objects (cat)</li>
+<li>Output: “Cat” (with 99.7% confidence)</li>
+<li>That’s all done automatically — no human manually coding “cat = whiskers + tail + ears.”</li>
+</ul></blockquote>
+<p>Then there are &ldquo;LLMs&rdquo; or Large Language Models</p>
+<blockquote>
+<p>LLMs are a specific type of ML model, trained on massive amounts of text to understand and generate human language.</p>
+<p>They’re built using deep learning (a subset of ML) — particularly neural networks with billions of parameters.
+They predict the next word in a sequence, which allows them to write, summarize, translate, and even reason.</p>
+<p>Examples:</p>
+<ul>
+<li>GPT-5</li>
+<li>Claude, Gemini, Mistral, Llama</li>
+</ul></blockquote>
+<p>So the hierarchy is something like</p>
+<pre tabindex="0"><code>Artificial Intelligence
+└── Machine Learning
+    └── Deep Learning
+        └── Large Language Models
+</code></pre><h3 id="what-is-gpt">What is GPT?</h3>
+<p>GPT = Generative Pre-trained Transformer (A type of LLM)</p>
+<ul>
+<li>“Generative” means the model creates new content, rather than just classifying or retrieving information.</li>
+<li>“pre-trained” means it already has general language knowledge before you use it.</li>
+<li>&ldquo;Transformer is the architecture — the actual neural network design that makes GPT work. It uses a mechanism called self-attention which means the model looks at all words in a sentence at once and learns which ones are most relevant to each other.</li>
+</ul>
+<h3 id="what-are-tokens-and-parameters">What are tokens and parameters?</h3>
+<p>Every answer you get from an LLM is built by predicting one token at a time, incredibly fast — millions of times per second.</p>
+<ul>
+<li>Tokens: what the model reads and writes
+<ul>
+<li>Tokens are small chunks of text — not quite words, not quite letters.They’re how the model “sees” language.</li>
+</ul>
+</li>
+<li>Parameters: what the model learns (its “knowledge”)
+<ul>
+<li>Parameters are the learned weights inside the neural network. They’re the numbers that determine how the model connects and transforms one token to the next.</li>
+</ul>
+</li>
+</ul>
+<p>Now that we have a basic understanding of what AI is, how can we set it up and use it?</p>
+<h3 id="how-do-we-use-ai">How do we use AI?</h3>
+<p>One of the most obvious ways of using AI is simply going to a website like chatgpt.com and using it like a chatbot. You can ask questions and it can provide answers.</p>
+<p>One of the key concerns of this is of course privacy and security. Everything that you type and paste into the model can be used to train it or the company behind the LLM can also have access to every single chat log. Companies have had to crack down on AI use as people have pasted confidential or sensitive information into it.</p>
+<h2 id="self-hosting-your-llms">Self hosting your LLMs</h2>
+<p>There are open source LLMs that can be downloaded and self-hosted locally on your computer. This is where <a href="https://ollama.com">Ollama</a> comes in.</p>
+<blockquote>
+<p>Ollama is a tool and runtime for running Large Language Models (LLMs) locally on your computer — instead of in the cloud (like ChatGPT does). It lets you download and run open-source LLMs right on your own device (Mac, Windows, or Linux).</p>
+<p>Ollama handles all the hard parts of working with LLMs:</p>
+<ul>
+<li>Downloading models (like Llama 3, Mistral, Phi-3, Gemma, etc.)</li>
+<li>Running them efficiently on your CPU or GPU</li>
+<li>Managing prompts, context, and chat history</li>
+<li>Exposing a simple API (like OpenAI’s) for developers to use in scripts or apps</li>
+</ul>
+<p>So you can use it both:</p>
+<ul>
+<li>From the command line (chat directly)</li>
+<li>Or in your own programs (like a local AI API)</li>
+</ul></blockquote>
+<h2 id="setting-up-ollama--openwebui">Setting up Ollama + OpenWebUI</h2>
+<ol>
+<li>Download <a href="https://ollama.com">Ollama</a></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama
+</span></span><span style="display:flex;"><span>Usage:
+</span></span><span style="display:flex;"><span>  ollama <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  ollama <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Available Commands:
+</span></span><span style="display:flex;"><span>  serve       Start ollama
+</span></span><span style="display:flex;"><span>  create      Create a model
+</span></span><span style="display:flex;"><span>  show        Show information <span style="color:#66d9ef">for</span> a model
+</span></span><span style="display:flex;"><span>  run         Run a model
+</span></span><span style="display:flex;"><span>  stop        Stop a running model
+</span></span><span style="display:flex;"><span>  pull        Pull a model from a registry
+</span></span><span style="display:flex;"><span>  push        Push a model to a registry
+</span></span><span style="display:flex;"><span>  signin      Sign in to ollama.com
+</span></span><span style="display:flex;"><span>  signout     Sign out from ollama.com
+</span></span><span style="display:flex;"><span>  list        List models
+</span></span><span style="display:flex;"><span>  ps          List running models
+</span></span><span style="display:flex;"><span>  cp          Copy a model
+</span></span><span style="display:flex;"><span>  rm          Remove a model
+</span></span><span style="display:flex;"><span>  help        Help about any command
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Flags:
+</span></span><span style="display:flex;"><span>  -h, --help      help <span style="color:#66d9ef">for</span> ollama
+</span></span><span style="display:flex;"><span>  -v, --version   Show version information
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Use <span style="color:#e6db74">&#34;ollama [command] --help&#34;</span> <span style="color:#66d9ef">for</span> more information about a command.
+</span></span></code></pre></div><ol start="2">
+<li>Download models</li>
+</ol>
+<p><em>Note: be aware of your hardware limitations. The more parameters there are the more resources it needs from your computer.</em></p>
+<p><em>From Ollama&rsquo;s own <a href="https://github.com/ollama/ollama">documentation</a>: You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run qwen3
+</span></span><span style="display:flex;"><span>pulling manifest
+</span></span><span style="display:flex;"><span>pulling a3de86cd1c13: 100% ▕███████████████████████████████▏ 5.2 GB
+</span></span><span style="display:flex;"><span>pulling ae370d884f10: 100% ▕███████████████████████████████▏ 1.7 KB
+</span></span><span style="display:flex;"><span>pulling d18a5cc71b84: 100% ▕███████████████████████████████▏  <span style="color:#ae81ff">11</span> KB
+</span></span><span style="display:flex;"><span>pulling cff3f395ef37: 100% ▕███████████████████████████████▏  <span style="color:#ae81ff">120</span> B
+</span></span><span style="display:flex;"><span>pulling 05a61d37b084: 100% ▕███████████████████████████████▏  <span style="color:#ae81ff">487</span> B
+</span></span><span style="display:flex;"><span>verifying sha256 digest
+</span></span><span style="display:flex;"><span>writing manifest
+</span></span><span style="display:flex;"><span>success
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; Send a message <span style="color:#f92672">(</span>/? <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama list
+</span></span><span style="display:flex;"><span>NAME            ID              SIZE      MODIFIED
+</span></span><span style="display:flex;"><span>qwen3:latest    500a1f067a9f    5.2 GB    <span style="color:#ae81ff">58</span> seconds ago
+</span></span><span style="display:flex;"><span>gemma3:4b       a2af6cc3eb7f    3.3 GB    <span style="color:#ae81ff">2</span> hours ago
+</span></span><span style="display:flex;"><span>llama3:8b       365c0bd3c000    4.7 GB    <span style="color:#ae81ff">2</span> hours ago
+</span></span></code></pre></div><ol start="3">
+<li>Use your models directly in the cmd line</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run gemma3:4b
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; hello
+</span></span><span style="display:flex;"><span>Hello there! How’s your day going so far? Is there anything I can help you with today? 😊
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Do you want to:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>*   Chat about something?
+</span></span><span style="display:flex;"><span>*   Ask me a question?
+</span></span><span style="display:flex;"><span>*   Play a game?
+</span></span><span style="display:flex;"><span>*   Just say hello back?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; /bye
+</span></span></code></pre></div><h2 id="build-a-webui-to-interact-with-the-llms">Build a webUI to interact with the LLMs</h2>
+<p>There is an open source project called <a href="https://github.com/open-webui/open-webui">Open WebUI</a> to help us build an interface similar to ChatGPT. It is very easy to set up especially with a container.</p>
+<p>Here is what I did to run it in a container through podman:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -d -p 3000:8080 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v open-webui:/app/backend/data <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name open-webui <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  ghcr.io/open-webui/open-webui:main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>8ceae59c06c485d86122fdb687f9f2e80708b4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                               COMMAND        CREATED        STATUS                     PORTS                   NAMES
+</span></span><span style="display:flex;"><span>8ceae59c06c4  ghcr.io/open-webui/open-webui:main  bash start.sh  <span style="color:#ae81ff">4</span> seconds ago  Up <span style="color:#ae81ff">4</span> seconds <span style="color:#f92672">(</span>starting<span style="color:#f92672">)</span>    0.0.0.0:3000-&gt;8080/tcp  open-webui
+</span></span></code></pre></div><p>Now I can go to http://localhost:3000 to access the web UI. There will be a dropdown to select which model to use.</p>
+<p><img src="/static/openwebui.png" alt="openwebui"></p>
+<p>Now everything here is self-hosted so the data is safely stored on our local host.</p>
+<h2 id="how-about-using-it-in-vscode">How about using it in VSCode?</h2>
+<p>There is a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">Continue</a></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Updating the BIOS on an older Lenovo Thinkpad - Linux Edition</title>
+            <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
+            <pubDate>Wed, 06 Aug 2025 01:05:58 -0700</pubDate>
+            
+            <guid>https://khuuj.com/posts/2025/august/080625_dd/</guid>
+            <description>&lt;h2 id=&#34;checking-for-updates-using-fwupdmgr&#34;&gt;Checking for updates using &lt;code&gt;fwupdmgr&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Start by checking if there are any firmware updates through fwupdmgr&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-devices&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr refresh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr get-updates&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo fwupdmgr update&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;when-fwupdmgr-fails&#34;&gt;When &lt;code&gt;fwupdmgr&lt;/code&gt; fails&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Check the lenovo website for the latest BIOS update and download the latest &lt;code&gt;BIOS Update (Bootable CD)&lt;/code&gt; option&lt;/li&gt;
+&lt;li&gt;Insert a USB stick&lt;/li&gt;
+&lt;li&gt;Check the hash to make sure it matches after the download: &lt;code&gt;echo &amp;quot;&amp;lt;sha256&amp;gt;&amp;quot; &amp;lt;location_to_file.iso&amp;gt; | sha256sum -c&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt install geteltorito&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;If this doesn&amp;rsquo;t work, go directly to the github &lt;a href=&#34;https://github.com/rainer042/geteltorito&#34;&gt;repo&lt;/a&gt; to download the perl script and change the permissions with &lt;code&gt;chmod +x geteltorito&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Extract the image: &lt;code&gt;./geteltorito -o boot.img &amp;lt;location_to_file.iso&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;lsblk&lt;/code&gt; to find the usb&lt;/li&gt;
+&lt;li&gt;Unmount the usb: &lt;code&gt;udisksctl unmount -b /dev/sdb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create the boot stick: &lt;code&gt;sudo dd if=boot.img of=/dev/sdb bs=1M status=progress&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Reboot the device: &lt;code&gt;sudo reboot&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="checking-for-updates-using-fwupdmgr">Checking for updates using <code>fwupdmgr</code></h2>
+<p>Start by checking if there are any firmware updates through fwupdmgr</p>
+<ol>
+<li><code>sudo fwupdmgr get-devices</code></li>
+<li><code>sudo fwupdmgr refresh</code></li>
+<li><code>sudo fwupdmgr get-updates</code></li>
+<li><code>sudo fwupdmgr update</code></li>
+</ol>
+<h3 id="when-fwupdmgr-fails">When <code>fwupdmgr</code> fails</h3>
+<ol>
+<li>Check the lenovo website for the latest BIOS update and download the latest <code>BIOS Update (Bootable CD)</code> option</li>
+<li>Insert a USB stick</li>
+<li>Check the hash to make sure it matches after the download: <code>echo &quot;&lt;sha256&gt;&quot; &lt;location_to_file.iso&gt; | sha256sum -c</code></li>
+<li><code>sudo apt install geteltorito</code></li>
+</ol>
+<ul>
+<li>If this doesn&rsquo;t work, go directly to the github <a href="https://github.com/rainer042/geteltorito">repo</a> to download the perl script and change the permissions with <code>chmod +x geteltorito</code></li>
+</ul>
+<ol start="5">
+<li>Extract the image: <code>./geteltorito -o boot.img &lt;location_to_file.iso&gt;</code></li>
+<li>Run <code>lsblk</code> to find the usb</li>
+<li>Unmount the usb: <code>udisksctl unmount -b /dev/sdb</code></li>
+<li>Create the boot stick: <code>sudo dd if=boot.img of=/dev/sdb bs=1M status=progress</code></li>
+<li>Reboot the device: <code>sudo reboot</code></li>
+</ol>
+<p>Then go into the BIOS to update some settings such as enabling flash bios updates, or switching UEFI/legacy boot</p>
+<p>Boot into the usb stick and follow the prompts to update the BIOS and revert your settings.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Using GPG Keys</title>
+            <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>
+            <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2024/april/041624_gpgkeys/</guid>
+            <description>&lt;p&gt;GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.</p>
+<p>Let&rsquo;s give a hypothetical situation on how this can be used. Let&rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</p>
+<ol>
+<li>Generate a GPG key which would include a public and private key</li>
+<li>Share the public key with my coworker.</li>
+<li>My coworker could then encrypt the file with my public key then send it back to me</li>
+<li>Then I could use my private key to decrypt the file</li>
+</ol>
+<p>Now let&rsquo;s go over the actual steps of how to do this.</p>
+<h3 id="key-generation">Key Generation</h3>
+<p>We can generate our own key by running <code>gpg --full-generate-key</code> which will guide us through a series of questions such as what key algorithm we want to use, the keysize, and the length of time the key should be valid for. At the end of the key generation, it will prompt for a password for the key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> what kind of key you want:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
+</span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>RSA keys may be between <span style="color:#ae81ff">1024</span> and <span style="color:#ae81ff">4096</span> bits long.
+</span></span><span style="display:flex;"><span>What keysize <span style="color:#66d9ef">do</span> you want? <span style="color:#f92672">(</span>3072<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Requested keysize is <span style="color:#ae81ff">3072</span> bits
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>        0 <span style="color:#f92672">=</span> key does not expire
+</span></span><span style="display:flex;"><span>     &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
+</span></span><span style="display:flex;"><span>     &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
+</span></span><span style="display:flex;"><span>     &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
+</span></span><span style="display:flex;"><span>     &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Key expires at Wed <span style="color:#ae81ff">17</span> Apr <span style="color:#ae81ff">2024</span> 02:38:19 AM EDT
+</span></span><span style="display:flex;"><span>Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GnuPG needs to construct a user ID to identify your key.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Real name: jocelyn
+</span></span><span style="display:flex;"><span>Email address: jk@test.com
+</span></span><span style="display:flex;"><span>Comment: To test gpg
+</span></span><span style="display:flex;"><span>You selected this USER-ID:
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
+</span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>     44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-secret-keys
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>sec   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>     44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ file publickey.asc
+</span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --armor --export 44EF66288AF
+</span></span><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
+</span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
+</span></span></code></pre></div><p>If needed we can also export the private key by doing the same thing <code>gpg --armor --export-secret-keys 44EF66288AF &gt; private.asc</code></p>
+<h3 id="encrypting-a-message">Encrypting a Message</h3>
+<p>We can encrypt a message using the public key by running <code>gpg -ear &lt;USER&gt;</code>.</p>
+<ul>
+<li><code>-e</code> = encrypt data</li>
+<li><code>-a</code> = ASCII armored output</li>
+<li><code>-r</code> = recipient USER-ID</li>
+</ul>
+<p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>     44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys joce
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>     44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys test
+</span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>     44EF66288AF
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>sub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --list-keys none 
+</span></span><span style="display:flex;"><span>gpg: error reading key: No public key
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
+</span></span><span style="display:flex;"><span>thisisatest!
+</span></span><span style="display:flex;"><span>WE CAN DO MULTIPLE LINES
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RANDOM STUFF HERE
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span></code></pre></div><p>Hit ENTER and then CTRL+D to save the message and generate the PGP message.</p>
+<h3 id="decrypting-a-message">Decrypting a Message</h3>
+<p>Now if we want to decrypt it, we can run <code>gpg -d</code>, paste in the message, hit ENTER, and CTRL+D.</p>
+<ul>
+<li><code>-d</code> = decrypt</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>THISISATEST!!!%           
+</span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
+</span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg -d test.gpg
+</span></span><span style="display:flex;"><span>gpg: encrypted with rsa3072 key, ID 116C9FD, created 2024-04-16
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>this is a test message
+</span></span></code></pre></div><h3 id="importing-a-key">Importing a Key</h3>
+<p>Now let&rsquo;s say we need to import a public key from someone else to use it to encrypt something. We can run <code>gpg --import</code> and it will show up in our <code>gpg --list-keys</code>.</p>
+<h3 id="deleting-a-key">Deleting a Key</h3>
+<p>We can delete a public key by running <code>gpg --delete-key &lt;KEY_ID_OR_EMAIL&gt;</code>.</p>
+<p>To delete a private key, we will need to run <code>gpg --delete-secret-key &lt;KEY_ID_OR_EMAIL&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>This is a secret key! - really delete? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ gpg --delete-key 44EF66288AF
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pub  rsa3072/19B3521E 2024-04-16 jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span></code></pre></div><p>And that is the basics of using GPG keys! This personally helped me learn how asymmetric encryption works.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Intro to Podman</title>
+            <link>https://khuuj.com/posts/2024/april/040324_dockersetup/</link>
+            <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2024/april/040324_dockersetup/</guid>
+            <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;
+&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;
+&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="podman-basics">Podman Basics</h2>
+<p>I needed to test some scripts on Linux (I&rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose <a href="https://podman.io/">Podman</a> as it&rsquo;s free and open source, making it a great Docker alternative especially for enterprises.</p>
+<p>To setup podman cli, we can install it from brew or download the pkg directly from the <a href="https://podman.io/docs/installation">website</a> and follow the instructions to init and start.</p>
+<p>Some basic podman commands to know:</p>
+<ul>
+<li><code>podman search</code> - searches registry for images</li>
+<li><code>podman pull &lt;image_name&gt;</code> - pulls an image from a registry</li>
+<li><code>podman ps -a</code> - shows all running containers (even stopped ones)</li>
+<li><code>podman images</code> - shows all images downloaded</li>
+<li><code>podman rmi &lt;image_name&gt;</code> - remove image</li>
+<li><code>podman rm &lt;container_name&gt;</code> - remove container</li>
+<li><code>podman build -t &lt;image_name&gt; .</code> - build a custom image using the Dockerfile in the current directory</li>
+<li><code>podman run -it --name &lt;container_name&gt; &lt;image_name&gt;</code> - run in a new container and creates a new container from an image
+<ul>
+<li>Can also add a <code>--hostname &lt;hostname&gt;</code> parameter to specify a hostname for your container</li>
+</ul>
+</li>
+<li><code>podman exec</code> - run a process in a container</li>
+</ul>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
+<p>Here&rsquo;s a sample Ubuntu image Dockerfile, created with the help of chatgpt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">ubuntu:latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install required tools</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gnupg2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   vim <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   net-tools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   wget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>   tee /usr/share/keyrings/gopass-archive-keyring.gpg &gt; /dev/null<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">## Add gopass repository to apt sources</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/gopass-archive-keyring.gpg] https://packages.gopass.pw/repos/gopass stable main&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   tee /etc/apt/sources.list.d/gopass.list<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Update package index and install gopass</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass-archive-keyring <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Clean up</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm -rf /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copies local file called bashrc &amp; vimrc in local host directory to /tmp/bashrc &amp; /tmp/vimrc on container</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> bashrc /tmp/bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/bashrc &gt;&gt; ~/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># COPY vimrc /tmp/vimrc</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/vimrc &gt;&gt; ~/.vimrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/root</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Defines default command</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>First we pull the image we want from the registry after searching for it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman search ubuntu
+</span></span><span style="display:flex;"><span>INDEX       NAME                                      DESCRIPTION                                      STARS       OFFICIAL    AUTOMATED
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu                  Ubuntu is a Debian-based Linux operating sys...  <span style="color:#ae81ff">16977</span>       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-debootstrap      DEPRECATED; use <span style="color:#e6db74">&#34;ubuntu&#34;</span> instead                 <span style="color:#ae81ff">52</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/neurodebian             NeuroDebian provides neuroscience research s...  <span style="color:#ae81ff">107</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/websphere-liberty       WebSphere Liberty multi-architecture images ...  <span style="color:#ae81ff">298</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/open-liberty            Open Liberty multi-architecture images based...  <span style="color:#ae81ff">64</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-upstart          DEPRECATED, as is Upstart <span style="color:#f92672">(</span>find other proces...  <span style="color:#ae81ff">115</span>         <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
+</span></span><span style="display:flex;"><span>docker.io   docker.io/ubuntu/nginx                    Nginx, a high-performance reverse proxy &amp; we...  <span style="color:#ae81ff">112</span>                     
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman pull ubuntu                   
+</span></span><span style="display:flex;"><span>Resolved <span style="color:#e6db74">&#34;ubuntu&#34;</span> as an alias <span style="color:#f92672">(</span>/etc/containers/registries.conf.d/shortnames.conf<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Trying to pull docker.io/library/ubuntu:latest...
+</span></span><span style="display:flex;"><span>Getting image source signatures
+</span></span><span style="display:flex;"><span>Copying blob bccd10f490ab <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Copying config ca2b0f2696 <span style="color:#66d9ef">done</span>  
+</span></span><span style="display:flex;"><span>Writing manifest to image destination
+</span></span><span style="display:flex;"><span>Storing signatures
+</span></span><span style="display:flex;"><span>ca2b0f26964cf2e80ba3e084d5983dab293fdb87485dc6445f3f7bbfc89d7459
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu  latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago  80.4 MB
+</span></span></code></pre></div><p>After pulling the image, we can create a custom image using the Dockerfile. The beginning of the dockerfile specifies a base image we can use: <code>FROM ubuntu:latest</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
+</span></span><span style="display:flex;"><span>STEP 1/12: FROM ubuntu:latest
+</span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget  <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman images
+</span></span><span style="display:flex;"><span>REPOSITORY                     TAG         IMAGE ID      CREATED         SIZE
+</span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">22</span> seconds ago  <span style="color:#ae81ff">285</span> MB
+</span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago     80.4 MB
+</span></span></code></pre></div><p>Now we can create a container and run an interactive shell using the <code>-it</code> option. They stand for &ldquo;interactive&rdquo; and &ldquo;pseudo-TTY&rdquo;. The <code>-i</code> option makes the session interactive, and the <code>-t</code> option allocates a pseudo-TTY, allowing you to interact with the shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -it --name ubuntu_container ubuntu_custom_image
+</span></span><span style="display:flex;"><span>root@1623365303af:~# ls -a
+</span></span><span style="display:flex;"><span>.  ..  .bashrc  .profile  .vimrc
+</span></span></code></pre></div><p>We can check the status of our container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS                         PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">2</span> minutes ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> About a minute ago              ubuntu_container
+</span></span></code></pre></div><p>To get back in, we need to make sure that it&rsquo;s started.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman start ubuntu_container             
+</span></span><span style="display:flex;"><span>ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman ps -a                              
+</span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS            PORTS       NAMES
+</span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">4</span> minutes ago  Up <span style="color:#ae81ff">6</span> seconds ago              ubuntu_container
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec -it ubuntu_container /bin/bash <span style="color:#75715e">#this starts an interactive shell </span>
+</span></span><span style="display:flex;"><span>root@1623365303af:~# 
+</span></span></code></pre></div><p>We can also just execute the command without an interactive shell from within the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman exec ubuntu_container ls -la  
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:18 .
+</span></span><span style="display:flex;"><span>dr-xr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:17 ..
+</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">16</span> Apr  <span style="color:#ae81ff">3</span> 07:23 .bash_history
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">3237</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .bashrc
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">161</span> Jul  <span style="color:#ae81ff">9</span>  <span style="color:#ae81ff">2019</span> .profile
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">100</span> Apr  <span style="color:#ae81ff">3</span> 07:16 .vimrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ podman exec ubuntu_container cat /etc/os-release
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu 22.04.4 LTS&#34;</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;22.04.4 LTS (Jammy Jellyfish)&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span><span style="display:flex;"><span>ID<span style="color:#f92672">=</span>ubuntu
+</span></span><span style="display:flex;"><span>ID_LIKE<span style="color:#f92672">=</span>debian
+</span></span><span style="display:flex;"><span>HOME_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>SUPPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://help.ubuntu.com/&#34;</span>
+</span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.launchpad.net/ubuntu/&#34;</span>
+</span></span><span style="display:flex;"><span>PRIVACY_POLICY_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;</span>
+</span></span><span style="display:flex;"><span>UBUNTU_CODENAME<span style="color:#f92672">=</span>jammy
+</span></span></code></pre></div><p>Now we can run whatever we want on our containers! It&rsquo;s a pretty light and easy way to test things without impacting our host system or running a VM with a gui.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Windows Subsystem for Linux (WSL)</title>
+            <link>https://khuuj.com/posts/2023/october/102523_wslwindows/</link>
+            <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2023/october/102523_wslwindows/</guid>
+            <description>&lt;p&gt;I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.&lt;/p&gt;
+&lt;h3 id=&#34;installing-wsl&#34;&gt;Installing WSL&lt;/h3&gt;
+&lt;p&gt;Following this &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install&#34;&gt;article&lt;/a&gt; on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the &lt;code&gt;Terminal&lt;/code&gt; app on Windows 11:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WslRegisterDistribution failed with error: 0x80370114
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: 0x80370114 The operation could not be started because a required feature is not installed.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press any key to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I manually enabled the features in &lt;code&gt;Turn Windows features On or Off&lt;/code&gt; then restarted:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I don&rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&rsquo;m much more familiar with navigating linux than using powershell.</p>
+<h3 id="installing-wsl">Installing WSL</h3>
+<p>Following this <a href="https://learn.microsoft.com/en-us/windows/wsl/install">article</a> on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the <code>Terminal</code> app on Windows 11:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Installing, this may take a few minutes...
+</span></span><span style="display:flex;"><span>WslRegisterDistribution failed with error: 0x80370114
+</span></span><span style="display:flex;"><span>Error: 0x80370114 The operation could not be started because a required feature is not installed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Press any key to <span style="color:#66d9ef">continue</span>...
+</span></span></code></pre></div><p>I manually enabled the features in <code>Turn Windows features On or Off</code> then restarted:</p>
+<ul>
+<li><code>Virtual Machine Platform</code></li>
+<li><code>Windows Hypervisor Platform</code></li>
+<li><code>Windows Subsystem for Linux</code></li>
+</ul>
+<h3 id="using-wsl">Using WSL</h3>
+<p><code>wsl --list</code> shows all the Linux distros installed and <code>wsl -d &lt;distro&gt;</code> launches the distro.</p>
+<p>In WSL, the C Drive is mounted in <code>/mnt/c/</code> so I was able to use linux to navigate to all of my Windows files in <code>/mnt/c/Users/&lt;user&gt;</code> #hooray!</p>
+<p>Everything else seemed the same as a regular Linux system including having a home directory in <code>/home/&lt;user&gt;</code>.</p>
+<h3 id="zsh-on-wsl">ZSH on WSL</h3>
+<p>It looks like by default it runs bash and I wanted to switch to zsh and install Powerlevel10k.</p>
+<ul>
+<li>Install zsh: <code>sudo apt install zsh</code></li>
+<li>Install Oh my zsh!: <code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</code></li>
+<li>Set theme to Powerlevel10k: <code>git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code></li>
+<li>Install <a href="https://github.com/romkatv/powerlevel10k#fonts">MesloLGS NF</a> fonts on Windows 11 and change it in the default profile in Terminal
+<ul>
+<li>Hit <code>CTRL + ,</code> to open Terminal settings</li>
+<li>Profiles &gt; Defaults &gt; Appearance &gt; Font face &gt; MesloLGS NF</li>
+</ul>
+</li>
+<li>Then run <code>p10k configure</code> to configure it</li>
+</ul>
+<p>I thought this was pretty cool as it was my first time using WSL. My experience with powershell is limited so I thought this would be helpful for me to navigate my Windows system faster.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Missing grub menu after update</title>
+            <link>https://khuuj.com/posts/2023/october/102423_brokengrub/</link>
+            <pubDate>Tue, 24 Oct 2023 01:54:39 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2023/october/102423_brokengrub/</guid>
+            <description>&lt;h2 id=&#34;failed-to-open-efibootgrubx64efi---not-found&#34;&gt;Failed to open \EFI\BOOT\grubx64.efi - Not Found&lt;/h2&gt;
+&lt;p&gt;I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.&lt;/p&gt;
+&lt;p&gt;Here is the error that I was receiving.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to open &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi - Not Found  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to load image &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi: Not Found    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;start_image&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; returned Not Found 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My Ubuntu version:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ cat /etc/os-release 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PRETTY_NAME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ubuntu 22.04.3 LTS&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to create a post to write about how I fixed the issue for future reference.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="failed-to-open-efibootgrubx64efi---not-found">Failed to open \EFI\BOOT\grubx64.efi - Not Found</h2>
+<p>I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.</p>
+<p>Here is the error that I was receiving.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to open <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi - Not Found  
+</span></span><span style="display:flex;"><span>Failed to load image <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi: Not Found    
+</span></span><span style="display:flex;"><span>start_image<span style="color:#f92672">()</span> returned Not Found 
+</span></span></code></pre></div><p>My Ubuntu version:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat /etc/os-release 
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu 22.04.3 LTS&#34;</span>
+</span></span></code></pre></div><p>I wanted to create a post to write about how I fixed the issue for future reference.</p>
+<h3 id="on-the-windows-side">On the Windows side</h3>
+<ul>
+<li>Get a copy of the latest ubuntu iso</li>
+<li>Make the bootable usb
+<ul>
+<li>I opted to use <a href="https://etcher.balena.io/#download-etcher">BalenaEtcher</a> on windows as it has a very simple interface.</li>
+</ul>
+</li>
+</ul>
+<p>I was running into some issues with reformatting my USB on Windows and had to use diskpart to clean it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\S</span>ystem32&gt; diskpart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Microsoft DiskPart version 10.0.22621.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> Microsoft Corporation.
+</span></span><span style="display:flex;"><span>On computer: CHEDDAR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; list disk
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Disk <span style="color:#75715e">###  Status         Size     Free     Dyn  Gpt</span>
+</span></span><span style="display:flex;"><span>  --------  -------------  -------  -------  ---  ---
+</span></span><span style="display:flex;"><span>  Disk <span style="color:#ae81ff">0</span>    Online          <span style="color:#ae81ff">476</span> GB      <span style="color:#ae81ff">0</span> B        *
+</span></span><span style="display:flex;"><span>  Disk <span style="color:#ae81ff">1</span>    Online           <span style="color:#ae81ff">14</span> GB  <span style="color:#ae81ff">1024</span> KB        *
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; <span style="color:#66d9ef">select</span> disk <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Disk <span style="color:#ae81ff">1</span> is now the selected disk.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; list volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Volume <span style="color:#75715e">###  Ltr  Label        Fs     Type        Size     Status     Info</span>
+</span></span><span style="display:flex;"><span>  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+</span></span><span style="display:flex;"><span>  Volume <span style="color:#ae81ff">0</span>     C   Windows      NTFS   Partition    <span style="color:#ae81ff">261</span> GB  Healthy    Boot
+</span></span><span style="display:flex;"><span>  Volume <span style="color:#ae81ff">1</span>         SYSTEM       FAT32  Partition    <span style="color:#ae81ff">260</span> MB  Healthy    System
+</span></span><span style="display:flex;"><span>  Volume <span style="color:#ae81ff">2</span>         WinRE_DRV    NTFS   Partition   <span style="color:#ae81ff">1000</span> MB  Healthy    Hidden
+</span></span><span style="display:flex;"><span>  Volume <span style="color:#ae81ff">3</span>     D                       Removable   <span style="color:#ae81ff">4799</span> MB  Unusable
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; <span style="color:#66d9ef">select</span> volume <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; clean
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; convert gpt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; create partition primary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DISKPART&gt; exit
+</span></span></code></pre></div><p>After that, I turned off Secure Boot in my BIOS and booted into the Ubuntu live usb.</p>
+<h3 id="on-the-ubuntu-live-usb-side">On the Ubuntu live usb side</h3>
+<ul>
+<li>Select the <code>Try Ubuntu</code> option</li>
+<li>Launch terminal and add the boot-repair ppa from <a href="https://launchpad.net/~yannubuntu/&#43;archive/ubuntu/boot-repair">YannUbuntu</a>
+<ul>
+<li><code>sudo add-apt-repository ppa:yannubuntu/boot-repair</code></li>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt install boot-repair &amp;&amp; boot-repair</code></li>
+</ul>
+</li>
+</ul>
+<p>This will run <code>boot-repair</code> and you can choose the recommended fix option to restall grub.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Authentication vs Authorization</title>
+            <link>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</link>
+            <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</guid>
+            <description>&lt;h1 id=&#34;oauth-oidc-and-saml&#34;&gt;OAuth, OIDC, and SAML&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; (AuthN) proves who someone is and &lt;strong&gt;Authorization&lt;/strong&gt; (AuthZ) allows that someone to access certain resources.&lt;/p&gt;
+&lt;p&gt;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h1 id="oauth-oidc-and-saml">OAuth, OIDC, and SAML</h1>
+<p><strong>Authentication</strong> (AuthN) proves who someone is and <strong>Authorization</strong> (AuthZ) allows that someone to access certain resources.</p>
+<p>Basic authentication is what we&rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.</p>
+<p>There are several authentication factors that are widely used and some are:</p>
+<ul>
+<li>Something a person knows</li>
+<li>Something a person has</li>
+<li>Something a person is</li>
+<li>Somewhere a person is</li>
+</ul>
+<p>If you can&rsquo;t prove who you are, then then you won&rsquo;t be allowed to access the resource as authorization should always follow after authentication. Authorization grants/denies permissions to resources.</p>
+<h2 id="what-is-oauth-20">What is OAuth 2.0?</h2>
+<p>OAuth 2.0 (Open Authoriation) is the standard to allow one application access to another application without sharing your credentials. It grants <strong>authorization</strong> for one application to access data or features in another application for you. It uses <strong>Access Tokens</strong> to hold information about your user and permissions.</p>
+<h2 id="what-is-oidc">What is OIDC?</h2>
+<p>OIDC (OpenID Connect) is an authentication protocol based on OAuth 2.0 and enables users to sign into one application and receive access to another. It is used to provide SSO for applications. For example, when you need to log into one website and it gives you the option to log in using your Google account, this is using OIDC authentication. OIDC uses <strong>ID Tokens</strong>, usually in the form of a JSON Web Token (JWT), which include information such as email address and name.</p>
+<p>According to <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-openid-connect-oidc">Microsoft</a>, <em>&ldquo;OIDC was built on top of OAuth 2.0 to add authentication. The OAuth 2.0 protocol was developed first and then OIDC was added to enhance its capabilities. The difference between the two is that OAuth 2.0 provides authorization, while OIDC provides authentication. OAuth 2.0 is what allows users to gain access to a relying party, using their account with an OpenID provider, and OIDC is what allows the OpenID provider to pass along a user profile to the relying party. OIDC also allows organizations to offer their users single sign-on.&rdquo;</em></p>
+<p>Okta has an illustrated guide that goes over how OAuth and OIDC work together <a href="https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc">here</a>.</p>
+<h2 id="what-is-saml">What is SAML?</h2>
+<p>SAML (Security Assertion Markup Language) is an XML-based authentication protocol used for transferring identity data between an idP (identity provider) and SP (service provider). It enables SSO for applications similar to OIDC.</p>
+<p>An idP provides the user&rsquo;s identity and authorization to the SP. For example, Okta would be an idP and an SP could be something like Slack. You would log into Okta and it would authenticate you into Slack using SAML.</p>
+<h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
+<p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically the same with 3 primary differences:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Differences</th>
+          <th>SAML</th>
+          <th>OIDC</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Data format</td>
+          <td>XML</td>
+          <td>JSON</td>
+      </tr>
+      <tr>
+          <td>Data sent</td>
+          <td>SAML Assertion</td>
+          <td>Claims</td>
+      </tr>
+      <tr>
+          <td>Application name</td>
+          <td>Service Provider</td>
+          <td>Relying Party</td>
+      </tr>
+  </tbody>
+</table>
+<p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Linux Tip of the Day - grep</title>
+            <link>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</link>
+            <pubDate>Sat, 03 Jun 2023 02:41:51 -0400</pubDate>
+            
+            <guid>https://khuuj.com/posts/2023/june/060323_ltotd_grep/</guid>
+            <description>&lt;h2 id=&#34;what-is-grep&#34;&gt;What is grep?&lt;/h2&gt;
+&lt;p&gt;According to the man page, &lt;code&gt;grep&lt;/code&gt; is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can be used by running &lt;code&gt;grep [OPTION...] PATTERNS [FILE...]&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.local/bin:&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is helpful when parsing log files or files with a lot of text.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;  OK  &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Started GNOME Display Manager.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         Starting GNOME Display Manager...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because it can search using regular expressions, it is case sensitive. Using &lt;code&gt;grep gnome /var/log/boot.log&lt;/code&gt; in this case would show no results but we can use different options to help with this.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="what-is-grep">What is grep?</h2>
+<p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
+<p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
+</span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
+</span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
+<p><strong><code>-i, --ignore-case</code></strong></p>
+<p><code>grep -i</code> ignores case when searching for matches.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
+</span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
+</span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
+<p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log | grep -vi gnome
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
+</span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
+<p><code>grep -c</code> can be used to provide the count for lines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>
+</span></span></code></pre></div><h3 id="using-regular-expressions-with-grep">Using regular expressions with grep</h3>
+<p>Let&rsquo;s say we have a test file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
+</span></span><span style="display:flex;"><span>test
+</span></span><span style="display:flex;"><span>TEST
+</span></span><span style="display:flex;"><span>TeST
+</span></span><span style="display:flex;"><span>123test
+</span></span><span style="display:flex;"><span>1TE34St
+</span></span><span style="display:flex;"><span>456tEST
+</span></span></code></pre></div><p>Look for lines with <code>test</code> regardless of case:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
+</span></span><span style="display:flex;"><span>test
+</span></span><span style="display:flex;"><span>TEST
+</span></span><span style="display:flex;"><span>TeST
+</span></span><span style="display:flex;"><span>123test
+</span></span><span style="display:flex;"><span>456tEST
+</span></span></code></pre></div><p>Look for lines that start with capital <code>T</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
+</span></span><span style="display:flex;"><span>TEST
+</span></span><span style="display:flex;"><span>TeST
+</span></span></code></pre></div><p>Look for lines that end with lowercase <code>t</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
+</span></span><span style="display:flex;"><span>test
+</span></span><span style="display:flex;"><span>123test
+</span></span><span style="display:flex;"><span>1TE34St
+</span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
+<p>Look for anything that starts with a number:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
+</span></span><span style="display:flex;"><span>123test
+</span></span><span style="display:flex;"><span>1TE34St
+</span></span><span style="display:flex;"><span>456tEST
+</span></span></code></pre></div><p>Look for lines that start with 3 numbers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
+</span></span><span style="display:flex;"><span>123test
+</span></span><span style="display:flex;"><span>456tEST
+</span></span></code></pre></div><p>Look for anything that ends with <code>test</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
+</span></span><span style="display:flex;"><span>test
+</span></span><span style="display:flex;"><span>123test
+</span></span></code></pre></div><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
+<p>I&rsquo;ve only provided a few options with basics for <code>grep</code> but it is a powerful tool that can be used to parse plaintext files.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Configuring https on a CentOS webserver</title>
+            <link>https://khuuj.com/posts/2022/december/120922_confighttps/</link>
+            <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
+            
+            <guid>https://khuuj.com/posts/2022/december/120922_confighttps/</guid>
+            <description>&lt;p&gt;I tried to configure https for a webserver recently and wanted to document what worked for me.&lt;/p&gt;
+&lt;p&gt;This worked on CentOS 7 running Apache version 2.4.6.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an &lt;code&gt;ssl.conf&lt;/code&gt; file in &lt;code&gt;/etc/httpd/conf.d/&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Create the following VirtualHost configuration:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apacheconf&#34; data-lang=&#34;apacheconf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;*:443&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Require &lt;span style=&#34;color:#66d9ef&#34;&gt;all&lt;/span&gt; granted
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  AllowOverride &lt;span style=&#34;color:#66d9ef&#34;&gt;All&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ServerName website.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DocumentRoot &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ErrorLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/website.error.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  CustomLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/access.log&lt;/span&gt; combined
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;on&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/public.crt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateKeyFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/private/private.key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateChainFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/chain.crt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;SSLCertificateChainFile&lt;/code&gt; might not be necessary in newer versions of Apache.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I tried to configure https for a webserver recently and wanted to document what worked for me.</p>
+<p>This worked on CentOS 7 running Apache version 2.4.6.</p>
+<ol>
+<li>Create an <code>ssl.conf</code> file in <code>/etc/httpd/conf.d/</code>.</li>
+<li>Create the following VirtualHost configuration:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:443</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/var/www/html/website/public</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  Require <span style="color:#66d9ef">all</span> granted
+</span></span><span style="display:flex;"><span>  AllowOverride <span style="color:#66d9ef">All</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>  ServerName website.com
+</span></span><span style="display:flex;"><span>  DocumentRoot <span style="color:#e6db74">/var/www/html/website/public</span>
+</span></span><span style="display:flex;"><span>  ErrorLog <span style="color:#e6db74">/var/log/httpd/website.error.log</span>
+</span></span><span style="display:flex;"><span>  CustomLog <span style="color:#e6db74">/var/log/httpd/access.log</span> combined
+</span></span><span style="display:flex;"><span>  SSLEngine <span style="color:#66d9ef">on</span>
+</span></span><span style="display:flex;"><span>  SSLCertificateFile <span style="color:#e6db74">/etc/ssl/certs/public.crt</span>
+</span></span><span style="display:flex;"><span>  SSLCertificateKeyFile <span style="color:#e6db74">/etc/ssl/private/private.key</span>
+</span></span><span style="display:flex;"><span>  SSLCertificateChainFile <span style="color:#e6db74">/etc/ssl/certs/chain.crt</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><p><code>SSLCertificateChainFile</code> might not be necessary in newer versions of Apache.</p>
+<ol start="3">
+<li>Restart <code>httpd</code>: <code>sudo systemctl restart httpd</code></li>
+</ol>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Setting up Python Virtual Environment</title>
+            <link>https://khuuj.com/posts/2022/march/030322_pyvirtenv/</link>
+            <pubDate>Thu, 03 Mar 2022 02:47:19 -0500</pubDate>
+            
+            <guid>https://khuuj.com/posts/2022/march/030322_pyvirtenv/</guid>
+            <description>&lt;h2 id=&#34;setting-up-python-virtual-environment&#34;&gt;Setting up Python Virtual Environment&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links&#34;&gt;Miniconda&lt;/a&gt;: &lt;a href=&#34;https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf&#34;&gt;Conda cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Verify &lt;code&gt;conda&lt;/code&gt; is installed running &lt;code&gt;conda -V&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create new virtual environment (in this example, we are using python 3.9): &lt;code&gt;conda create --name py39 python=3.9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check that env shows in &lt;code&gt;conda env list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To start the environment: &lt;code&gt;conda activate py39&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install IPython: &lt;code&gt;pip install ipython&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install any other libraries needed: ex. &lt;code&gt;pip install requests&lt;/code&gt;, &lt;code&gt;pip install python-ldap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start ipython: &lt;code&gt;ipython&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To exit ipython: &lt;code&gt;exit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To leave virtual env: &lt;code&gt;conda deactivate&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+            <content type="html"><![CDATA[<h2 id="setting-up-python-virtual-environment">Setting up Python Virtual Environment</h2>
+<p><em>This is a note to myself on how to setup a Python virtual environment using Anaconda and IPython.</em></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Install <a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">Miniconda</a>: <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">Conda cheatsheet</a></li>
+<li>Verify <code>conda</code> is installed running <code>conda -V</code></li>
+<li>Create new virtual environment (in this example, we are using python 3.9): <code>conda create --name py39 python=3.9</code></li>
+<li>Check that env shows in <code>conda env list</code></li>
+<li>To start the environment: <code>conda activate py39</code></li>
+<li>Install IPython: <code>pip install ipython</code></li>
+<li>Install any other libraries needed: ex. <code>pip install requests</code>, <code>pip install python-ldap</code></li>
+<li>Start ipython: <code>ipython</code></li>
+<li>To exit ipython: <code>exit</code></li>
+<li>To leave virtual env: <code>conda deactivate</code></li>
+</ol>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Passing Security&#43;</title>
+            <link>https://khuuj.com/posts/2022/february/021722_security&#43;/</link>
+            <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
+            
+            <guid>https://khuuj.com/posts/2022/february/021722_security&#43;/</guid>
+            <description>&lt;p&gt;I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.&lt;/p&gt;
+&lt;h3 id=&#34;the-testing-experience&#34;&gt;The Testing Experience&lt;/h3&gt;
+&lt;p&gt;I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.</p>
+<h3 id="the-testing-experience">The Testing Experience</h3>
+<p>I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.</p>
+<p>Like lots of others I thought I had failed for sure during the test. I flagged all PBQs and dedicated about 30 minutes after finishing the multiple choice to go over them. I ran out of time in the end to double-check all of my answers but made sure to submit something on all of the questions regardless of whether I was sure or not.</p>
+<h3 id="resources">Resources</h3>
+<ul>
+<li>Darril Gibson&rsquo;s GCGA</li>
+<li>Professor Messer&rsquo;s Practice Exams and Videos</li>
+<li>Jason Dion&rsquo;s Udemy Practice Exams</li>
+<li>Mike Chapple&rsquo;s Cert Prep (Linkedin Learning)</li>
+</ul>
+<p>I mainly watched Prof. Messer&rsquo;s and Mike Chapple&rsquo;s videos at 1.75x speed to help clarify things I didn&rsquo;t understand.</p>
+<p>I spent about a month of serious studying and dedicated about 4-5 hours of study after work. I ended up passing with an 825.</p>
+<h3 id="what-was-helpful-for-me">What was helpful for me</h3>
+<p>Practice Exams! The practice exams really gave me an idea of what I needed to focus on. I wasn&rsquo;t scoring very high on Dion&rsquo;s practice exams (low to mid 70s) but on Prof. Messer&rsquo;s exams I was getting mid to high 80s. I would definitely recommend purchasing Prof. Messer&rsquo;s exams as they were super helpful.</p>
+<p>A year and half later, I have found that while the cert did help me with gaining basic security knowledge, it wasn&rsquo;t very helpful for helping me land a job. I don&rsquo;t think that companies value the cert as much as people say they do. I would still recommed getting the cert as it definitely teaches good foundations that are important during interviews.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>How I Got My First Security Job</title>
+            <link>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</link>
+            <pubDate>Wed, 02 Feb 2022 00:19:34 -0500</pubDate>
+            
+            <guid>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</guid>
+            <description>&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/entrylevel.png&#34; alt=&#34;Entry Level&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.&lt;/p&gt;
+&lt;p&gt;For some context, here is my work experience:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5 years of IT support experience overall&lt;/li&gt;
+&lt;li&gt;2 years at a FAANG doing internal IT support&lt;/li&gt;
+&lt;li&gt;6 months running IT at a startup as the sole IT person&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><img src="/static/entrylevel.png" alt="Entry Level"></p>
+<p>I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.</p>
+<p>For some context, here is my work experience:</p>
+<ul>
+<li>5 years of IT support experience overall</li>
+<li>2 years at a FAANG doing internal IT support</li>
+<li>6 months running IT at a startup as the sole IT person</li>
+</ul>
+<p>I honestly wouldn&rsquo;t say that I&rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.</p>
+<p>I&rsquo;ve been interested in security for almost 3 years now and had been actively trying to break into a security role for the past 2 years. The thing about security is that it&rsquo;s not an entry level field even if roles are advertised as &ldquo;entry level&rdquo;. What I mean by that is that many organization desire folks with experience as it is cheaper to hire someone with experience than it is to train someone with no experience. Unfortunately, security is still seen as a cost center today and organizations tend to want to save on that cost as much as possible. There are so many folks trying to break into roles with actual experience, degrees, certs, and bootcamps that I didn&rsquo;t think that I really stood a chance.</p>
+<p>I probably applied to over 150 &ldquo;entry level&rdquo; roles over the past 2 years including SOC Analyst, Security Analyst, Security Engineer, SecOps Engineer roles, and received maybe 5-7 responses in total. When the pandemic hit in 2019, I had some time on my hands to get my Security+. The Sec+ was honestly a good way to learn the fundamentals of security, and I highly recommend it for anyone trying to get into security if they don&rsquo;t have experience. I was asked a lot of foundational questions covered in the material during interviews.</p>
+<p>Getting the Sec+ won&rsquo;t get you a job rightaway though. It&rsquo;s good for learning the basics and as a checkmark if job descriptions have it but it isn&rsquo;t really helpful to get a job in the end in my experience. I was applying to roles and still couldn&rsquo;t get to a recruiter screen for awhile. I started doing TryHackMe rooms to learn about tools, reading security blogs, and learned scripting as I saw that those were desirable skills. My IT Support roles actually helped a lot as I was able to learn the foundations of how computers worked, networking basics, system administration, and most importantly how to work and communicate with people.</p>
+<p>We sometimes see recruiter posts about how applying for jobs isn&rsquo;t a numbers game and that we should be tailoring our resume to every single job that we apply to. I half agree with that and half don&rsquo;t and here&rsquo;s why. Yes, we should be taking a look at the job description and making sure that our resume has the key words to get past ATS, but, you should absolutely be applying to every and any job that you are interested in and it&rsquo;s okay to use the same resume as long as it makes sense to. The more jobs that you apply to the better in my opinion. When I was applying to jobs, I went through all of LinkedIn and filtered by &ldquo;Easy Apply&rdquo; jobs first to quickly send out my resume. I never once filled out a cover letter and most organizations don&rsquo;t require filling out a million fields after submitting a resume these days. After that, if I saw a posting that I really liked and it required me to go through the Workday fields, I did it as my chances were 0% if I didn&rsquo;t try.</p>
+<p>Eventually, I started getting reach outs for Security Engineer and SecOps Engineer roles during the &ldquo;Great Resignation&rdquo; time.</p>
+<p>To prepare for the interviews, I researched the interviewers and other folks from the same company that had the same or similar job titles. LinkedIn was a great place to utilize OSINT to gather information on tooling and the day to day. I didn&rsquo;t have to do any coding except for one job interview (which I tanked horribly). To me, the biggest thing was showing that I had a passion for security and willingness to learn. Even if I didn&rsquo;t know everything, I showed them that I had huge potential and that all I needed was the right opportunity and a chance to learn.</p>
+<p>I couldn&rsquo;t have done it without the support of my friends, family, and peers. When I was having trouble with getting a security job, I made sure to look for IT opportunities that could at least lead to a specialization in Security, and made it clear to all hiring managers that that was my plan. If a job didn&rsquo;t have that potential, I didn&rsquo;t take it or move forward with the interview. All my coworkers, friends, and family supported me and helped me to network with security folks or sent me security resources.</p>
+<p>The most important thing is, don&rsquo;t give up. There were days when I felt done and thought maybe I should stick with IT support or maybe try moving into a systems admin/engineer role if security didn&rsquo;t work out. After those periods of lows, I would always fall back in love with learning about security and reading up on security news.</p>
+<p>I&rsquo;ll be creating a separate post on how I passed Security+ and what materials I used.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Linux Tip of the Day - ps</title>
+            <link>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</link>
+            <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+            
+            <guid>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</guid>
+            <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;
+&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;
+&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="what-is-ps">What is ps?</h2>
+<p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
+<p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
+<p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43682</span> pts/1    00:00:00 bash
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43706</span> pts/1    00:00:00 ps
+</span></span></code></pre></div><ul>
+<li><code>PID</code> = Process ID</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-e, select all processes</code></strong></p>
+<p><code>ps -e</code> lists all processes that have been started by all users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -e | head -3
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">1</span> ?        00:00:03 systemd
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">2</span> ?        00:00:00 kthreadd
+</span></span></code></pre></div><p><strong><code>-f, full format listing</code></strong></p>
+<p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-F, Extra full format</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -eF | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">45072</span> <span style="color:#ae81ff">11088</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>SZ</code> = Size in RAM page of the process image</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>PSR</code> = processor that the process is assigned to</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>ps aux</code></strong></p>
+<p><code>ps aux</code> is another way to list all processes (not the same as <code>ps -aux</code>, which displays all processes owned by user named &ldquo;x&rdquo;). This is the legacy way of seeing all processes running using BSD syntax.</p>
+<ul>
+<li><code>a</code> = all users</li>
+<li><code>u</code> = shows the user</li>
+<li><code>x</code> = displays the processes not executed in the terminal</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps aux | head -3
+</span></span><span style="display:flex;"><span>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>  0.0  0.0 <span style="color:#ae81ff">180288</span> <span style="color:#ae81ff">11088</span> ?        Ss   Mar06   0:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>  0.0  0.0      <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span> ?        S    Mar06   0:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>USER</code> = User account running process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>%CPU</code> = CPU time used by the process (in %)</li>
+<li><code>%MEM</code> = Physical Memory used by the process (in %)</li>
+<li><code>VSZ</code> = Virtual memory used (in bytes)</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>STAT</code> = Process state</li>
+<li><code>START</code> = Starting time/date of the process</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>COMMAND</code> = Command which started the process</li>
+</ul>
+<p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
+<p><strong><code>-C, cmdlet</code></strong></p>
+<p><code>-C</code> can be used to search in ps with a command name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -C chrome
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:49 chrome
+</span></span></code></pre></div><p><strong><code>-p, process id</code></strong></p>
+<p><code>-p</code> can be used to search for process id</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -p <span style="color:#ae81ff">23128</span>
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:51 chrome
+</span></span></code></pre></div><p><strong><code>-u, userlist</code></strong></p>
+<p><code>-u</code> can be used to search by user</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -u bob
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17827</span> ?        00:00:00 systemd
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17828</span> ?        00:00:00 <span style="color:#f92672">(</span>sd-pam<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17854</span> ?        00:00:00 dbus-daemon 
+</span></span></code></pre></div><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>What is a CVE?</title>
+            <link>https://khuuj.com/posts/2021/march/032421_whatiscve/</link>
+            <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+            
+            <guid>https://khuuj.com/posts/2021/march/032421_whatiscve/</guid>
+            <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>CVE is short for <strong>&ldquo;Common Vulnerabilities and Exposures&rdquo;</strong>.</p>
+<p>CVE is managed by the <a href="https://cve.mitre.org/">MITRE corporation</a> and is funded by the DHS CISA. According to the Mitre site, &ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.</p>
+<p>CVE provides an identifier assigned by a CVE Numbering Authority (CNA). Once an issue is brought up to a CNA, they can assign the issue/information a CVE ID and provide a brief description to post on the CVE website.</p>
+<p>According to RedHad, &ldquo;Often, a CVE ID is assigned before a security advisory is made public. It’s common for vendors to keep security flaws secret until a fix has been developed and tested. That reduces opportunities for attackers to exploit unpatched flaws.&rdquo;</p>
+<p>CVE IDs are in the format of <code>CVE-2021-1234567</code> and an entry includes the CVE ID, a brief description, a product and version, and links to the reports.</p>
+<h2 id="what-are-the-requirements-for-a-cve">What are the requirements for a CVE?</h2>
+<p>Not all vulnerabilities will receive a CVE ID.</p>
+<p>RedHat provides a list of criteria.</p>
+<p><img src="/static/cvecriteria.png" alt="CVE Criteria"></p>
+<blockquote>
+<p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p></blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Linux Tip of the Day - du</title>
+            <link>https://khuuj.com/posts/2021/march/030721_ltotd_du/</link>
+            <pubDate>Sun, 07 Mar 2021 13:49:29 -0800</pubDate>
+            
+            <guid>https://khuuj.com/posts/2021/march/030721_ltotd_du/</guid>
+            <description>&lt;p&gt;&lt;em&gt;I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-is-du&#34;&gt;What is du?&lt;/h2&gt;
+&lt;p&gt;According to the &lt;code&gt;du&lt;/code&gt; man page, &lt;code&gt;du&lt;/code&gt; is used to estimate file space usage. It&amp;rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the &lt;code&gt;du&lt;/code&gt; cmd has helped to figure out which files/folders are the culprits.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><em>I decided to start a Linux Tip of the Day for myself as a refresher on some Linux cmds and troubleshooting steps that I use daily. Part of my role is to handle linux escalations and these tips have helped me tremendously to figure out issues.</em></p>
+<h2 id="what-is-du">What is du?</h2>
+<p>According to the <code>du</code> man page, <code>du</code> is used to estimate file space usage. It&rsquo;s a standard command that can be applied to directories to find out how much space files/directories are taking. One issue that I often run into when supporting users are full hard drives and the <code>du</code> cmd has helped to figure out which files/folders are the culprits.</p>
+<p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
+<p><strong><code>-s, --summarize</code></strong></p>
+<p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ du -s
+</span></span><span style="display:flex;"><span>12669812	.
+</span></span><span style="display:flex;"><span> ~ $ du -s *
+</span></span><span style="display:flex;"><span>16	Desktop
+</span></span><span style="display:flex;"><span>429860	Documents
+</span></span></code></pre></div><p><strong><code>-h, --human-readable</code></strong></p>
+<p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> ~ $ du -sh *
+</span></span><span style="display:flex;"><span>16K	Desktop
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span></code></pre></div><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
+<p><strong><code>-a, --all</code></strong></p>
+<p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>test $  du -ha
+</span></span><span style="display:flex;"><span>0	./test/test/test.txt
+</span></span><span style="display:flex;"><span>4.0K	./test/test
+</span></span><span style="display:flex;"><span>8.0K	./test
+</span></span><span style="display:flex;"><span>12K	.
+</span></span></code></pre></div><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $  du -sh * | sort -hr | head -5
+</span></span><span style="display:flex;"><span>4.6G	Downloads
+</span></span><span style="display:flex;"><span>655M	games
+</span></span><span style="display:flex;"><span>420M	Documents
+</span></span><span style="display:flex;"><span>33M	github
+</span></span><span style="display:flex;"><span>14M	Pictures
+</span></span></code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>Sudo Vulnerability</title>
+            <link>https://khuuj.com/posts/2021/january/012621_sudovuln/</link>
+            <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+            
+            <guid>https://khuuj.com/posts/2021/january/012621_sudovuln/</guid>
+            <description>&lt;h2 id=&#34;a-sudo-vulnerability&#34;&gt;A Sudo Vulnerability&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/sudo.jpg&#34; alt=&#34;Sudo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156&#34;&gt;CVE-2021-3156&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&lt;/p&gt;
+&lt;p&gt;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="a-sudo-vulnerability">A Sudo Vulnerability</h2>
+<p><img src="/static/sudo.jpg" alt="Sudo"></p>
+<p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156">CVE-2021-3156</a></p>
+<p>On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &lsquo;sudo&rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &lsquo;', however, a bug has made it possible to run &lsquo;sudoedit&rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.</p>
+<p>With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.</p>
+<p>To <a href="https://www.sudo.ws/alerts/unescape_overflow.html">check</a> if your version of sudo is affected try running:
+<code>sudoedit -s /</code></p>
+<p>A vulnerable version will either prompt for a password or display an error similar to: <code>sudoedit: /: not a regular file</code></p>
+<p>According to Mitre, <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-315I6">CVE-2021-3156</a>, sudo versions before 1.9.5p2 are vulnerable.</p>
+<p>Apple has <a href="https://support.apple.com/en-us/HT212177">released an update</a> today for Big Sur, Catalina, and Mojave.</p>
+<p>This particular vulnerability, while dangerous, still does require an attacker to have access to the machine already to trigger this.</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

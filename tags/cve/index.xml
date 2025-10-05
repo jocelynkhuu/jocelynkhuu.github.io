@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cve on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/cve/</link>
+    <description>Recent content in Cve on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Mar 2021 21:18:30 -0700</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/cve/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is a CVE?</title>
+      <link>https://khuuj.com/posts/2021/march/032421_whatiscve/</link>
+      <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_whatiscve/</guid>
+      <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

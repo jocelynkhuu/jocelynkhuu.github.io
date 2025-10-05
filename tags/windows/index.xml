@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/windows/</link>
+    <description>Recent content in Windows on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Oct 2023 03:35:17 -0400</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Subsystem for Linux (WSL)</title>
+      <link>https://khuuj.com/posts/2023/october/102523_wslwindows/</link>
+      <pubDate>Wed, 25 Oct 2023 03:35:17 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/october/102523_wslwindows/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.&lt;/p&gt;&#xA;&lt;h3 id=&#34;installing-wsl&#34;&gt;Installing WSL&lt;/h3&gt;&#xA;&lt;p&gt;Following this &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install&#34;&gt;article&lt;/a&gt; on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the &lt;code&gt;Terminal&lt;/code&gt; app on Windows 11:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WslRegisterDistribution failed with error: 0x80370114&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: 0x80370114 The operation could not be started because a required feature is not installed.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press any key to &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I manually enabled the features in &lt;code&gt;Turn Windows features On or Off&lt;/code&gt; then restarted:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

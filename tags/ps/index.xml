@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ps on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/ps/</link>
+    <description>Recent content in Ps on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Mar 2021 21:30:06 -0700</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/ps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Tip of the Day - ps</title>
+      <link>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</link>
+      <pubDate>Wed, 24 Mar 2021 21:30:06 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_ltotd_ps/</guid>
+      <description>&lt;h2 id=&#34;what-is-ps&#34;&gt;What is ps?&lt;/h2&gt;&#xA;&lt;p&gt;According to the man page, the &lt;code&gt;ps&lt;/code&gt; utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.&lt;/p&gt;&#xA;&lt;p&gt;This is a fancy way of saying that &lt;code&gt;ps&lt;/code&gt; shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

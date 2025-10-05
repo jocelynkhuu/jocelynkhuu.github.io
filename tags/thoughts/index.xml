@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thoughts on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/thoughts/</link>
+    <description>Recent content in Thoughts on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Oct 2025 01:05:58 -0700</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/thoughts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ollama &#43; Open WebUI</title>
+      <link>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</link>
+      <pubDate>Sun, 05 Oct 2025 01:05:58 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</guid>
+      <description>&lt;h1 id=&#34;what-exactly-is-ai&#34;&gt;What exactly is AI?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: I will primary be using ChatGPT to define a lot of what this is&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.&lt;/p&gt;&#xA;&lt;p&gt;AI = Artificial Intelligence&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;From ChatGPT:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intro to Podman</title>
+      <link>https://khuuj.com/posts/2024/april/040324_dockersetup/</link>
+      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/040324_dockersetup/</guid>
+      <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;&#xA;&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;&#xA;&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication vs Authorization</title>
+      <link>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</link>
+      <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</guid>
+      <description>&lt;h1 id=&#34;oauth-oidc-and-saml&#34;&gt;OAuth, OIDC, and SAML&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; (AuthN) proves who someone is and &lt;strong&gt;Authorization&lt;/strong&gt; (AuthZ) allows that someone to access certain resources.&lt;/p&gt;&#xA;&lt;p&gt;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Passing Security&#43;</title>
+      <link>https://khuuj.com/posts/2022/february/021722_security&#43;/</link>
+      <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/021722_security&#43;/</guid>
+      <description>&lt;p&gt;I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-testing-experience&#34;&gt;The Testing Experience&lt;/h3&gt;&#xA;&lt;p&gt;I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I Got My First Security Job</title>
+      <link>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</link>
+      <pubDate>Wed, 02 Feb 2022 00:19:34 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/entrylevel.png&#34; alt=&#34;Entry Level&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.&lt;/p&gt;&#xA;&lt;p&gt;For some context, here is my work experience:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;5 years of IT support experience overall&lt;/li&gt;&#xA;&lt;li&gt;2 years at a FAANG doing internal IT support&lt;/li&gt;&#xA;&lt;li&gt;6 months running IT at a startup as the sole IT person&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is a CVE?</title>
+      <link>https://khuuj.com/posts/2021/march/032421_whatiscve/</link>
+      <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_whatiscve/</guid>
+      <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sudo Vulnerability</title>
+      <link>https://khuuj.com/posts/2021/january/012621_sudovuln/</link>
+      <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/january/012621_sudovuln/</guid>
+      <description>&lt;h2 id=&#34;a-sudo-vulnerability&#34;&gt;A Sudo Vulnerability&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/sudo.jpg&#34; alt=&#34;Sudo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156&#34;&gt;CVE-2021-3156&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&lt;/p&gt;&#xA;&lt;p&gt;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

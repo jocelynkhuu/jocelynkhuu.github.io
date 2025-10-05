@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Configuring WSL on Windows 11" />
+<meta name="keywords" content=", linux, note to self, post, blog, windows" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://khuuj.com/posts/2023/october/102523_wslwindows/" />
+
+
+    <title>
+        
+            Windows Subsystem for Linux (WSL) :: Jocelyn&#39;s mind wanderings 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://khuuj.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://khuuj.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://khuuj.com/favicon-16x16.png">
+    <link rel="manifest" href="https://khuuj.com/site.webmanifest">
+    <link rel="mask-icon" href="https://khuuj.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://khuuj.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Windows Subsystem for Linux (WSL)">
+  <meta itemprop="description" content="Configuring WSL on Windows 11">
+  <meta itemprop="datePublished" content="2023-10-25T03:35:17-04:00">
+  <meta itemprop="dateModified" content="2023-10-25T03:35:17-04:00">
+  <meta itemprop="wordCount" content="298">
+  <meta itemprop="image" content="https://khuuj.com/">
+  <meta itemprop="keywords" content="Linux,Note to Self,Post,Blog,Windows">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khuuj.com/">
+  <meta name="twitter:title" content="Windows Subsystem for Linux (WSL)">
+  <meta name="twitter:description" content="Configuring WSL on Windows 11">
+
+
+
+    <meta property="og:url" content="https://khuuj.com/posts/2023/october/102523_wslwindows/">
+  <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
+  <meta property="og:title" content="Windows Subsystem for Linux (WSL)">
+  <meta property="og:description" content="Configuring WSL on Windows 11">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-10-25T03:35:17-04:00">
+    <meta property="article:modified_time" content="2023-10-25T03:35:17-04:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Note to Self">
+    <meta property="article:tag" content="Post">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Windows">
+    <meta property="og:image" content="https://khuuj.com/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-10-25 03:35:17 -0400 -0400" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://khuuj.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        2 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://khuuj.com/posts/2023/october/102523_wslwindows/">Windows Subsystem for Linux (WSL)</a>
+      </h1>
+
+      
+        <div class="post-excerpt">Configuring WSL on Windows 11</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>I don&rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&rsquo;m much more familiar with navigating linux than using powershell.</p>
+<h3 id="installing-wsl">Installing WSL</h3>
+<p>Following this <a href="https://learn.microsoft.com/en-us/windows/wsl/install">article</a> on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the <code>Terminal</code> app on Windows 11:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Installing, this may take a few minutes...
+</span></span><span style="display:flex;"><span>WslRegisterDistribution failed with error: 0x80370114
+</span></span><span style="display:flex;"><span>Error: 0x80370114 The operation could not be started because a required feature is not installed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Press any key to <span style="color:#66d9ef">continue</span>...
+</span></span></code></pre></div><p>I manually enabled the features in <code>Turn Windows features On or Off</code> then restarted:</p>
+<ul>
+<li><code>Virtual Machine Platform</code></li>
+<li><code>Windows Hypervisor Platform</code></li>
+<li><code>Windows Subsystem for Linux</code></li>
+</ul>
+<h3 id="using-wsl">Using WSL</h3>
+<p><code>wsl --list</code> shows all the Linux distros installed and <code>wsl -d &lt;distro&gt;</code> launches the distro.</p>
+<p>In WSL, the C Drive is mounted in <code>/mnt/c/</code> so I was able to use linux to navigate to all of my Windows files in <code>/mnt/c/Users/&lt;user&gt;</code> #hooray!</p>
+<p>Everything else seemed the same as a regular Linux system including having a home directory in <code>/home/&lt;user&gt;</code>.</p>
+<h3 id="zsh-on-wsl">ZSH on WSL</h3>
+<p>It looks like by default it runs bash and I wanted to switch to zsh and install Powerlevel10k.</p>
+<ul>
+<li>Install zsh: <code>sudo apt install zsh</code></li>
+<li>Install Oh my zsh!: <code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</code></li>
+<li>Set theme to Powerlevel10k: <code>git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code></li>
+<li>Install <a href="https://github.com/romkatv/powerlevel10k#fonts">MesloLGS NF</a> fonts on Windows 11 and change it in the default profile in Terminal
+<ul>
+<li>Hit <code>CTRL + ,</code> to open Terminal settings</li>
+<li>Profiles &gt; Defaults &gt; Appearance &gt; Font face &gt; MesloLGS NF</li>
+</ul>
+</li>
+<li>Then run <code>p10k configure</code> to configure it</li>
+</ul>
+<p>I thought this was pretty cool as it was my first time using WSL. My experience with powershell is limited so I thought this would be helpful for me to navigate my Windows system faster.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://khuuj.com/tags/linux/">linux</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/note-to-self/">note to self</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/post/">post</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/windows/">windows</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        298 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2023-10-25 00:35
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://khuuj.com/posts/2024/april/040324_dockersetup/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Intro to Podman</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://khuuj.com/posts/2023/october/102423_brokengrub/">
+                    <span class="button__text">Missing grub menu after update</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

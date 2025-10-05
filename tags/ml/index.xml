@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/ml/</link>
+    <description>Recent content in ML on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Oct 2025 01:05:58 -0700</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ollama &#43; Open WebUI</title>
+      <link>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</link>
+      <pubDate>Sun, 05 Oct 2025 01:05:58 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</guid>
+      <description>&lt;h1 id=&#34;what-exactly-is-ai&#34;&gt;What exactly is AI?&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: I will primary be using ChatGPT to define a lot of what this is&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.&lt;/p&gt;&#xA;&lt;p&gt;AI = Artificial Intelligence&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;From ChatGPT:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

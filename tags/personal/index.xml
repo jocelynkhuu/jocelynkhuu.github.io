@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/personal/</link>
+    <description>Recent content in Personal on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Feb 2022 03:24:13 -0500</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Passing Security&#43;</title>
+      <link>https://khuuj.com/posts/2022/february/021722_security&#43;/</link>
+      <pubDate>Thu, 17 Feb 2022 03:24:13 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/021722_security&#43;/</guid>
+      <description>&lt;p&gt;I took the Security+ exam back in 2020 when covid hit. It had always been a goal of mine to pass as I heard from many people that it would be a good entry level cert into Security.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-testing-experience&#34;&gt;The Testing Experience&lt;/h3&gt;&#xA;&lt;p&gt;I took the test via OnVue and was super nervous about potential issues from all the horror stories of online proctors. Luckily, I didn’t experience any issues when taking my exam and everything ran smoothly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I Got My First Security Job</title>
+      <link>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</link>
+      <pubDate>Wed, 02 Feb 2022 00:19:34 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/february/020122_1stsecurityjob/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/entrylevel.png&#34; alt=&#34;Entry Level&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I started my first Endpoint Security Engineer role late last month and I wanted to write down how I was able to finally break into security. This is going to be written in a journal style as this is just my experience.&lt;/p&gt;&#xA;&lt;p&gt;For some context, here is my work experience:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;5 years of IT support experience overall&lt;/li&gt;&#xA;&lt;li&gt;2 years at a FAANG doing internal IT support&lt;/li&gt;&#xA;&lt;li&gt;6 months running IT at a startup as the sole IT person&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I honestly wouldn&amp;rsquo;t say that I&amp;rsquo;m the most technical person in the world but I definitely have a lot of interest in learning new technologies, automation, and tinkering with tech such as Raspberry Pis.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

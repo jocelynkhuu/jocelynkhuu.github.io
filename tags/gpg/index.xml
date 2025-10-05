@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gpg on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/gpg/</link>
+    <description>Recent content in Gpg on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using GPG Keys</title>
+      <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/041624_gpgkeys/</guid>
+      <description>&lt;p&gt;GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

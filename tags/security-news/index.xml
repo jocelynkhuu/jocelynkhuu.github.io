@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security News on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/security-news/</link>
+    <description>Recent content in Security News on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Feb 2021 22:43:05 -0800</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/security-news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sudo Vulnerability</title>
+      <link>https://khuuj.com/posts/2021/january/012621_sudovuln/</link>
+      <pubDate>Tue, 09 Feb 2021 22:43:05 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2021/january/012621_sudovuln/</guid>
+      <description>&lt;h2 id=&#34;a-sudo-vulnerability&#34;&gt;A Sudo Vulnerability&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://khuuj.com/static/sudo.jpg&#34; alt=&#34;Sudo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156&#34;&gt;CVE-2021-3156&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;On 1/26/21, a heap-based buffer overflow vulnerability was discovered in &amp;lsquo;sudo&amp;rsquo; that can leave it exploited by an local user. Normally, sudo is supposed to escape special characters with a backslash &amp;lsquo;&#39;, however, a bug has made it possible to run &amp;lsquo;sudoedit&amp;rsquo; with -s or -i options, meaning no escaping had been done, making a buffer overflow possible.&lt;/p&gt;&#xA;&lt;p&gt;With these exploits, researchers were able to obtain full root privileges without being listed in the sudoers files.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

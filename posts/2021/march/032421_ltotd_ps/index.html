@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="ps - process status" />
+<meta name="keywords" content=", linux, LTOTD, tip of the day, blog, ps" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://khuuj.com/posts/2021/march/032421_ltotd_ps/" />
+
+
+    <title>
+        
+            Linux Tip of the Day - ps :: Jocelyn&#39;s mind wanderings 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://khuuj.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://khuuj.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://khuuj.com/favicon-16x16.png">
+    <link rel="manifest" href="https://khuuj.com/site.webmanifest">
+    <link rel="mask-icon" href="https://khuuj.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://khuuj.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Linux Tip of the Day - ps">
+  <meta itemprop="description" content="ps - process status">
+  <meta itemprop="datePublished" content="2021-03-24T21:30:06-07:00">
+  <meta itemprop="dateModified" content="2021-03-24T21:30:06-07:00">
+  <meta itemprop="wordCount" content="749">
+  <meta itemprop="image" content="https://khuuj.com/">
+  <meta itemprop="keywords" content="Linux,LTOTD,Tip of the Day,Blog,Ps">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://khuuj.com/">
+  <meta name="twitter:title" content="Linux Tip of the Day - ps">
+  <meta name="twitter:description" content="ps - process status">
+
+
+
+    <meta property="og:url" content="https://khuuj.com/posts/2021/march/032421_ltotd_ps/">
+  <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
+  <meta property="og:title" content="Linux Tip of the Day - ps">
+  <meta property="og:description" content="ps - process status">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-03-24T21:30:06-07:00">
+    <meta property="article:modified_time" content="2021-03-24T21:30:06-07:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="LTOTD">
+    <meta property="article:tag" content="Tip of the Day">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Ps">
+    <meta property="og:image" content="https://khuuj.com/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-03-24 21:30:06 -0700 PDT" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://khuuj.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        4 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://khuuj.com/posts/2021/march/032421_ltotd_ps/">Linux Tip of the Day - ps</a>
+      </h1>
+
+      
+        <div class="post-excerpt">ps - process status</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="what-is-ps">What is ps?</h2>
+<p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
+<p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
+<p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43682</span> pts/1    00:00:00 bash
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43706</span> pts/1    00:00:00 ps
+</span></span></code></pre></div><ul>
+<li><code>PID</code> = Process ID</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-e, select all processes</code></strong></p>
+<p><code>ps -e</code> lists all processes that have been started by all users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -e | head -3
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">1</span> ?        00:00:03 systemd
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">2</span> ?        00:00:00 kthreadd
+</span></span></code></pre></div><p><strong><code>-f, full format listing</code></strong></p>
+<p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Name of console that the user is logged in at</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>-F, Extra full format</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -eF | head -3
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">45072</span> <span style="color:#ae81ff">11088</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>UID</code> = User ID of the owner of the process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>PPID</code> = Parent process ID of the process</li>
+<li><code>C</code> = Number of children the process has</li>
+<li><code>SZ</code> = Size in RAM page of the process image</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>PSR</code> = processor that the process is assigned to</li>
+<li><code>STIME</code> = Start time of the process</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>CMD</code> = Command executed that launched the process</li>
+</ul>
+<p><strong><code>ps aux</code></strong></p>
+<p><code>ps aux</code> is another way to list all processes (not the same as <code>ps -aux</code>, which displays all processes owned by user named &ldquo;x&rdquo;). This is the legacy way of seeing all processes running using BSD syntax.</p>
+<ul>
+<li><code>a</code> = all users</li>
+<li><code>u</code> = shows the user</li>
+<li><code>x</code> = displays the processes not executed in the terminal</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps aux | head -3
+</span></span><span style="display:flex;"><span>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>  0.0  0.0 <span style="color:#ae81ff">180288</span> <span style="color:#ae81ff">11088</span> ?        Ss   Mar06   0:03 /sbin/init
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>  0.0  0.0      <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span> ?        S    Mar06   0:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li><code>USER</code> = User account running process</li>
+<li><code>PID</code> = Process ID</li>
+<li><code>%CPU</code> = CPU time used by the process (in %)</li>
+<li><code>%MEM</code> = Physical Memory used by the process (in %)</li>
+<li><code>VSZ</code> = Virtual memory used (in bytes)</li>
+<li><code>RSS</code> = Resident set size. Non-swappable physical memory used</li>
+<li><code>TTY</code> = Terminal the process is started from. ? indicates it didn&rsquo;t start from a terminal.</li>
+<li><code>STAT</code> = Process state</li>
+<li><code>START</code> = Starting time/date of the process</li>
+<li><code>TIME</code> = Time that the process has been running</li>
+<li><code>COMMAND</code> = Command which started the process</li>
+</ul>
+<p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
+<p><strong><code>-C, cmdlet</code></strong></p>
+<p><code>-C</code> can be used to search in ps with a command name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -C chrome
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:49 chrome
+</span></span></code></pre></div><p><strong><code>-p, process id</code></strong></p>
+<p><code>-p</code> can be used to search for process id</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -p <span style="color:#ae81ff">23128</span>
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:51 chrome
+</span></span></code></pre></div><p><strong><code>-u, userlist</code></strong></p>
+<p><code>-u</code> can be used to search by user</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -u bob
+</span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17827</span> ?        00:00:00 systemd
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17828</span> ?        00:00:00 <span style="color:#f92672">(</span>sd-pam<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17854</span> ?        00:00:00 dbus-daemon 
+</span></span></code></pre></div><p><code>ps</code> can be used with <code>grep</code> to locate specific processes as well. This can be helpful when we have to locate or kill certain processes. I&rsquo;ll most likely make another post on killing processes using commands such as ps and pgrep.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://khuuj.com/tags/linux/">linux</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/ltotd/">LTOTD</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/tip-of-the-day/">tip of the day</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/blog/">blog</a></span>
+        <span class="tag"><a href="https://khuuj.com/tags/ps/">ps</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        749 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-03-24 21:30
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://khuuj.com/posts/2022/february/020122_1stsecurityjob/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">How I Got My First Security Job</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://khuuj.com/posts/2021/march/032421_whatiscve/">
+                    <span class="button__text">What is a CVE?</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

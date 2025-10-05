@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Podman on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/podman/</link>
+    <description>Recent content in Podman on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Apr 2024 01:37:12 -0400</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/podman/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to Podman</title>
+      <link>https://khuuj.com/posts/2024/april/040324_dockersetup/</link>
+      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/040324_dockersetup/</guid>
+      <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;&#xA;&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;&#xA;&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

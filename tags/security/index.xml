@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Jocelyn&#39;s mind wanderings</title>
+    <link>https://khuuj.com/tags/security/</link>
+    <description>Recent content in Security on Jocelyn&#39;s mind wanderings</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Apr 2024 02:12:55 -0400</lastBuildDate>
+    <atom:link href="https://khuuj.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using GPG Keys</title>
+      <link>https://khuuj.com/posts/2024/april/041624_gpgkeys/</link>
+      <pubDate>Tue, 16 Apr 2024 02:12:55 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/041624_gpgkeys/</guid>
+      <description>&lt;p&gt;GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s give a hypothetical situation on how this can be used. Let&amp;rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intro to Podman</title>
+      <link>https://khuuj.com/posts/2024/april/040324_dockersetup/</link>
+      <pubDate>Wed, 03 Apr 2024 01:37:12 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2024/april/040324_dockersetup/</guid>
+      <description>&lt;h2 id=&#34;podman-basics&#34;&gt;Podman Basics&lt;/h2&gt;&#xA;&lt;p&gt;I needed to test some scripts on Linux (I&amp;rsquo;m on a Mac) and figured why not take this time to learn how to build some containers with Podman. I specifically chose &lt;a href=&#34;https://podman.io/&#34;&gt;Podman&lt;/a&gt; as it&amp;rsquo;s free and open source, making it a great Docker alternative especially for enterprises.&lt;/p&gt;&#xA;&lt;p&gt;To setup podman cli, we can install it from brew or download the pkg directly from the &lt;a href=&#34;https://podman.io/docs/installation&#34;&gt;website&lt;/a&gt; and follow the instructions to init and start.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication vs Authorization</title>
+      <link>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</link>
+      <pubDate>Fri, 18 Aug 2023 16:17:47 -0400</pubDate>
+      <guid>https://khuuj.com/posts/2023/august/081823_authnvsauthz/</guid>
+      <description>&lt;h1 id=&#34;oauth-oidc-and-saml&#34;&gt;OAuth, OIDC, and SAML&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; (AuthN) proves who someone is and &lt;strong&gt;Authorization&lt;/strong&gt; (AuthZ) allows that someone to access certain resources.&lt;/p&gt;&#xA;&lt;p&gt;Basic authentication is what we&amp;rsquo;re all used to with something like a username and password. We can prove who we are by inputting the correct credentials. Another common form of authentication is biometrics. When we unlock our phones, we can use a fingerprint scan or an eye scan to prove our identities to unlock our phones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuring https on a CentOS webserver</title>
+      <link>https://khuuj.com/posts/2022/december/120922_confighttps/</link>
+      <pubDate>Fri, 09 Dec 2022 00:44:03 -0500</pubDate>
+      <guid>https://khuuj.com/posts/2022/december/120922_confighttps/</guid>
+      <description>&lt;p&gt;I tried to configure https for a webserver recently and wanted to document what worked for me.&lt;/p&gt;&#xA;&lt;p&gt;This worked on CentOS 7 running Apache version 2.4.6.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create an &lt;code&gt;ssl.conf&lt;/code&gt; file in &lt;code&gt;/etc/httpd/conf.d/&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Create the following VirtualHost configuration:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apacheconf&#34; data-lang=&#34;apacheconf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;*:443&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Require &lt;span style=&#34;color:#66d9ef&#34;&gt;all&lt;/span&gt; granted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  AllowOverride &lt;span style=&#34;color:#66d9ef&#34;&gt;All&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ServerName website.com&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  DocumentRoot &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ErrorLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/website.error.log&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  CustomLog &lt;span style=&#34;color:#e6db74&#34;&gt;/var/log/httpd/access.log&lt;/span&gt; combined&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;on&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/public.crt&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateKeyFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/private/private.key&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  SSLCertificateChainFile &lt;span style=&#34;color:#e6db74&#34;&gt;/etc/ssl/certs/chain.crt&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;SSLCertificateChainFile&lt;/code&gt; might not be necessary in newer versions of Apache.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What is a CVE?</title>
+      <link>https://khuuj.com/posts/2021/march/032421_whatiscve/</link>
+      <pubDate>Wed, 24 Mar 2021 21:18:30 -0700</pubDate>
+      <guid>https://khuuj.com/posts/2021/march/032421_whatiscve/</guid>
+      <description>&lt;p&gt;CVE is short for &lt;strong&gt;&amp;ldquo;Common Vulnerabilities and Exposures&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;CVE is managed by the &lt;a href=&#34;https://cve.mitre.org/&#34;&gt;MITRE corporation&lt;/a&gt; and is funded by the DHS CISA. According to the Mitre site, &amp;ldquo;The mission of the CVE® Program is to identify, define, and catalog publicly disclosed cybersecurity vulnerabilities.&amp;rdquo; It provides a free list of security vulnerabilities that have been disclosed to the public and gives an easy way for IT and Security teams to look up and prioritize security issues to address.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
