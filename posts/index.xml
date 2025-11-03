@@ -165,6 +165,19 @@ They predict the next word in a sequence, which allows them to write, summarize,
 <li>“pre-trained” means it already has general language knowledge before you use it.</li>
 <li>&ldquo;Transformer is the architecture — the actual neural network design that makes GPT work. It uses a mechanism called self-attention which means the model looks at all words in a sentence at once and learns which ones are most relevant to each other.</li>
 </ul>
+<h4 id="if-gpt-is-pre-trained-how-does-it-get-more-recent-data">If GPT is pre-trained how does it get more recent data?</h4>
+<blockquote>
+<p>RAG = Retrieval-Augmented Generation
+It’s an architecture (or strategy) that makes a language model (like GPT) smarter and more accurate by letting it look up real information before answering your question.</p>
+<p>Instead of relying purely on its internal training data, the model:</p>
+<ul>
+<li>Retrieves relevant information from an external knowledge base (documents, database, API, etc.),</li>
+<li>Augments its context with that information, and</li>
+<li>Generates a final answer using both its general knowledge and the retrieved facts.</li>
+</ul>
+<p>LLMs like GPT are trained up to a certain point in time (e.g., 2024-06 for GPT-5).
+They don’t automatically know your company data, private docs, or brand-new events.
+RAG fixes that by allowing the model to “plug in” to live or private data without retraining the model.</p></blockquote>
 <h3 id="what-are-tokens-and-parameters">What are tokens and parameters?</h3>
 <p>Every answer you get from an LLM is built by predicting one token at a time, incredibly fast — millions of times per second.</p>
 <ul>
