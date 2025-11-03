@@ -298,6 +298,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <h2 id="how-about-using-it-in-vscode">How about using it in VSCode?</h2>
 <p>There is a VSCode extension called <a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">Continue</a> that will automatically detect any local LLMs downloaded and can help with chatbot and autocomplete capabilities.</p>
 <p>Another extension is <a href="https://cline.bot/">Cline</a> and it can be used to automatically edit and create new files, write code for you and put it in certain files, and install dependencies if needed.</p>
+<p><img src="/static/ollamacline.png" alt="Ollama &#43; Cline"></p>
 ]]></content>
         </item>
         
