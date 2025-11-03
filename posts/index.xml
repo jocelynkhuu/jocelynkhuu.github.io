@@ -56,23 +56,89 @@ One of the most classic deep learning examples is a Convolutional Neural Network
 <li>Output: “Cat” (with 99.7% confidence)</li>
 <li>That’s all done automatically — no human manually coding “cat = whiskers + tail + ears.”</li>
 </ul></blockquote>
-<p>Then there are &ldquo;LLMs&rdquo; or Large Language Models</p>
+<p>There are different models out there that focus on different areas.</p>
+<p>&ldquo;LLMs&rdquo; or Large Language Models are one type of Machine Learning model for text or understanding and generating human language.</p>
 <blockquote>
 <p>LLMs are a specific type of ML model, trained on massive amounts of text to understand and generate human language.</p>
 <p>They’re built using deep learning (a subset of ML) — particularly neural networks with billions of parameters.
 They predict the next word in a sequence, which allows them to write, summarize, translate, and even reason.</p>
 <p>Examples:</p>
 <ul>
-<li>GPT-5</li>
-<li>Claude, Gemini, Mistral, Llama</li>
+<li>GPT (OpenAI)</li>
+<li>Claude (Anthropic)</li>
+<li>Gemini (Google)</li>
+<li>LLaMA (Meta)</li>
+<li>Mistral (Mistral AI)</li>
 </ul></blockquote>
 <p>So the hierarchy is something like</p>
 <pre tabindex="0"><code>Artificial Intelligence
 └── Machine Learning
     └── Deep Learning
         └── Large Language Models
-</code></pre><h3 id="what-is-gpt">What is GPT?</h3>
-<p>GPT = Generative Pre-trained Transformer (A type of LLM)</p>
+</code></pre><p>There are other types of models such as vision models, audio models, Multimodal Models, etc.</p>
+<blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>Model Type</th>
+          <th>Data Type</th>
+          <th>Example Models</th>
+          <th>Common Uses</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>LLMs</strong></td>
+          <td>Text</td>
+          <td>GPT, Claude, LLaMA</td>
+          <td>Chatbots, writing, Q&amp;A</td>
+      </tr>
+      <tr>
+          <td><strong>Vision</strong></td>
+          <td>Images/Video</td>
+          <td>ResNet, YOLO, CLIP</td>
+          <td>Object detection, photo tagging</td>
+      </tr>
+      <tr>
+          <td><strong>Audio</strong></td>
+          <td>Sound</td>
+          <td>Whisper, MusicLM</td>
+          <td>Speech-to-text, voice synthesis</td>
+      </tr>
+      <tr>
+          <td><strong>Multimodal</strong></td>
+          <td>Mixed (text + image + audio)</td>
+          <td>GPT-4o, Gemini</td>
+          <td>Vision-language tasks</td>
+      </tr>
+      <tr>
+          <td><strong>Time Series</strong></td>
+          <td>Temporal data</td>
+          <td>Prophet, LSTM</td>
+          <td>Forecasting, anomaly detection</td>
+      </tr>
+      <tr>
+          <td><strong>Generative</strong></td>
+          <td>Various</td>
+          <td>GANs, Diffusion</td>
+          <td>Image/music generation</td>
+      </tr>
+      <tr>
+          <td><strong>Reinforcement Learning</strong></td>
+          <td>Interaction-based</td>
+          <td>AlphaGo, robotics RL</td>
+          <td>Games, control, robots</td>
+      </tr>
+      <tr>
+          <td><strong>Classical ML</strong></td>
+          <td>Numeric/tabular</td>
+          <td>SVM, Random Forest</td>
+          <td>Predictions, clustering</td>
+      </tr>
+  </tbody>
+</table></blockquote>
+<h3 id="what-is-gpt">What is GPT?</h3>
+<p>GPT = Generative Pre-trained Transformer (A type of LLM by OpenAI for its family of LLMs)</p>
 <ul>
 <li>“Generative” means the model creates new content, rather than just classifying or retrieving information.</li>
 <li>“pre-trained” means it already has general language knowledge before you use it.</li>
