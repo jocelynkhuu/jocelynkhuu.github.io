@@ -81,62 +81,83 @@ They predict the next word in a sequence, which allows them to write, summarize,
   <thead>
       <tr>
           <th>Model Type</th>
-          <th>Data Type</th>
-          <th>Example Models</th>
+          <th>Data Type / Domain</th>
+          <th>Example Models / Frameworks</th>
           <th>Common Uses</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><strong>LLMs</strong></td>
+          <td><strong>LLMs (Large Language Models)</strong></td>
           <td>Text</td>
-          <td>GPT, Claude, LLaMA</td>
-          <td>Chatbots, writing, Q&amp;A</td>
+          <td>GPT, Claude, LLaMA, Mistral</td>
+          <td>Chatbots, writing, summarization, coding</td>
       </tr>
       <tr>
-          <td><strong>Vision</strong></td>
-          <td>Images/Video</td>
-          <td>ResNet, YOLO, CLIP</td>
-          <td>Object detection, photo tagging</td>
+          <td><strong>Embedding Models</strong></td>
+          <td>Text / multimodal → numeric</td>
+          <td>OpenAI Embeddings, SentenceTransformer</td>
+          <td>Semantic search, clustering, retrieval (RAG)</td>
       </tr>
       <tr>
-          <td><strong>Audio</strong></td>
-          <td>Sound</td>
-          <td>Whisper, MusicLM</td>
-          <td>Speech-to-text, voice synthesis</td>
+          <td><strong>Embedded / Edge Models</strong></td>
+          <td>Various (tiny models)</td>
+          <td>TensorFlow Lite, Phi-3-mini, MobileNet</td>
+          <td>On-device AI, IoT, offline assistants</td>
       </tr>
       <tr>
-          <td><strong>Multimodal</strong></td>
+          <td><strong>Vision Models</strong></td>
+          <td>Images / Video</td>
+          <td>ResNet, YOLO, CLIP, SAM</td>
+          <td>Object detection, photo tagging, segmentation</td>
+      </tr>
+      <tr>
+          <td><strong>Audio Models</strong></td>
+          <td>Sound / Waveform</td>
+          <td>Whisper, MusicLM, DeepSpeech</td>
+          <td>Speech-to-text, voice synthesis, music gen</td>
+      </tr>
+      <tr>
+          <td><strong>Multimodal Models</strong></td>
           <td>Mixed (text + image + audio)</td>
-          <td>GPT-4o, Gemini</td>
-          <td>Vision-language tasks</td>
+          <td>GPT-4o, Gemini, CLIP</td>
+          <td>Vision-language reasoning, captioning</td>
       </tr>
       <tr>
-          <td><strong>Time Series</strong></td>
-          <td>Temporal data</td>
-          <td>Prophet, LSTM</td>
+          <td><strong>Time Series Models</strong></td>
+          <td>Temporal / sequential data</td>
+          <td>LSTM, GRU, Prophet, Temporal Fusion Transformer</td>
           <td>Forecasting, anomaly detection</td>
       </tr>
       <tr>
-          <td><strong>Generative</strong></td>
+          <td><strong>Generative Models</strong></td>
           <td>Various</td>
-          <td>GANs, Diffusion</td>
-          <td>Image/music generation</td>
+          <td>GANs, Diffusion, VAE</td>
+          <td>Image, video, or music generation</td>
       </tr>
       <tr>
           <td><strong>Reinforcement Learning</strong></td>
-          <td>Interaction-based</td>
-          <td>AlphaGo, robotics RL</td>
-          <td>Games, control, robots</td>
+          <td>Interaction / environment</td>
+          <td>AlphaGo, DQN, PPO, robotics RL</td>
+          <td>Games, robotics, control systems</td>
       </tr>
       <tr>
-          <td><strong>Classical ML</strong></td>
-          <td>Numeric/tabular</td>
-          <td>SVM, Random Forest</td>
-          <td>Predictions, clustering</td>
+          <td><strong>Classical ML Models</strong></td>
+          <td>Numeric / tabular data</td>
+          <td>SVM, Random Forest, XGBoost</td>
+          <td>Predictions, clustering, classification</td>
       </tr>
   </tbody>
-</table></blockquote>
+</table>
+<p>Notes:</p>
+<ul>
+<li>LLMs are a type of deep learning model that work specifically with language.</li>
+<li>Embedding models produce numerical meaning representations (used by or alongside LLMs).</li>
+<li>Embedded models are small-scale models optimized for running locally.</li>
+<li>Multimodal models combine multiple data types (e.g., GPT-4o processes both text and images).</li>
+<li>Generative models create new data (text, image, sound, etc.).</li>
+<li>Reinforcement learning teaches models through trial and reward — also used to fine-tune LLM behavior (like ChatGPT’s helpful tone).</li>
+</ul></blockquote>
 <h3 id="what-is-gpt">What is GPT?</h3>
 <p>GPT = Generative Pre-trained Transformer (A type of LLM by OpenAI for its family of LLMs)</p>
 <ul>
