@@ -2,16 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://khuuj.com/tags/blog/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
+    <loc>https://khuuj.com/tags/containers/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
     <loc>https://khuuj.com/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
+    <loc>https://khuuj.com/tags/linux/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
+    <loc>https://khuuj.com/tags/post/</loc>
     <lastmod>2026-01-06T23:15:40-08:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/posts/</loc>
     <lastmod>2026-01-06T23:15:40-08:00</lastmod>
   </url><url>
-    <loc>https://khuuj.com/tags/ai/</loc>
-    <lastmod>2025-10-05T01:05:58-07:00</lastmod>
+    <loc>https://khuuj.com/tags/security/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
   </url><url>
-    <loc>https://khuuj.com/tags/blog/</loc>
+    <loc>https://khuuj.com/tags/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
+    <loc>https://khuuj.com/posts/2026/january/intro_containers_010626/</loc>
+    <lastmod>2026-01-06T23:15:40-08:00</lastmod>
+  </url><url>
+    <loc>https://khuuj.com/tags/ai/</loc>
     <lastmod>2025-10-05T01:05:58-07:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/tags/llm/</loc>
@@ -23,17 +41,8 @@
     <loc>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</loc>
     <lastmod>2025-10-05T01:05:58-07:00</lastmod>
   </url><url>
-    <loc>https://khuuj.com/tags/post/</loc>
-    <lastmod>2025-10-05T01:05:58-07:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/tags/</loc>
-    <lastmod>2025-10-05T01:05:58-07:00</lastmod>
-  </url><url>
     <loc>https://khuuj.com/tags/thoughts/</loc>
     <lastmod>2025-10-05T01:05:58-07:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/tags/linux/</loc>
-    <lastmod>2025-08-06T01:05:58-07:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/posts/2025/august/080625_dd/</loc>
     <lastmod>2025-08-06T01:05:58-07:00</lastmod>
@@ -42,9 +51,6 @@
     <lastmod>2024-04-16T02:12:55-04:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/tags/gpg/</loc>
-    <lastmod>2024-04-16T02:12:55-04:00</lastmod>
-  </url><url>
-    <loc>https://khuuj.com/tags/security/</loc>
     <lastmod>2024-04-16T02:12:55-04:00</lastmod>
   </url><url>
     <loc>https://khuuj.com/posts/2024/april/041624_gpgkeys/</loc>

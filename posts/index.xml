@@ -9,6 +9,78 @@
         <atom:link href="https://khuuj.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>What are containers?</title>
+            <link>https://khuuj.com/posts/2026/january/intro_containers_010626/</link>
+            <pubDate>Tue, 06 Jan 2026 23:15:40 -0800</pubDate>
+            
+            <guid>https://khuuj.com/posts/2026/january/intro_containers_010626/</guid>
+            <description>&lt;h1 id=&#34;differences-between-vms-and-containers&#34;&gt;Differences between VMs and containers&lt;/h1&gt;
+&lt;p&gt;I wrote a post a couple of years ago on how to use Podman, but what exactly are containers and how do they differ from VMs?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with VMs.&lt;/p&gt;
+&lt;h3 id=&#34;virtual-machines-vm&#34;&gt;Virtual Machines (VM)&lt;/h3&gt;
+&lt;p&gt;A VM is basically a virtual computer that can run operating systems within a virtualized environment on a single physical host machine. Hypervisors manage VMs and there are Type 1 and Type 2 Hypervisors. Type 1 is what typically runs in datacenters directly on hardware. Type 2 runs as an app on a host OS such as VirtualBox, VMware Fusion, etc.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h1 id="differences-between-vms-and-containers">Differences between VMs and containers</h1>
+<p>I wrote a post a couple of years ago on how to use Podman, but what exactly are containers and how do they differ from VMs?</p>
+<p>Let&rsquo;s start with VMs.</p>
+<h3 id="virtual-machines-vm">Virtual Machines (VM)</h3>
+<p>A VM is basically a virtual computer that can run operating systems within a virtualized environment on a single physical host machine. Hypervisors manage VMs and there are Type 1 and Type 2 Hypervisors. Type 1 is what typically runs in datacenters directly on hardware. Type 2 runs as an app on a host OS such as VirtualBox, VMware Fusion, etc.</p>
+<p>Virtual machines are great for customization and security as they run their own kernel, own guest OS, and own libraries making them pretty isolated. Many VMs can run on one host for scalability but VMs tend to be more resource intensive than containers. Each VM has to be individually patched as they run their own OS and kernel.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|                  Applications                    |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|  |   App A   |   |   App B   |   |   App C   |   |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|        |               |               |         |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|  | Libraries |   | Libraries |   | Libraries |   |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|        |               |               |         |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|  | Guest OS  |   | Guest OS  |   | Guest OS  |   |
+</span></span><span style="display:flex;"><span>|  | (Kernel)  |   | (Kernel)  |   | (Kernel)  |   |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|                    Hypervisor                    |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|              Host OS / Bare Metal                |
+</span></span><span style="display:flex;"><span>|        (Type 2 uses Host OS, Type 1 does not)    |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|                    Hardware                      |
+</span></span><span style="display:flex;"><span>|               (CPU, RAM, Storage)                |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span></code></pre></div><h3 id="containers">Containers</h3>
+<p>Containers are isolated processes that run an application with its dependencies while sharing the host OS&rsquo; kernel. Kind of like a sandbox for a process. They scale well and are extremely lightweight and portable as they don&rsquo;t require a guest OS, are often ephemeral, and all of the dependencies are packaged together to run on the host OS&rsquo; kernel. They do have their own security risks though as they share the Host OS kernel. Meaning that if vulnerabilities are present at the kernel level, all containers are vulnerable to it.</p>
+<p>Containers have 3 basic components to run:</p>
+<ol>
+<li>A manifest such as a Dockerfile, which describes how the container image should be built. This acts as a blueprint for the application, including which base image and libraries are required and how the application is started.</li>
+<li>A container image that is created from the Dockerfile as an immutable snapshot of the application</li>
+<li>The container runtime which runs on the host OS and is responsible for isolation and managing the container resources. This is kind of like the hypervisor</li>
+</ol>
+<p>A container can be destroyed and redeployed very quickly and container images can be updated and versioned in a container image repository.</p>
+<p>The key difference between virtual machines and containers is that virtual machines isolate entire machines, while containers isolate processes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|                  Containers                      |
+</span></span><span style="display:flex;"><span>|                                                  |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|  |   App A   |   |   App B   |   |   App C   |   |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|  | Libraries |   | Libraries |   | Libraries |   |
+</span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
+</span></span><span style="display:flex;"><span>|      (User-space dependencies per container)     |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|              Container Runtime                   |
+</span></span><span style="display:flex;"><span>|        (containerd / CRI-O / runc)               |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|             Host OS Kernel (Shared)              |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span><span style="display:flex;"><span>|                    Hardware                      |
+</span></span><span style="display:flex;"><span>|               (CPU, RAM, Storage)                |
+</span></span><span style="display:flex;"><span>+--------------------------------------------------+
+</span></span></code></pre></div><p>Container runtime protection is very important to securing containers. Container runtime protection typically runs on the Host OS to monitor container processes in real time and detect anomalies or suspicious activity. Since containers are immutable, any unexepected behavior could indicate a compromise.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Ollama &#43; Open WebUI</title>
             <link>https://khuuj.com/posts/2025/october/100525_selfhosted_ai/</link>
             <pubDate>Sun, 05 Oct 2025 01:05:58 -0700</pubDate>

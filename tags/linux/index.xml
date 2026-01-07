@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Jocelyn&#39;s mind wanderings</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Aug 2025 01:05:58 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jan 2026 23:15:40 -0800</lastBuildDate>
     <atom:link href="https://khuuj.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What are containers?</title>
+      <link>https://khuuj.com/posts/2026/january/intro_containers_010626/</link>
+      <pubDate>Tue, 06 Jan 2026 23:15:40 -0800</pubDate>
+      <guid>https://khuuj.com/posts/2026/january/intro_containers_010626/</guid>
+      <description>&lt;h1 id=&#34;differences-between-vms-and-containers&#34;&gt;Differences between VMs and containers&lt;/h1&gt;&#xA;&lt;p&gt;I wrote a post a couple of years ago on how to use Podman, but what exactly are containers and how do they differ from VMs?&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s start with VMs.&lt;/p&gt;&#xA;&lt;h3 id=&#34;virtual-machines-vm&#34;&gt;Virtual Machines (VM)&lt;/h3&gt;&#xA;&lt;p&gt;A VM is basically a virtual computer that can run operating systems within a virtualized environment on a single physical host machine. Hypervisors manage VMs and there are Type 1 and Type 2 Hypervisors. Type 1 is what typically runs in datacenters directly on hardware. Type 2 runs as an app on a host OS such as VirtualBox, VMware Fusion, etc.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Updating the BIOS on an older Lenovo Thinkpad - Linux Edition</title>
       <link>https://khuuj.com/posts/2025/august/080625_dd/</link>
