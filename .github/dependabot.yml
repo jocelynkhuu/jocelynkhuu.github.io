@@ -2,10 +2,9 @@ version: 2
 
 updates:
   - package-ecosystem: "github-actions"
-    directory: ".github/workflows"
+    directory: "/"
     schedule:
-      interval: "weekly" # Options: "daily", "weekly", "monthly"
+      interval: "weekly" 
       day: "monday"
       time: "09:00"
-    timezone: "America/Los_Angeles"
     open-pull-requests-limit: 3
