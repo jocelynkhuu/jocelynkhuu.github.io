@@ -23,7 +23,7 @@
 
 
 
-  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://khuuj.com/main.min.7289daf2e88ea2c7b253a51cc5794c7cc17e7aeb7295a19d978db764a5862f25.css" integrity="sha256-cona8uiOoseyU6UcxXlMfMF&#43;eutylaGdl423ZKWGLyU=" crossorigin="anonymous">
 
 
 
@@ -58,7 +58,7 @@
   <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
   <meta property="og:title" content="Using GPG Keys">
   <meta property="og:description" content="Intro on how to use GPG keys">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-04-16T02:12:55-04:00">
@@ -115,9 +115,16 @@
 
         <span class="header__right">
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    <ul class="menu__inner">
+                <li><a href="https://khuuj.com/about">whoami</a></li>
+            
+                <li><a href="https://khuuj.com/posts">posts</a></li>
+            
+                <li><a href="https://khuuj.com/resume">resume</a></li>
+            
     </ul>
 </nav>
+
 
                 <span class="menu-trigger">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -135,37 +142,32 @@
 </header>
 
 
-            <div class="content">
-                
-  <main class="post">
+            
+  <div class="content">
+    <main class="post">
 
-    <div class="post-info">
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        5 minutes
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="https://khuuj.com/posts/2024/april/041624_gpgkeys/">Using GPG Keys</a>
+        </h1>
 
         
-      </p>
-    </div>
+          <div class="post-excerpt">Intro on how to use GPG keys</div>
+        
 
-    <article>
-      <h1 class="post-title">
-        <a href="https://khuuj.com/posts/2024/april/041624_gpgkeys/">Using GPG Keys</a>
-      </h1>
+        
 
-      
-        <div class="post-excerpt">Intro on how to use GPG keys</div>
-      
+        
 
-      
-
-      
-
-      <div class="post-content">
-        <p>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.</p>
+        <div class="post-content">
+          <p>GPG (GNU Privacy Guard) is an encryption tool that allows us to secure data and communications. It is an open source implementation of the OpenPGP standard which stems from PGP and is based on public-key cryptogrophy which uses public and private key pairs for encryption and decryption.</p>
 <p>Let&rsquo;s give a hypothetical situation on how this can be used. Let&rsquo;s say I need to receive a sensitive file from a coworker. Here are the steps that I would follow.</p>
 <ol>
 <li>Generate a GPG key which would include a public and private key</li>
@@ -176,7 +178,7 @@
 <p>Now let&rsquo;s go over the actual steps of how to do this.</p>
 <h3 id="key-generation">Key Generation</h3>
 <p>We can generate our own key by running <code>gpg --full-generate-key</code> which will guide us through a series of questions such as what key algorithm we want to use, the keysize, and the length of time the key should be valid for. At the end of the key generation, it will prompt for a password for the key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
 </span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
 </span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
 </span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
@@ -214,7 +216,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
 </span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
 </span></span><span style="display:flex;"><span>------------------------------
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>     44EF66288AF
@@ -228,7 +230,7 @@
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ file publickey.asc
 </span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
@@ -246,7 +248,7 @@
 <li><code>-r</code> = recipient USER-ID</li>
 </ul>
 <p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
@@ -266,7 +268,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ gpg --list-keys none 
 </span></span><span style="display:flex;"><span>gpg: error reading key: No public key
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
 </span></span><span style="display:flex;"><span>thisisatest!
 </span></span><span style="display:flex;"><span>WE CAN DO MULTIPLE LINES
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
@@ -279,7 +281,7 @@
 <ul>
 <li><code>-d</code> = decrypt</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
@@ -287,7 +289,7 @@
 </span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>THISISATEST!!!%           
 </span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
@@ -301,7 +303,7 @@
 <h3 id="deleting-a-key">Deleting a Key</h3>
 <p>We can delete a public key by running <code>gpg --delete-key &lt;KEY_ID_OR_EMAIL&gt;</code>.</p>
 <p>To delete a private key, we will need to run <code>gpg --delete-secret-key &lt;KEY_ID_OR_EMAIL&gt;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
 </span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
 </span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
 </span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
@@ -321,13 +323,13 @@
 </span></span><span style="display:flex;"><span>Delete this key from the keyring? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
 </span></span></code></pre></div><p>And that is the basics of using GPG keys! This personally helped me learn how asymmetric encryption works.</p>
 
-      </div>
-    </article>
+        </div>
+      </article>
 
-    <hr />
+      <hr />
 
-    <div class="post-info">
-      
+      <div class="post-info">
+        
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
@@ -339,37 +341,37 @@
         
     </p>
 
-      
-
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        1025 Words
-      </p>
-
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        
-          2024-04-15 23:12
         
 
-         
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          1025 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
           
-        
-      </p>
-    </div>
+            2024-04-15 23:12
+          
 
-    
+           
+            
+          
+        </p>
+      </div>
+
+      
     <div class="pagination">
         
         <div class="pagination__title">
@@ -400,15 +402,15 @@
     </div>
 
 
-    
+      
 
-    
+      
 
-    
+      
 
-  </main>
+    </main>
+  </div>
 
-            </div>
 
             
                 <footer class="footer">
@@ -423,7 +425,7 @@
 
 
 
-<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+<script type="text/javascript" src="https://khuuj.com/bundle.min.08b680078a3cf9c69e3dd217a5aa52cfddd4a1d850f8cdff127fdd7421a71f8b2b474be69386f67819edace92273916e7230c9054f38107db9dc6730b3530ab5.js" integrity="sha512-CLaAB4o8&#43;caePdIXpapSz93UodhQ&#43;M3/En/ddCGnH4srR0vmk4b2eBntrOkic5FucjDJBU84EH253Gcws1MKtQ=="></script>
 
 
 

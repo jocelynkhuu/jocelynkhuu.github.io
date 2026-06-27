@@ -23,7 +23,7 @@
 
 
 
-  <link rel="stylesheet" href="https://khuuj.com/main.min.ab5336003ba331300318b49292c672210905baf1ef5410a739f647e70c8808fa.css" integrity="sha256-q1M2ADujMTADGLSSksZyIQkFuvHvVBCnOfZH5wyICPo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://khuuj.com/main.min.7289daf2e88ea2c7b253a51cc5794c7cc17e7aeb7295a19d978db764a5862f25.css" integrity="sha256-cona8uiOoseyU6UcxXlMfMF&#43;eutylaGdl423ZKWGLyU=" crossorigin="anonymous">
 
 
 
@@ -58,7 +58,7 @@
   <meta property="og:site_name" content="Jocelyn&#39;s mind wanderings">
   <meta property="og:title" content="Linux Tip of the Day - grep">
   <meta property="og:description" content="grep - Global Regular Expression Print">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-06-03T02:41:51-04:00">
@@ -115,9 +115,16 @@
 
         <span class="header__right">
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://khuuj.com/about">whoami</a></li><li><a href="https://khuuj.com/posts">posts</a></li><li><a href="https://khuuj.com/resume">resume</a></li>
+    <ul class="menu__inner">
+                <li><a href="https://khuuj.com/about">whoami</a></li>
+            
+                <li><a href="https://khuuj.com/posts">posts</a></li>
+            
+                <li><a href="https://khuuj.com/resume">resume</a></li>
+            
     </ul>
 </nav>
+
 
                 <span class="menu-trigger">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -135,54 +142,49 @@
 </header>
 
 
-            <div class="content">
-                
-  <main class="post">
+            
+  <div class="content">
+    <main class="post">
 
-    <div class="post-info">
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        2 minutes
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="https://khuuj.com/posts/2023/june/060323_ltotd_grep/">Linux Tip of the Day - grep</a>
+        </h1>
 
         
-      </p>
-    </div>
+          <div class="post-excerpt">grep - Global Regular Expression Print</div>
+        
 
-    <article>
-      <h1 class="post-title">
-        <a href="https://khuuj.com/posts/2023/june/060323_ltotd_grep/">Linux Tip of the Day - grep</a>
-      </h1>
+        
 
-      
-        <div class="post-excerpt">grep - Global Regular Expression Print</div>
-      
+        
 
-      
-
-      
-
-      <div class="post-content">
-        <h2 id="what-is-grep">What is grep?</h2>
+        <div class="post-content">
+          <h2 id="what-is-grep">What is grep?</h2>
 <p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
 <p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
 <p><strong><code>-i, --ignore-case</code></strong></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
 <p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>
@@ -190,11 +192,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
 </span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
 <p><code>grep -c</code> can be used to provide the count for lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>
 </span></span></code></pre></div><h3 id="using-regular-expressions-with-grep">Using regular expressions with grep</h3>
 <p>Let&rsquo;s say we have a test file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
@@ -202,45 +204,45 @@
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines with <code>test</code> regardless of case:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with capital <code>T</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span></code></pre></div><p>Look for lines that end with lowercase <code>t</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
 <p>Look for anything that starts with a number:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with 3 numbers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for anything that ends with <code>test</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span></code></pre></div><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
 <p>I&rsquo;ve only provided a few options with basics for <code>grep</code> but it is a powerful tool that can be used to parse plaintext files.</p>
 
-      </div>
-    </article>
+        </div>
+      </article>
 
-    <hr />
+      <hr />
 
-    <div class="post-info">
-      
+      <div class="post-info">
+        
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
@@ -252,37 +254,37 @@
         
     </p>
 
-      
-
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        378 Words
-      </p>
-
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        
-          2023-06-02 23:41
         
 
-         
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          378 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
           
-        
-      </p>
-    </div>
+            2023-06-02 23:41
+          
 
-    
+           
+            
+          
+        </p>
+      </div>
+
+      
     <div class="pagination">
         
         <div class="pagination__title">
@@ -313,15 +315,15 @@
     </div>
 
 
-    
+      
 
-    
+      
 
-    
+      
 
-  </main>
+    </main>
+  </div>
 
-            </div>
 
             
                 <footer class="footer">
@@ -336,7 +338,7 @@
 
 
 
-<script type="text/javascript" src="https://khuuj.com/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+<script type="text/javascript" src="https://khuuj.com/bundle.min.08b680078a3cf9c69e3dd217a5aa52cfddd4a1d850f8cdff127fdd7421a71f8b2b474be69386f67819edace92273916e7230c9054f38107db9dc6730b3530ab5.js" integrity="sha512-CLaAB4o8&#43;caePdIXpapSz93UodhQ&#43;M3/En/ddCGnH4srR0vmk4b2eBntrOkic5FucjDJBU84EH253Gcws1MKtQ=="></script>
 
 
 

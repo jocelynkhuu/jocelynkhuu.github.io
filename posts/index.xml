@@ -4,7 +4,7 @@
         <link>https://khuuj.com/posts/</link>
         <description>Recent content in Posts on Jocelyn&#39;s mind wanderings</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
+        <language>en-us</language>
         <lastBuildDate>Tue, 06 Jan 2026 23:15:40 -0800</lastBuildDate>
         <atom:link href="https://khuuj.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -23,7 +23,7 @@
 <h3 id="virtual-machines-vm">Virtual Machines (VM)</h3>
 <p>A VM is basically a virtual computer that can run operating systems within a virtualized environment on a single physical host machine. Hypervisors manage VMs and there are Type 1 and Type 2 Hypervisors. Type 1 is what typically runs in datacenters directly on hardware. Type 2 runs as an app on a host OS such as VirtualBox, VMware Fusion, etc.</p>
 <p>Virtual machines are great for customization and security as they run their own kernel, own guest OS, and own libraries making them pretty isolated. Many VMs can run on one host for scalability but VMs tend to be more resource intensive than containers. Each VM has to be individually patched as they run their own OS and kernel.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
 </span></span><span style="display:flex;"><span>|                  Applications                    |
 </span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
 </span></span><span style="display:flex;"><span>|  |   App A   |   |   App B   |   |   App C   |   |
@@ -56,7 +56,7 @@
 </ol>
 <p>A container can be destroyed and redeployed very quickly and container images can be updated and versioned in a container image repository.</p>
 <p>The key difference between virtual machines and containers is that virtual machines isolate entire machines, while containers isolate processes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>+--------------------------------------------------+
 </span></span><span style="display:flex;"><span>|                  Containers                      |
 </span></span><span style="display:flex;"><span>|                                                  |
 </span></span><span style="display:flex;"><span>|  +-----------+   +-----------+   +-----------+   |
@@ -103,7 +103,8 @@
 <li>A chatbot that can answer questions</li>
 <li>A self-driving car that detects pedestrians</li>
 <li>A spam filter that learns to block unwanted emails</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>You may also hear the term &ldquo;ML&rdquo; for Machine Learning which is a subset of AI and how most AI learn.</p>
 <blockquote>
 <p>Instead of being explicitly programmed with rules, ML models learn from data.
@@ -111,7 +112,8 @@ They look for patterns and improve automatically as they see more examples.</p>
 <p>Example:</p>
 <ul>
 <li>If you feed a model thousands of cat and dog photos labeled correctly, it learns to recognize cats vs dogs without you hard-coding “cats have whiskers.”</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>Then there&rsquo;s &ldquo;DL&rdquo; for Deep Learning which is a subset of ML.</p>
 <blockquote>
 <p>Deep Learning is a subset of Machine Learning that uses artificial neural networks — lots of layers (“deep”) that learn patterns from raw data.</p>
@@ -125,7 +127,8 @@ One of the most classic deep learning examples is a Convolutional Neural Network
 <li>Deep layers detect whole objects (cat)</li>
 <li>Output: “Cat” (with 99.7% confidence)</li>
 <li>That’s all done automatically — no human manually coding “cat = whiskers + tail + ears.”</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>There are different models out there that focus on different areas.</p>
 <p>&ldquo;LLMs&rdquo; or Large Language Models are one type of Machine Learning model for text or understanding and generating human language.</p>
 <blockquote>
@@ -139,7 +142,8 @@ They predict the next word in a sequence, which allows them to write, summarize,
 <li>Gemini (Google)</li>
 <li>LLaMA (Meta)</li>
 <li>Mistral (Mistral AI)</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>So the hierarchy is something like</p>
 <pre tabindex="0"><code>Artificial Intelligence
 └── Machine Learning
@@ -227,7 +231,8 @@ They predict the next word in a sequence, which allows them to write, summarize,
 <li>Multimodal models combine multiple data types (e.g., GPT-4o processes both text and images).</li>
 <li>Generative models create new data (text, image, sound, etc.).</li>
 <li>Reinforcement learning teaches models through trial and reward — also used to fine-tune LLM behavior (like ChatGPT’s helpful tone).</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <h3 id="what-is-gpt">What is GPT?</h3>
 <p>GPT = Generative Pre-trained Transformer (A type of LLM by OpenAI for its family of LLMs)</p>
 <ul>
@@ -247,7 +252,8 @@ They predict the next word in a sequence, which allows them to write, summarize,
 </ul>
 <p>LLMs like GPT are trained up to a certain point in time (e.g., 2024-06 for GPT-5).
 They don’t automatically know your company data, private docs, or brand-new events.
-RAG fixes that by allowing the model to “plug in” to live or private data without retraining the model.</p></blockquote>
+RAG fixes that by allowing the model to “plug in” to live or private data without retraining the model.</p>
+</blockquote>
 <h3 id="what-are-tokens-and-parameters">What are tokens and parameters?</h3>
 <p>Every answer you get from an LLM is built by predicting one token at a time, incredibly fast — millions of times per second.</p>
 <ul>
@@ -281,12 +287,13 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <ul>
 <li>From the command line (chat directly)</li>
 <li>Or in your own programs (like a local AI API)</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <h2 id="setting-up-ollama--openwebui">Setting up Ollama + OpenWebUI</h2>
 <ol>
 <li>Download <a href="https://ollama.com">Ollama</a></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama
 </span></span><span style="display:flex;"><span>Usage:
 </span></span><span style="display:flex;"><span>  ollama <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>  ollama <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
@@ -317,7 +324,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </ol>
 <p><em>Note: be aware of your hardware limitations. The more parameters there are the more resources it needs from your computer.</em></p>
 <p><em>From Ollama&rsquo;s own <a href="https://github.com/ollama/ollama">documentation</a>: You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models, and 32 GB to run the 33B models.</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run qwen3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run qwen3
 </span></span><span style="display:flex;"><span>pulling manifest
 </span></span><span style="display:flex;"><span>pulling a3de86cd1c13: 100% ▕███████████████████████████████▏ 5.2 GB
 </span></span><span style="display:flex;"><span>pulling ae370d884f10: 100% ▕███████████████████████████████▏ 1.7 KB
@@ -328,7 +335,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>writing manifest
 </span></span><span style="display:flex;"><span>success
 </span></span><span style="display:flex;"><span>&gt;&gt;&gt; Send a message <span style="color:#f92672">(</span>/? <span style="color:#66d9ef">for</span> help<span style="color:#f92672">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama list
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama list
 </span></span><span style="display:flex;"><span>NAME            ID              SIZE      MODIFIED
 </span></span><span style="display:flex;"><span>qwen3:latest    500a1f067a9f    5.2 GB    <span style="color:#ae81ff">58</span> seconds ago
 </span></span><span style="display:flex;"><span>gemma3:4b       a2af6cc3eb7f    3.3 GB    <span style="color:#ae81ff">2</span> hours ago
@@ -336,7 +343,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span></code></pre></div><ol start="3">
 <li>Use your models directly in the cmd line</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run gemma3:4b
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ ollama run gemma3:4b
 </span></span><span style="display:flex;"><span>&gt;&gt;&gt; hello
 </span></span><span style="display:flex;"><span>Hello there! How’s your day going so far? Is there anything I can help you with today? 😊
 </span></span><span style="display:flex;"><span>
@@ -351,11 +358,11 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span></code></pre></div><h2 id="build-a-webui-to-interact-with-the-llms">Build a webUI to interact with the LLMs</h2>
 <p>There is an open source project called <a href="https://github.com/open-webui/open-webui">Open WebUI</a> to help us build an interface similar to ChatGPT. It is very easy to set up especially with a container.</p>
 <p>Here is what I did to run it in a container through podman:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -d -p 3000:8080 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v open-webui:/app/backend/data <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name open-webui <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  ghcr.io/open-webui/open-webui:main
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -d -p 3000:8080 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -v open-webui:/app/backend/data <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --name open-webui <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  ghcr.io/open-webui/open-webui:main
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>8ceae59c06c485d86122fdb687f9f2e80708b4
 </span></span><span style="display:flex;"><span>
@@ -453,7 +460,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <p>Now let&rsquo;s go over the actual steps of how to do this.</p>
 <h3 id="key-generation">Key Generation</h3>
 <p>We can generate our own key by running <code>gpg --full-generate-key</code> which will guide us through a series of questions such as what key algorithm we want to use, the keysize, and the length of time the key should be valid for. At the end of the key generation, it will prompt for a password for the key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --full-generate-key
 </span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
 </span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
 </span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
@@ -491,7 +498,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
 </span></span></code></pre></div><p>We can list all the keys in our keyring by running <code>gpg --list-keys</code> for public keys and <code>gpg --list-secret-keys</code> for private keys</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys
 </span></span><span style="display:flex;"><span>------------------------------
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>     44EF66288AF
@@ -505,7 +512,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
 </span></span><span style="display:flex;"><span>ssb   rsa3072 2024-04-16 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p>We can then export the public key using the Key ID (in this case <code>44EF66288AF</code>) and provide it to others in either a public key file (<code>.asc</code>) or just by copying the GPG public key block and sharing it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --export 44EF66288AF &gt; publickey.asc
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ file publickey.asc
 </span></span><span style="display:flex;"><span>publickey.asc: OpenPGP Public Key Version 4, Created Tue Apr <span style="color:#ae81ff">16</span> 06:41:08 2024, RSA <span style="color:#f92672">(</span>Encrypt or Sign, <span style="color:#ae81ff">3072</span> bits<span style="color:#f92672">)</span>; User ID; Signature; OpenPGP Certificate
@@ -523,7 +530,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <li><code>-r</code> = recipient USER-ID</li>
 </ul>
 <p>gpg is pretty flexible in that you can list keys and encrypt with recipient using email, name, partial name, etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --list-keys jk
 </span></span><span style="display:flex;"><span>pub   rsa3072 2024-04-16 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expires: 2024-04-17<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>     44EF66288AF
 </span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> jocelyn <span style="color:#f92672">(</span>To test gpg<span style="color:#f92672">)</span> &lt;jk@test.com&gt;
@@ -543,7 +550,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ gpg --list-keys none 
 </span></span><span style="display:flex;"><span>gpg: error reading key: No public key
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -ear jk
 </span></span><span style="display:flex;"><span>thisisatest!
 </span></span><span style="display:flex;"><span>WE CAN DO MULTIPLE LINES
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
@@ -556,7 +563,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <ul>
 <li><code>-d</code> = decrypt</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg -d
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
@@ -564,7 +571,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;jocelyn (To test gpg) &lt;jk@test.com&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>THISISATEST!!!%           
 </span></span></code></pre></div><p>You can also decrypt from a file running <code>gpg -d filename.gpg</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat test.gpg
 </span></span><span style="display:flex;"><span>-----BEGIN PGP MESSAGE-----
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>-----END PGP MESSAGE-----
@@ -578,7 +585,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <h3 id="deleting-a-key">Deleting a Key</h3>
 <p>We can delete a public key by running <code>gpg --delete-key &lt;KEY_ID_OR_EMAIL&gt;</code>.</p>
 <p>To delete a private key, we will need to run <code>gpg --delete-secret-key &lt;KEY_ID_OR_EMAIL&gt;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ gpg --delete-secret-key 44EF66288AF
 </span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.4.5; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2024</span> g10 Code GmbH
 </span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
 </span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
@@ -631,48 +638,48 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <h3 id="dockerfile">Dockerfile</h3>
 <p>We can build custom images by creating a Dockerfile, which basically is a set of instructions to follow when building an image.</p>
 <p>Here&rsquo;s a sample Ubuntu image Dockerfile, created with the help of chatgpt:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">ubuntu:latest</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">ubuntu:latest</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install required tools</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gnupg2 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   vim <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   net-tools <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   wget <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Install required tools</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   curl <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   gnupg2 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   vim <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   net-tools <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   wget <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>   tee /usr/share/keyrings/gopass-archive-keyring.gpg &gt; /dev/null<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Download and add GPG key for gopass repo</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> curl https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg | <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span>   tee /usr/share/keyrings/gopass-archive-keyring.gpg &gt; /dev/null<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">## Add gopass repository to apt sources</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/gopass-archive-keyring.gpg] https://packages.gopass.pw/repos/gopass stable main&#34;</span> | <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   tee /etc/apt/sources.list.d/gopass.list<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">## Add gopass repository to apt sources</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> echo <span style="color:#e6db74">&#34;deb [signed-by=/usr/share/keyrings/gopass-archive-keyring.gpg] https://packages.gopass.pw/repos/gopass stable main&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   tee /etc/apt/sources.list.d/gopass.list<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Update package index and install gopass</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   gopass-archive-keyring <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Update package index and install gopass</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> apt update <span style="color:#f92672">&amp;&amp;</span> apt install -y <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   gopass <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   gopass-archive-keyring <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Clean up</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm -rf /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean up</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> rm -rf /usr/share/keyrings/gopass-archive-keyring.gpg<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copies local file called bashrc &amp; vimrc in local host directory to /tmp/bashrc &amp; /tmp/vimrc on container</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> bashrc /tmp/bashrc<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/bashrc &gt;&gt; ~/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Copies local file called bashrc &amp; vimrc in local host directory to /tmp/bashrc &amp; /tmp/vimrc on container</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">COPY</span> bashrc /tmp/bashrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> cat /tmp/bashrc &gt;&gt; ~/.bashrc<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># COPY vimrc /tmp/vimrc</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> cat /tmp/vimrc &gt;&gt; ~/.vimrc<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># COPY vimrc /tmp/vimrc</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN</span> cat /tmp/vimrc &gt;&gt; ~/.vimrc<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/root</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the working directory</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/root</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Defines default command</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Defines default command</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><p>First we pull the image we want from the registry after searching for it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman search ubuntu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman search ubuntu
 </span></span><span style="display:flex;"><span>INDEX       NAME                                      DESCRIPTION                                      STARS       OFFICIAL    AUTOMATED
 </span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu                  Ubuntu is a Debian-based Linux operating sys...  <span style="color:#ae81ff">16977</span>       <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
 </span></span><span style="display:flex;"><span>docker.io   docker.io/library/ubuntu-debootstrap      DEPRECATED; use <span style="color:#e6db74">&#34;ubuntu&#34;</span> instead                 <span style="color:#ae81ff">52</span>          <span style="color:#f92672">[</span>OK<span style="color:#f92672">]</span>        
@@ -697,7 +704,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
 </span></span><span style="display:flex;"><span>docker.io/library/ubuntu  latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago  80.4 MB
 </span></span></code></pre></div><p>After pulling the image, we can create a custom image using the Dockerfile. The beginning of the dockerfile specifies a base image we can use: <code>FROM ubuntu:latest</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman build -t ubuntu_custom_image . 
 </span></span><span style="display:flex;"><span>STEP 1/12: FROM ubuntu:latest
 </span></span><span style="display:flex;"><span>STEP 2/12: RUN apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y <span style="color:#f92672">&amp;&amp;</span> apt install -y    curl    gnupg2    vim    net-tools    wget  <span style="color:#f92672">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </span></span><span style="display:flex;"><span>...
@@ -707,15 +714,15 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>localhost/ubuntu_custom_image  latest      6d689e465837  <span style="color:#ae81ff">22</span> seconds ago  <span style="color:#ae81ff">285</span> MB
 </span></span><span style="display:flex;"><span>docker.io/library/ubuntu       latest      ca2b0f26964c  <span style="color:#ae81ff">5</span> weeks ago     80.4 MB
 </span></span></code></pre></div><p>Now we can create a container and run an interactive shell using the <code>-it</code> option. They stand for &ldquo;interactive&rdquo; and &ldquo;pseudo-TTY&rdquo;. The <code>-i</code> option makes the session interactive, and the <code>-t</code> option allocates a pseudo-TTY, allowing you to interact with the shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -it --name ubuntu_container ubuntu_custom_image
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman run -it --name ubuntu_container ubuntu_custom_image
 </span></span><span style="display:flex;"><span>root@1623365303af:~# ls -a
 </span></span><span style="display:flex;"><span>.  ..  .bashrc  .profile  .vimrc
 </span></span></code></pre></div><p>We can check the status of our container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman ps -a
 </span></span><span style="display:flex;"><span>CONTAINER ID  IMAGE                                 COMMAND     CREATED        STATUS                         PORTS       NAMES
 </span></span><span style="display:flex;"><span>1623365303af  localhost/ubuntu_custom_image:latest  /bin/bash   <span style="color:#ae81ff">2</span> minutes ago  Exited <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> About a minute ago              ubuntu_container
 </span></span></code></pre></div><p>To get back in, we need to make sure that it&rsquo;s started.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman start ubuntu_container             
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman start ubuntu_container             
 </span></span><span style="display:flex;"><span>ubuntu_container
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>❯ podman ps -a                              
@@ -725,7 +732,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>❯ podman exec -it ubuntu_container /bin/bash <span style="color:#75715e">#this starts an interactive shell </span>
 </span></span><span style="display:flex;"><span>root@1623365303af:~# 
 </span></span></code></pre></div><p>We can also just execute the command without an interactive shell from within the container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman exec ubuntu_container ls -la  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ podman exec ubuntu_container ls -la  
 </span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">24</span>
 </span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:18 .
 </span></span><span style="display:flex;"><span>dr-xr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Apr  <span style="color:#ae81ff">3</span> 07:17 ..
@@ -760,7 +767,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
             <description>&lt;p&gt;I don&amp;rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&amp;rsquo;m much more familiar with navigating linux than using powershell.&lt;/p&gt;
 &lt;h3 id=&#34;installing-wsl&#34;&gt;Installing WSL&lt;/h3&gt;
 &lt;p&gt;Following this &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install&#34;&gt;article&lt;/a&gt; on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the &lt;code&gt;Terminal&lt;/code&gt; app on Windows 11:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Installing, this may take a few minutes...
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WslRegisterDistribution failed with error: 0x80370114
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: 0x80370114 The operation could not be started because a required feature is not installed.
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -769,7 +776,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
             <content type="html"><![CDATA[<p>I don&rsquo;t use a Windows system on a day-to-day basis but I wanted to configure WSL on Windows since I&rsquo;m much more familiar with navigating linux than using powershell.</p>
 <h3 id="installing-wsl">Installing WSL</h3>
 <p>Following this <a href="https://learn.microsoft.com/en-us/windows/wsl/install">article</a> on Microsoft Learn, I tried to install WSL but ran into some issues afterwards. I was receiving an error through the <code>Terminal</code> app on Windows 11:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Installing, this may take a few minutes...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Installing, this may take a few minutes...
 </span></span><span style="display:flex;"><span>WslRegisterDistribution failed with error: 0x80370114
 </span></span><span style="display:flex;"><span>Error: 0x80370114 The operation could not be started because a required feature is not installed.
 </span></span><span style="display:flex;"><span>
@@ -811,21 +818,21 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
             <description>&lt;h2 id=&#34;failed-to-open-efibootgrubx64efi---not-found&#34;&gt;Failed to open \EFI\BOOT\grubx64.efi - Not Found&lt;/h2&gt;
 &lt;p&gt;I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.&lt;/p&gt;
 &lt;p&gt;Here is the error that I was receiving.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to open &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi - Not Found  
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to open &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi - Not Found  
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to load image &lt;span style=&#34;color:#ae81ff&#34;&gt;\E&lt;/span&gt;FI&lt;span style=&#34;color:#ae81ff&#34;&gt;\B&lt;/span&gt;OOT&lt;span style=&#34;color:#ae81ff&#34;&gt;\g&lt;/span&gt;rubx64.efi: Not Found    
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;start_image&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; returned Not Found 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My Ubuntu version:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ cat /etc/os-release 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ cat /etc/os-release 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PRETTY_NAME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ubuntu 22.04.3 LTS&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to create a post to write about how I fixed the issue for future reference.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="failed-to-open-efibootgrubx64efi---not-found">Failed to open \EFI\BOOT\grubx64.efi - Not Found</h2>
 <p>I dual-boot Ubuntu with Windows on my system and after running a Windows update, I suddenly lost my grub menu to be able to boot back into my linux system.</p>
 <p>Here is the error that I was receiving.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to open <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi - Not Found  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Failed to open <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi - Not Found  
 </span></span><span style="display:flex;"><span>Failed to load image <span style="color:#ae81ff">\E</span>FI<span style="color:#ae81ff">\B</span>OOT<span style="color:#ae81ff">\g</span>rubx64.efi: Not Found    
 </span></span><span style="display:flex;"><span>start_image<span style="color:#f92672">()</span> returned Not Found 
 </span></span></code></pre></div><p>My Ubuntu version:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat /etc/os-release 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat /etc/os-release 
 </span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ubuntu 22.04.3 LTS&#34;</span>
 </span></span></code></pre></div><p>I wanted to create a post to write about how I fixed the issue for future reference.</p>
 <h3 id="on-the-windows-side">On the Windows side</h3>
@@ -838,7 +845,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </li>
 </ul>
 <p>I was running into some issues with reformatting my USB on Windows and had to use diskpart to clean it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\S</span>ystem32&gt; diskpart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\S</span>ystem32&gt; diskpart
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Microsoft DiskPart version 10.0.22621.1
 </span></span><span style="display:flex;"><span>
@@ -960,31 +967,31 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
             <description>&lt;h2 id=&#34;what-is-grep&#34;&gt;What is grep?&lt;/h2&gt;
 &lt;p&gt;According to the man page, &lt;code&gt;grep&lt;/code&gt; is used to print lines that match patterns. It can be used to match regular expressions in plaintext.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can be used by running &lt;code&gt;grep [OPTION...] PATTERNS [FILE...]&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep export ~/.zshrc
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HOME&lt;span style=&#34;color:#e6db74&#34;&gt;/.local/bin:&lt;/span&gt;$PATH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is helpful when parsing log files or files with a lot of text.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;❯ grep GNOME /var/log/boot.log 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;  OK  &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; Started GNOME Display Manager.
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         Starting GNOME Display Manager...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because it can search using regular expressions, it is case sensitive. Using &lt;code&gt;grep gnome /var/log/boot.log&lt;/code&gt; in this case would show no results but we can use different options to help with this.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="what-is-grep">What is grep?</h2>
 <p>According to the man page, <code>grep</code> is used to print lines that match patterns. It can be used to match regular expressions in plaintext.</p>
 <p><code>grep</code> can be used by running <code>grep [OPTION...] PATTERNS [FILE...]</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep export ~/.zshrc
 </span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div><p><code>grep</code> is helpful when parsing log files or files with a lot of text.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep GNOME /var/log/boot.log 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p>Because it can search using regular expressions, it is case sensitive. Using <code>grep gnome /var/log/boot.log</code> in this case would show no results but we can use different options to help with this.</p>
 <p><strong><code>-i, --ignore-case</code></strong></p>
 <p><code>grep -i</code> ignores case when searching for matches.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>         Starting GNOME Display Manager...
 </span></span></code></pre></div><p><strong><code>-v, --invert-match</code></strong></p>
 <p><code>grep -v</code> finds non-matching lines. This is helpful to exclude certain search terms</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ tail -2 /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started GNOME Display Manager.
 </span></span><span style="display:flex;"><span>
@@ -992,11 +999,11 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>  OK  <span style="color:#f92672">]</span> Started Manage, Install and Generate Color Profiles.
 </span></span></code></pre></div><p><strong><code>-c, --count</code></strong></p>
 <p><code>grep -c</code> can be used to provide the count for lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -ci gnome /var/log/boot.log
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>
 </span></span></code></pre></div><h3 id="using-regular-expressions-with-grep">Using regular expressions with grep</h3>
 <p>Let&rsquo;s say we have a test file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ cat testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
@@ -1004,33 +1011,33 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines with <code>test</code> regardless of case:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -i test testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with capital <code>T</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;^T&#39;</span> testfile
 </span></span><span style="display:flex;"><span>TEST
 </span></span><span style="display:flex;"><span>TeST
 </span></span></code></pre></div><p>Look for lines that end with lowercase <code>t</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep <span style="color:#e6db74">&#39;t$&#39;</span> testfile
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span></code></pre></div><p>You can use <strong><code>-E, --extended-regexp</code></strong> to find more patterns using regular expressions. This is the same as <code>egrep</code>.</p>
 <p>Look for anything that starts with a number:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{1}&#39;</span> testfile
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>1TE34St
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for lines that start with 3 numbers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;^[0-9]{3}&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>123test
 </span></span><span style="display:flex;"><span>456tEST
 </span></span></code></pre></div><p>Look for anything that ends with <code>test</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>❯ grep -E <span style="color:#e6db74">&#39;test$&#39;</span> testfile 
 </span></span><span style="display:flex;"><span>test
 </span></span><span style="display:flex;"><span>123test
 </span></span></code></pre></div><p>There are a ton of regex patterns that can be used. <a href="https://regex101.com/">Regex101</a> can be used to test different regular expressions.</p>
@@ -1050,7 +1057,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 &lt;li&gt;Create an &lt;code&gt;ssl.conf&lt;/code&gt; file in &lt;code&gt;/etc/httpd/conf.d/&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Create the following VirtualHost configuration:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apacheconf&#34; data-lang=&#34;apacheconf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;*:443&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-apacheconf&#34; data-lang=&#34;apacheconf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;*:443&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/var/www/html/website/public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Require &lt;span style=&#34;color:#66d9ef&#34;&gt;all&lt;/span&gt; granted
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  AllowOverride &lt;span style=&#34;color:#66d9ef&#34;&gt;All&lt;/span&gt;
@@ -1071,7 +1078,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <li>Create an <code>ssl.conf</code> file in <code>/etc/httpd/conf.d/</code>.</li>
 <li>Create the following VirtualHost configuration:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:443</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">*:443</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;Directory</span> <span style="color:#e6db74">/var/www/html/website/public</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>  Require <span style="color:#66d9ef">all</span> granted
 </span></span><span style="display:flex;"><span>  AllowOverride <span style="color:#66d9ef">All</span>
@@ -1208,7 +1215,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <p>According to the man page, the <code>ps</code> utility displays a header line, followed by lines containing information about all of your processes that have controllng terminals.</p>
 <p>This is a fancy way of saying that <code>ps</code> shows all of the running processes on your Linux system. This is especially helpful when troubleshooting issues with system resources or stuck programs and seeing what processes are running on your system.</p>
 <p>Without an option, <code>ps</code> will display a list of currently active processes ran by the user.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps
 </span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43682</span> pts/1    00:00:00 bash
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">43706</span> pts/1    00:00:00 ps
@@ -1220,13 +1227,13 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 </ul>
 <p><strong><code>-e, select all processes</code></strong></p>
 <p><code>ps -e</code> lists all processes that have been started by all users.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -e | head -3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -e | head -3
 </span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
 </span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">1</span> ?        00:00:03 systemd
 </span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">2</span> ?        00:00:00 kthreadd
 </span></span></code></pre></div><p><strong><code>-f, full format listing</code></strong></p>
 <p>This option can be combined with something like <code>-e</code> to display extra columns.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | head -3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | head -3
 </span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:03 /sbin/init
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
@@ -1241,7 +1248,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <li><code>CMD</code> = Command executed that launched the process</li>
 </ul>
 <p><strong><code>-F, Extra full format</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -eF | head -3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -eF | head -3
 </span></span><span style="display:flex;"><span>UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">45072</span> <span style="color:#ae81ff">11088</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:03 /sbin/init
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">3</span> Mar06 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
@@ -1265,7 +1272,7 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <li><code>u</code> = shows the user</li>
 <li><code>x</code> = displays the processes not executed in the terminal</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps aux | head -3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps aux | head -3
 </span></span><span style="display:flex;"><span>USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>  0.0  0.0 <span style="color:#ae81ff">180288</span> <span style="color:#ae81ff">11088</span> ?        Ss   Mar06   0:03 /sbin/init
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>  0.0  0.0      <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span> ?        S    Mar06   0:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
@@ -1285,17 +1292,17 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <p>Now that we have a bunch of different ways to pull running processes, we can filter that information with different options.</p>
 <p><strong><code>-C, cmdlet</code></strong></p>
 <p><code>-C</code> can be used to search in ps with a command name.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -C chrome
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -C chrome
 </span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:49 chrome
 </span></span></code></pre></div><p><strong><code>-p, process id</code></strong></p>
 <p><code>-p</code> can be used to search for process id</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -p <span style="color:#ae81ff">23128</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -p <span style="color:#ae81ff">23128</span>
 </span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">23128</span> ?        00:01:51 chrome
 </span></span></code></pre></div><p><strong><code>-u, userlist</code></strong></p>
 <p><code>-u</code> can be used to search by user</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -u bob
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -u bob
 </span></span><span style="display:flex;"><span>    PID TTY          TIME CMD
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17827</span> ?        00:00:00 systemd
 </span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">17828</span> ?        00:00:00 <span style="color:#f92672">(</span>sd-pam<span style="color:#f92672">)</span>
@@ -1322,7 +1329,8 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <p>RedHat provides a list of criteria.</p>
 <p><img src="/static/cvecriteria.png" alt="CVE Criteria"></p>
 <blockquote>
-<p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p></blockquote>
+<p>Sources: <a href="https://cve.mitre.org/about/faqs.html">mitre</a>, <a href="https://www.redhat.com/en/topics/security/what-is-cve">RedHat</a></p>
+</blockquote>
 ]]></content>
         </item>
         
@@ -1341,26 +1349,26 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <p>Just running the <code>du</code> cmd will provide output of directories recursively. With different options/flags, we&rsquo;re able to format the data to make it more disgestable.</p>
 <p><strong><code>-s, --summarize</code></strong></p>
 <p><code>-s</code> shows us the summary of the current directory&rsquo;s usage. So instead of a potentially really long output of all the directories and their contents drilled down, we can use the <code>-s</code> flag to show a summary of the current directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ du -s
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $ du -s
 </span></span><span style="display:flex;"><span>12669812	.
 </span></span><span style="display:flex;"><span> ~ $ du -s *
 </span></span><span style="display:flex;"><span>16	Desktop
 </span></span><span style="display:flex;"><span>429860	Documents
 </span></span></code></pre></div><p><strong><code>-h, --human-readable</code></strong></p>
 <p><code>-h</code> shows the size output in human-readable format (in Bytes). When combined with the <code>-s</code> flag, we can get a pretty nice readable format.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> ~ $ du -sh *
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> ~ $ du -sh *
 </span></span><span style="display:flex;"><span>16K	Desktop
 </span></span><span style="display:flex;"><span>420M	Documents
 </span></span></code></pre></div><p>By using *, du will show the size of each folder individually as opposed to just the total.</p>
 <p><strong><code>-a, --all</code></strong></p>
 <p><code>-a</code> will list the sizes of ALL files and directories in a given file path (Not just directories).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>test $  du -ha
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>test $  du -ha
 </span></span><span style="display:flex;"><span>0	./test/test/test.txt
 </span></span><span style="display:flex;"><span>4.0K	./test/test
 </span></span><span style="display:flex;"><span>8.0K	./test
 </span></span><span style="display:flex;"><span>12K	.
 </span></span></code></pre></div><p>A lot of times, we don&rsquo;t want all of the results, we just want the top 5 or 10. We can sort the output and get the top 5 directories.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $  du -sh * | sort -hr | head -5
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ $  du -sh * | sort -hr | head -5
 </span></span><span style="display:flex;"><span>4.6G	Downloads
 </span></span><span style="display:flex;"><span>655M	games
 </span></span><span style="display:flex;"><span>420M	Documents
