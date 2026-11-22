@@ -90,7 +90,14 @@
 &lt;p&gt;AI = Artificial Intelligence&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;From ChatGPT:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;</description>
+&lt;p&gt;AI refers to any system or machine that can perform tasks that normally require human intelligence — like understanding language, recognizing images, solving problems, or making decisions.&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A chatbot that can answer questions&lt;/li&gt;
+&lt;li&gt;A self-driving car that detects pedestrians&lt;/li&gt;
+&lt;li&gt;A spam filter that learns to block unwanted emails&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description>
             <content type="html"><![CDATA[<h1 id="what-exactly-is-ai">What exactly is AI?</h1>
 <p><em>Note: I will primary be using ChatGPT to define a lot of what this is</em></p>
 <p>AI has taken off quickly within the last couple of years and even people like my aunt are using it in their everyday lives to help with tasks like learning, searching, and even translating.</p>
@@ -152,76 +159,76 @@ They predict the next word in a sequence, which allows them to write, summarize,
 </code></pre><p>There are other types of models such as vision models, audio models, Multimodal Models, etc.</p>
 <blockquote>
 <table>
-  <thead>
-      <tr>
-          <th>Model Type</th>
-          <th>Data Type / Domain</th>
-          <th>Example Models / Frameworks</th>
-          <th>Common Uses</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>LLMs (Large Language Models)</strong></td>
-          <td>Text</td>
-          <td>GPT, Claude, LLaMA, Mistral</td>
-          <td>Chatbots, writing, summarization, coding</td>
-      </tr>
-      <tr>
-          <td><strong>Embedding Models</strong></td>
-          <td>Text / multimodal → numeric</td>
-          <td>OpenAI Embeddings, SentenceTransformer</td>
-          <td>Semantic search, clustering, retrieval (RAG)</td>
-      </tr>
-      <tr>
-          <td><strong>Embedded / Edge Models</strong></td>
-          <td>Various (tiny models)</td>
-          <td>TensorFlow Lite, Phi-3-mini, MobileNet</td>
-          <td>On-device AI, IoT, offline assistants</td>
-      </tr>
-      <tr>
-          <td><strong>Vision Models</strong></td>
-          <td>Images / Video</td>
-          <td>ResNet, YOLO, CLIP, SAM</td>
-          <td>Object detection, photo tagging, segmentation</td>
-      </tr>
-      <tr>
-          <td><strong>Audio Models</strong></td>
-          <td>Sound / Waveform</td>
-          <td>Whisper, MusicLM, DeepSpeech</td>
-          <td>Speech-to-text, voice synthesis, music gen</td>
-      </tr>
-      <tr>
-          <td><strong>Multimodal Models</strong></td>
-          <td>Mixed (text + image + audio)</td>
-          <td>GPT-4o, Gemini, CLIP</td>
-          <td>Vision-language reasoning, captioning</td>
-      </tr>
-      <tr>
-          <td><strong>Time Series Models</strong></td>
-          <td>Temporal / sequential data</td>
-          <td>LSTM, GRU, Prophet, Temporal Fusion Transformer</td>
-          <td>Forecasting, anomaly detection</td>
-      </tr>
-      <tr>
-          <td><strong>Generative Models</strong></td>
-          <td>Various</td>
-          <td>GANs, Diffusion, VAE</td>
-          <td>Image, video, or music generation</td>
-      </tr>
-      <tr>
-          <td><strong>Reinforcement Learning</strong></td>
-          <td>Interaction / environment</td>
-          <td>AlphaGo, DQN, PPO, robotics RL</td>
-          <td>Games, robotics, control systems</td>
-      </tr>
-      <tr>
-          <td><strong>Classical ML Models</strong></td>
-          <td>Numeric / tabular data</td>
-          <td>SVM, Random Forest, XGBoost</td>
-          <td>Predictions, clustering, classification</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Model Type</th>
+					<th>Data Type / Domain</th>
+					<th>Example Models / Frameworks</th>
+					<th>Common Uses</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>LLMs (Large Language Models)</strong></td>
+					<td>Text</td>
+					<td>GPT, Claude, LLaMA, Mistral</td>
+					<td>Chatbots, writing, summarization, coding</td>
+			</tr>
+			<tr>
+					<td><strong>Embedding Models</strong></td>
+					<td>Text / multimodal → numeric</td>
+					<td>OpenAI Embeddings, SentenceTransformer</td>
+					<td>Semantic search, clustering, retrieval (RAG)</td>
+			</tr>
+			<tr>
+					<td><strong>Embedded / Edge Models</strong></td>
+					<td>Various (tiny models)</td>
+					<td>TensorFlow Lite, Phi-3-mini, MobileNet</td>
+					<td>On-device AI, IoT, offline assistants</td>
+			</tr>
+			<tr>
+					<td><strong>Vision Models</strong></td>
+					<td>Images / Video</td>
+					<td>ResNet, YOLO, CLIP, SAM</td>
+					<td>Object detection, photo tagging, segmentation</td>
+			</tr>
+			<tr>
+					<td><strong>Audio Models</strong></td>
+					<td>Sound / Waveform</td>
+					<td>Whisper, MusicLM, DeepSpeech</td>
+					<td>Speech-to-text, voice synthesis, music gen</td>
+			</tr>
+			<tr>
+					<td><strong>Multimodal Models</strong></td>
+					<td>Mixed (text + image + audio)</td>
+					<td>GPT-4o, Gemini, CLIP</td>
+					<td>Vision-language reasoning, captioning</td>
+			</tr>
+			<tr>
+					<td><strong>Time Series Models</strong></td>
+					<td>Temporal / sequential data</td>
+					<td>LSTM, GRU, Prophet, Temporal Fusion Transformer</td>
+					<td>Forecasting, anomaly detection</td>
+			</tr>
+			<tr>
+					<td><strong>Generative Models</strong></td>
+					<td>Various</td>
+					<td>GANs, Diffusion, VAE</td>
+					<td>Image, video, or music generation</td>
+			</tr>
+			<tr>
+					<td><strong>Reinforcement Learning</strong></td>
+					<td>Interaction / environment</td>
+					<td>AlphaGo, DQN, PPO, robotics RL</td>
+					<td>Games, robotics, control systems</td>
+			</tr>
+			<tr>
+					<td><strong>Classical ML Models</strong></td>
+					<td>Numeric / tabular data</td>
+					<td>SVM, Random Forest, XGBoost</td>
+					<td>Predictions, clustering, classification</td>
+			</tr>
+	</tbody>
 </table>
 <p>Notes:</p>
 <ul>
@@ -929,30 +936,30 @@ RAG fixes that by allowing the model to “plug in” to live or private data wi
 <h2 id="differences-between-saml-and-oidc">Differences between SAML and OIDC</h2>
 <p>Both SAML and OIDC are identity protocols that allow applications to communicate with another for authentication. According to <a href="https://www.onelogin.com/blog/real-difference-saml-oidc">onelogin</a>, their login flows are basically the same with 3 primary differences:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Differences</th>
-          <th>SAML</th>
-          <th>OIDC</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Data format</td>
-          <td>XML</td>
-          <td>JSON</td>
-      </tr>
-      <tr>
-          <td>Data sent</td>
-          <td>SAML Assertion</td>
-          <td>Claims</td>
-      </tr>
-      <tr>
-          <td>Application name</td>
-          <td>Service Provider</td>
-          <td>Relying Party</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Differences</th>
+					<th>SAML</th>
+					<th>OIDC</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Data format</td>
+					<td>XML</td>
+					<td>JSON</td>
+			</tr>
+			<tr>
+					<td>Data sent</td>
+					<td>SAML Assertion</td>
+					<td>Claims</td>
+			</tr>
+			<tr>
+					<td>Application name</td>
+					<td>Service Provider</td>
+					<td>Relying Party</td>
+			</tr>
+	</tbody>
 </table>
 <p>OIDC seems to be more easily implemented and is better for mobile applications as it uses JSON instead of XML for ID tokens.</p>
 ]]></content>
